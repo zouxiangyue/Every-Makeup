@@ -80,8 +80,11 @@ page-my {
         background: #A683FF;
     }
     .contents{
+        ion-col{
+            padding:10px;
+        }
         .img{
-            width:150px;
+            width:100%;
             height:150px;
         }
         h6{
@@ -95,7 +98,8 @@ page-my {
             height:20px;
         }
         span{
-            margin-left: 19px;
+            float:right;
+            margin-top:5px; 
         }
     }
     
