@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
+import { HttpClientModule } from '@angular/common/http';
+
 import { RegisterPage } from '../pages/register/register';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -43,20 +45,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FeedbackPage,
     SetPage,
     AddPage,
-    WreleasePage ,
+    WreleasePage,
     AboutmeiPage,
     RegisterPage,
     ImprovePage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicStorageModule.forRoot(),
-    IonicModule.forRoot(
-      MyApp,
-      {
+    IonicModule.forRoot(MyApp,{
         backButtonText: '',
-      }
-    )
+        tabsHideOnSubPages:'true'
+      })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

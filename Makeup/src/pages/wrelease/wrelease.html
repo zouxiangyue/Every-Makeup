@@ -1,12 +1,42 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>发表文章</ion-title>
-  </ion-navbar>
-
+<ion-header text-center style="background-color:#A683FF">
+  <ion-title>
+    文章发表
+  </ion-title>
 </ion-header>
 
-
 <ion-content>
+  <button ion-button (click)="cancel()">取消</button>
+  <button ion-button style="float: right;" (click)="Publish()" id="publish">发表</button>
+  <div id="note">
+    <font color="#777" >发表你的每妆帖......</font>
+  </div>
+  <textarea rows="20" cols="46" id="ta" value="说点什么吧" [(ngModel)]="content" onfocus="document.getElementById('note').style.display='none'; console.log(value);" onblur="if( value.trim()== ''){document.getElementById('note').style.display='block';   console.log('block');}"></textarea>
+
+  <ion-list radio-group> 
+    <ion-item>
+      <ion-label>美妆类</ion-label>
+      <ion-radio  value="beauty" id="beauty" checked color="purple"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>穿搭类</ion-label>
+      <ion-radio value="wear" id="wear" color="purple"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>护肤类</ion-label>
+      <ion-radio value="skin" id="skin" color="purple"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>香氛类</ion-label>
+      <ion-radio value="perfume" id="perfume" color="purple"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>健身类</ion-label>
+      <ion-radio value="sport" id="sport" color="purple"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>其他类</ion-label>
+      <ion-radio value="other" id="other" color="purple"></ion-radio>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

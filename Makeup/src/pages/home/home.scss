@@ -1,8 +1,11 @@
 page-home {
-    .toolbar-background-ios {
-        background: #A770EF; 
-        background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  
-        background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); 
+    .toolbar-background-md,.toolbar-background-ios{
+      background: #A770EF; 
+      background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  
+      background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); 
+    }
+    .bar-button-default-md{
+      color:white;
     }
     .searchbar-md
     .searchbar-input {
@@ -26,18 +29,36 @@ page-home {
       .first{
         background-color: pink;
       }
-      .iconfont{
-        display: inline-block;
-        font-size: 2em;
-        color: #A770EF;
-      }
       .iconfont1{
         display: inline-block;
         font-size: 2em;
-        color: #CF8BF3;
+        color: #A683FF;
       }
       p{
-        color: #A770EF;
+        color: #A683FF;
+      }
+    }
+    .contents{
+      ion-col{
+        padding:10px;      
+      }
+      .img{
+        width: 100%;
+        height: 150px;
+      }
+      h6{
+          overflow: hidden; //把超出的内容进行隐藏；
+          white-space: nowrap; //设置内容不换行；
+          text-overflow: ellipsis; //设置超出内容为省略号
+      }
+      .photo{
+        width: 20px;
+        height: 20px;
+        border-radius:25px;
+      }
+      span{
+          float: right;
+          margin-top:5px; 
       }
     }
 }
