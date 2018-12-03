@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ImprovePage } from '../improve/improve';
 import { SetPage } from '../set/set';
 import { DengluPage } from '../denglu/denglu';
+import { FensiPage } from '../fensi/fensi';
 
 /**
  * Generated class for the MyPage page.
@@ -32,5 +33,8 @@ goDenglu(){
   }
   setting1(){
     this.navCtrl.push(SetPage);
+  }
+  goto(){
+    this.navCtrl.push(FensiPage);
   }
 }
