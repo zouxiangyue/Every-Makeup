@@ -1,0 +1,12 @@
+<ion-menu [content]="mycontent">
+    <ion-content>
+        <ion-list>
+            <h2>更多</h2>
+            <ion-item *ngFor="let item of more let idx=index" (click)="goPage(idx)" menuClose no-lines>
+                <i class="iconfont {{item[0]}}"></i>
+                {{item[1]}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav #myNav #mycontent [root]="rootPage"></ion-nav>

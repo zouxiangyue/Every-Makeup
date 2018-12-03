@@ -1,0 +1,36 @@
+page-Guide {
+    .guide{
+        height: 0px;
+        visibility: hidden;
+    }
+    .btn{
+        opacity: 0;
+        position: absolute;;
+        top:76%;
+        left:26%;
+        width:200px;
+        height:54px;
+    }
+    .goTabs{
+        opacity: 0.6;
+        position: absolute;;
+        top:3%;
+        left:72%;
+        width:80px;
+        height:30px;
+    }
+    .btn_Signin,.btn_Signup{
+        position: absolute;;
+        top:85%;
+        width:82px;
+        height:31px;
+        background-color: palevioletred;
+        color:white
+    }
+    .btn_Signin{
+        left:21%;
+    }
+    .btn_Signup{
+        left:58%;
+    }
+}

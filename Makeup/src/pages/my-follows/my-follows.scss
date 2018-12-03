@@ -1,0 +1,74 @@
+page-my-follows {
+    ion-content{
+        ion-grid{
+            color:white;
+            font-size:20px;
+            ion-col{
+                text-align: center;
+                background: pink;
+                border-radius: 3px;
+            }
+            .isActive{
+                background: #A683FF;
+            }
+        }
+        .users{
+            .list-ios > .item-block:first-child {
+                border-top: 0px solid white;
+            }
+            ion-list{
+                padding:0% 5%;
+                p{
+                    color:black;
+                    font-size:20px;
+                }
+                ion-item{
+                    span{
+                        color:gray;
+                    }
+                }
+                .interest,.follow{
+                    img{
+                        height:50px;
+                        width:50px;
+                    }
+                   h2{
+                        color:black ;
+                        display: inline;
+                        position: relative;
+                        top:-35px;
+                        left:10px;
+                        font-size:20px
+                    }
+                    span{
+                        font-size:15px;
+                        position: absolute;
+                        left: 62px;
+                        top: 45px;
+                        font-size:14px
+                    }
+                    button{
+                        height:40px;
+                        width:60px;
+                        background-color: #A683FF;
+                        border-radius: 10px
+                    }
+                }
+                .follow{
+                    button{
+                        background-color:gray
+                    }
+                    .fan_num{
+                        position: absolute;
+                        left: 140px;
+                        top: 45px;
+                        font-size:14px
+                    }
+                }
+            }
+        }
+    }
+ }
+    
+
+

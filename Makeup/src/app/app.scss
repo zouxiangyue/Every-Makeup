@@ -1,0 +1,79 @@
+ion-list{
+    width:100%;
+    padding-left:15%;
+    color:#A683FF;
+    h3{
+       width:61%
+    }
+    
+    .item-ios {
+        padding-left: 0px;
+        color:#A683FF;
+    }
+    .hide{
+        height: 0px;
+        visibility: hidden;
+    }
+}
+
+@font-face {
+    font-family: 'Ionicons';
+    src: url('../assets/fonts/iconfont.eot');
+    src: url('../assets/fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/iconfont.woff') format('woff'),
+    url('../assets/fonts/iconfont.ttf') format('truetype'),
+    url('../assets/fonts/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"Ionicons" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    padding-right:8%;
+}
+.icon-set:before { content: "\e683"; }
+
+.icon-star:before { content: "\e628"; }
+
+.icon-bin:before { content: "\e614"; }
+
+.icon-eye:before { content: "\e63a"; }
+
+.icon-pen_:before { content: "\e67b"; }
+
+.icon-lock:before { content: "\e6d1"; }
+
+.icon-warning:before { content: "\e601"; }
+
+@font-face {
+    font-family: 'iconfont';  /* project id 937912 */
+    src: url('//at.alicdn.com/t/font_937912_xmwqyrbylu9.eot');
+    src: url('//at.alicdn.com/t/font_937912_xmwqyrbylu9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_937912_xmwqyrbylu9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_937912_xmwqyrbylu9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_937912_xmwqyrbylu9.svg#iconfont') format('svg');
+  }
+.iconfont1{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+ul,li{
+    list-style: none;
+}
+
+page-my-follows,page-my-favorites,page-privacy, page-clear,page-set,page-feedback{
+    
+    .toolbar-title-ios,.bar-button-default-ios{
+        color:white;
+    }
+    .toolbar-ios {
+        .toolbar-background-ios {
+            background: #A683FF;
+        }
+    }
+}

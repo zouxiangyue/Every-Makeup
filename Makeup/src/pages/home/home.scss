@@ -1,0 +1,43 @@
+page-home {
+    .toolbar-background-ios {
+        background: #A770EF; 
+        background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  
+        background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); 
+    }
+    .searchbar-md
+    .searchbar-input {
+        padding: 0 40px;
+        border-radius: 10px;
+    }
+    .sli{
+        height:150px;
+        img{
+            width: 100%;
+        }
+    }
+    #navigation{
+      ion-col{
+        background-color: white;
+        border-radius: 10px;
+        height: 80px;
+        text-align: center;
+        padding:10px;      
+      }  
+      .first{
+        background-color: pink;
+      }
+      .iconfont{
+        display: inline-block;
+        font-size: 2em;
+        color: #A770EF;
+      }
+      .iconfont1{
+        display: inline-block;
+        font-size: 2em;
+        color: #CF8BF3;
+      }
+      p{
+        color: #A770EF;
+      }
+    }
+}

@@ -1,0 +1,82 @@
+<ion-header text-center no-border>
+  <ion-navbar class="color">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        <ion-searchbar placeholder="秋季时尚穿搭"></ion-searchbar> 
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="add()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true" autoplay="1000" loop="true" class="sli">
+    <ion-slide>
+      <img src="../../assets/images/轮播图01.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/轮播图02.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/轮播图03.jpg">
+    </ion-slide>
+  </ion-slides> 
+  <div id="navigation">
+  <ion-row>
+    <ion-col (click)="isClick(0)" [class.first]="isActive==0">
+      <i class="iconfont1">&#xe68d;</i>
+      <p>推荐</p>
+    </ion-col>
+    <ion-col (click)="isClick(1)" [class.first]="isActive==1">
+      <i class="iconfont1">&#xe606;</i>
+      <p>美妆</p>
+    </ion-col>
+    <ion-col (click)="isClick(2)" [class.first]="isActive==2">
+      <i class="iconfont1">&#xe603;</i>
+      <p>穿搭</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col (click)="isClick(3)" [class.first]="isActive==3">
+      <i class="iconfont1">&#xe62c;</i>
+      <p>香氛</p>
+    </ion-col>
+    <ion-col (click)="isClick(4)" [class.first]="isActive==4">
+      <i class="iconfont1">&#xe64a;</i>
+      <p>护肤</p>
+    </ion-col>
+    <ion-col (click)="isClick(5)" [class.first]="isActive==5">
+      <i class="iconfont1">&#xe607;</i>
+      <p>健身</p>
+    </ion-col>
+  </ion-row>
+  </div>
+  <div [ngSwitch]="isActive">
+    <div *ngSwitchCase="0">
+      0
+    </div>
+    <div *ngSwitchCase="1">
+      1
+    </div>
+    <div *ngSwitchCase="2">
+      2
+    </div>
+    <div *ngSwitchCase="3">
+      3
+    </div>
+    <div *ngSwitchCase="4">
+      4
+    </div>
+    <div *ngSwitchCase="5">
+      5
+    </div>
+  </div>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+</ion-content>

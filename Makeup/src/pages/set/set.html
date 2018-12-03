@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar color="purple">
+    <ion-title>设置</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item detail-push no-lines>账号管理</ion-item>
+  <ion-item detail-push no-lines>账号与安全</ion-item>
+  <ion-item detail-push no-lines>消息设置</ion-item>
+  <ion-item detail-push no-lines >通用设置</ion-item>
+  <ion-item detail-push no-lines (click)="setting()">关于每妆</ion-item>
+  <br/><br/><br/>
+  <button (click)="goDenglu()" class="btn1" ion-button block color="purple">退出当前账号</button>
+
+
+</ion-content>
