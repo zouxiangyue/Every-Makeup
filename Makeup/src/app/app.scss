@@ -1,20 +1,20 @@
-ion-list{
-    width:100%;
-    padding-left:15%;
-    color:#A683FF;
-    h3{
-       width:61%
-    }
-    
-    .item-ios {
-        padding-left: 0px;
-        color:#A683FF;
-    }
-    .hide{
-        height: 0px;
-        visibility: hidden;
-    }
-}
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
 
 @font-face {
     font-family: 'Ionicons';
@@ -48,11 +48,11 @@ ion-list{
 
 @font-face {
     font-family: 'iconfont';  /* project id 937912 */
-    src: url('//at.alicdn.com/t/font_937912_xmwqyrbylu9.eot');
-    src: url('//at.alicdn.com/t/font_937912_xmwqyrbylu9.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_937912_xmwqyrbylu9.woff') format('woff'),
-    url('//at.alicdn.com/t/font_937912_xmwqyrbylu9.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_937912_xmwqyrbylu9.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_937912_mdauyrsept.eot');
+    src: url('//at.alicdn.com/t/font_937912_mdauyrsept.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_937912_mdauyrsept.woff') format('woff'),
+    url('//at.alicdn.com/t/font_937912_mdauyrsept.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_937912_mdauyrsept.svg#iconfont') format('svg');
   }
 .iconfont1{
     font-family:"iconfont" !important;
