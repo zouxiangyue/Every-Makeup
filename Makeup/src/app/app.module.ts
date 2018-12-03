@@ -26,6 +26,12 @@ import { WreleasePage } from '../pages/wrelease/wrelease';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FensiPage } from '../pages/fensi/fensi';
+<<<<<<< HEAD
+import { DianzanPage } from '../pages/dianzan/dianzan';
+import { PinglunPage } from '../pages/pinglun/pinglun';
+import { AitePage } from '../pages/aite/aite';
+=======
+>>>>>>> 8a0c4fe9ec4a3e22e6d04d788712499c3c0d8efd
 
 @NgModule({
   declarations: [
@@ -49,16 +55,20 @@ import { FensiPage } from '../pages/fensi/fensi';
     RegisterPage,
     ImprovePage,
     FensiPage,
+<<<<<<< HEAD
+    DianzanPage,
+    PinglunPage,
+    AitePage
+=======
+>>>>>>> 8a0c4fe9ec4a3e22e6d04d788712499c3c0d8efd
   ],
   imports: [
     BrowserModule,
     IonicStorageModule.forRoot(),
-    IonicModule.forRoot(
-      MyApp,
-      {
-        backButtonText: '',
-      }
-    )
+    IonicModule.forRoot(MyApp,{
+      backButtonText: '',
+      tabsHideOnSubPages:'true'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -82,6 +92,12 @@ import { FensiPage } from '../pages/fensi/fensi';
     RegisterPage,
     ImprovePage,
     FensiPage,
+<<<<<<< HEAD
+    DianzanPage,
+    PinglunPage,
+    AitePage
+=======
+>>>>>>> 8a0c4fe9ec4a3e22e6d04d788712499c3c0d8efd
   ],
   providers: [
     StatusBar,
