@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { AddPage } from '../add/add';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the WreleasePage page.
@@ -23,7 +23,7 @@ export class WreleasePage {
     console.log('ionViewDidLoad WreleasePage');
   }
   cancel(){
-    this.navCtrl.push(AddPage);
+    this.navCtrl.push(HomePage);
   }
    
   Publish(){     

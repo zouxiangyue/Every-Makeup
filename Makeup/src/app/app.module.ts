@@ -31,6 +31,7 @@ import { FensiPage } from '../pages/fensi/fensi';
 import { DianzanPage } from '../pages/dianzan/dianzan';
 import { PinglunPage } from '../pages/pinglun/pinglun';
 import { AitePage } from '../pages/aite/aite';
+import { SearchPage } from '../pages/search/search';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { AitePage } from '../pages/aite/aite';
     FensiPage,
     DianzanPage,
     PinglunPage,
-    AitePage
+    AitePage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -91,7 +93,8 @@ import { AitePage } from '../pages/aite/aite';
     FensiPage,
     DianzanPage,
     PinglunPage,
-    AitePage
+    AitePage,
+    SearchPage
   ],
   providers: [
     StatusBar,
