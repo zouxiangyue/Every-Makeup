@@ -2,13 +2,14 @@ page-my-follows {
     ion-content{
         ion-grid{
             color:black;
-            font-size:20px;
+            font-size:18px;
             ion-col{
                 text-align: center;
                 background:rgb(225, 225, 225);
             }
             .isActive{
                 background: #A683FF;
+                opacity: 0.7;
             }
         }
         .users{
@@ -19,7 +20,7 @@ page-my-follows {
                 padding:0% 5%;
                 p{
                     color:black;
-                    font-size:20px;
+                    font-size:18px;
                 }
                 ion-item{
                     span{
@@ -41,7 +42,7 @@ page-my-follows {
                         font-size:18px;
                     }
                     span{
-                        font-size:15px;
+                        font-size:12px;
                         position: absolute;
                         left: 62px;
                         top: 45px;
@@ -51,6 +52,7 @@ page-my-follows {
                         height:40px;
                         width:60px;
                         background-color: #A683FF;
+                        opacity: 0.7;
                         border-radius: 10px
                     }
                 }
