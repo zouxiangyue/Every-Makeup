@@ -27,6 +27,10 @@ import { WreleasePage } from '../pages/wrelease/wrelease';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FensiPage } from '../pages/fensi/fensi';
+import { DianzanPage } from '../pages/dianzan/dianzan';
+import { PinglunPage } from '../pages/pinglun/pinglun';
+import { AitePage } from '../pages/aite/aite';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WreleasePage,
     AboutmeiPage,
     RegisterPage,
-    ImprovePage
+    ImprovePage,
+    FensiPage,
+    DianzanPage,
+    PinglunPage,
+    AitePage
   ],
   imports: [
     BrowserModule,
@@ -79,7 +87,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AddPage,
     WreleasePage ,
     RegisterPage,
-    ImprovePage
+    ImprovePage,
+    FensiPage,
+    DianzanPage,
+    PinglunPage,
+    AitePage
   ],
   providers: [
     StatusBar,
