@@ -18,14 +18,14 @@
           <span item-end>查看更多</span>
         </ion-item>
         <ion-item *ngFor='let item of names' no-lines class='interest'>
-          <img src='assets/images/touxiang.png' alt='头像'>
-          <h2>{{item}}</h2>
+          <img src='{{item.img}}' alt='头像'>
+          <h2>{{item.name}}</h2>
           <span>你可能感兴趣的人</span>
           <button item-end>关注</button>
         </ion-item>
         <p ion-item outline>我关注的好友</p>
         <ion-item *ngFor='let item of follows' class='follow' no-lines>
-          <img src='assets/images/touxiang.png' alt='头像'>
+          <img src='{{item.img}}' alt='头像'>
           <h2>{{item.name}}</h2>
           <span>{{item.note_num}}个笔记</span>
           <span class='fan_num'>{{item.fan_num}}个粉丝</span>
@@ -40,18 +40,18 @@
           <p>你可能感兴趣的话题</p>
           <span item-end>查看更多</span>
         </ion-item>
-        <ion-item *ngFor='let item of names' no-lines class='interest'>
-          <img src='assets/images/touxiang.png' alt='头像'>
-          <h2>{{item}}</h2>
+        <ion-item *ngFor='let item2 of names2' no-lines class='interest'>
+          <img src='{{item2.img}}' alt='头像'>
+          <h2>{{item2.name}}</h2>
           <span>你可能感兴趣的话题</span>
           <button item-end>关注</button>
         </ion-item>
         <p ion-item outline>我关注的话题</p>
-        <ion-item *ngFor='let item of follows' class='follow' no-lines>
-          <img src='assets/images/touxiang.png' alt='头像'>
-          <h2>{{item.name}}</h2>
-          <span>{{item.note_num}}个笔记</span>
-          <span class='fan_num'>{{item.fan_num}}个粉丝</span>
+        <ion-item *ngFor='let item2 of follows2' class='follow' no-lines>
+          <img src='{{item2.img}}' alt='头像'>
+          <h2>{{item2.name}}</h2>
+          <span>{{item2.note_num}}个推荐人</span>
+          <span class='fan_num'>{{item2.fan_num}}个发表</span>
           <button item-end>已关注</button>
         </ion-item>
       </ion-list>
