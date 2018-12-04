@@ -1,10 +1,10 @@
 <ion-header text-center no-border>
-  <ion-navbar class="color">
+  <ion-navbar>
     <button ion-button icon-only menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-        <ion-searchbar placeholder="秋季时尚穿搭"></ion-searchbar> 
+        <ion-searchbar placeholder="秋季时尚穿搭" (click)="search()"></ion-searchbar> 
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="add()">
@@ -58,22 +58,184 @@
   </div>
   <div [ngSwitch]="isActive">
     <div *ngSwitchCase="0">
-      0
+      <ion-grid class="contents">
+        <ion-row>
+          <ion-col col-6>
+            <img src="../../assets/images/img12.jpg" class="img">
+            <h6>马丁靴穿搭遮肉、时髦</h6>
+            <p><img src="../../assets/images/img11.jpg" class="photo">
+            梅子熟了<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img13.jpg" class="img">
+            <h6>面试妆怎么化更加分？</h6>
+            <p><img src="../../assets/images/img14.jpg" class="photo">
+            雨夜<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img15.jpg" class="img">
+            <h6>秋冬穿搭必备神器!</h6>
+            <p><img src="../../assets/images/img16.jpg" class="photo">
+            听见你说<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img17.jpg" class="img">
+            <h6>完美安利一个小物！</h6>
+            <p><img src="../../assets/images/img18.jpg" class="photo">
+            柔弱<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
     </div>
     <div *ngSwitchCase="1">
-      1
+      <ion-grid class="contents">
+        <ion-row>
+          <ion-col col-6>
+            <img src="../../assets/images/img13.jpg" class="img">
+            <h6>面试妆怎么化更加分？</h6>
+            <p><img src="../../assets/images/img14.jpg" class="photo">
+            雨夜<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img12.jpg" class="img">
+            <h6>马丁靴穿搭遮肉、时髦</h6>
+            <p><img src="../../assets/images/img11.jpg" class="photo">
+            梅子熟了<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img15.jpg" class="img">
+            <h6>秋冬穿搭必备神器!</h6>
+            <p><img src="../../assets/images/img16.jpg" class="photo">
+            听见你说<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img17.jpg" class="img">
+            <h6>完美安利一个小物！</h6>
+            <p><img src="../../assets/images/img18.jpg" class="photo">
+            柔弱<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
     <div *ngSwitchCase="2">
-      2
+      <ion-grid class="contents">
+        <ion-row>
+          <ion-col col-6>
+            <img src="../../assets/images/img15.jpg" class="img">
+            <h6>秋冬穿搭必备神器!</h6>
+            <p><img src="../../assets/images/img16.jpg" class="photo">
+            听见你说<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img12.jpg" class="img">
+            <h6>马丁靴穿搭遮肉、时髦</h6>
+            <p><img src="../../assets/images/img11.jpg" class="photo">
+            梅子熟了<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img13.jpg" class="img">
+            <h6>面试妆怎么化更加分？</h6>
+            <p><img src="../../assets/images/img14.jpg" class="photo">
+            雨夜<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img17.jpg" class="img">
+            <h6>完美安利一个小物！</h6>
+            <p><img src="../../assets/images/img18.jpg" class="photo">
+            柔弱<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
     <div *ngSwitchCase="3">
-      3
+      <ion-grid class="contents">
+        <ion-row>
+          <ion-col col-6>
+            <img src="../../assets/images/img17.jpg" class="img">
+            <h6>完美安利一个小物！</h6>
+            <p><img src="../../assets/images/img18.jpg" class="photo">
+            柔弱<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img12.jpg" class="img">
+            <h6>马丁靴穿搭遮肉、时髦</h6>
+            <p><img src="../../assets/images/img11.jpg" class="photo">
+            梅子熟了<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img13.jpg" class="img">
+            <h6>面试妆怎么化更加分？</h6>
+            <p><img src="../../assets/images/img14.jpg" class="photo">
+            雨夜<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img15.jpg" class="img">
+            <h6>秋冬穿搭必备神器!</h6>
+            <p><img src="../../assets/images/img16.jpg" class="photo">
+            听见你说<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
     <div *ngSwitchCase="4">
-      4
+      <ion-grid class="contents">
+        <ion-row>
+          <ion-col col-6>
+            <img src="../../assets/images/img13.jpg" class="img">
+            <h6>面试妆怎么化更加分？</h6>
+            <p><img src="../../assets/images/img14.jpg" class="photo">
+            雨夜<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img12.jpg" class="img">
+            <h6>马丁靴穿搭遮肉、时髦</h6>
+            <p><img src="../../assets/images/img11.jpg" class="photo">
+            梅子熟了<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img15.jpg" class="img">
+            <h6>秋冬穿搭必备神器!</h6>
+            <p><img src="../../assets/images/img16.jpg" class="photo">
+            听见你说<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img17.jpg" class="img">
+            <h6>完美安利一个小物！</h6>
+            <p><img src="../../assets/images/img18.jpg" class="photo">
+            柔弱<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
     <div *ngSwitchCase="5">
-      5
+      <ion-grid class="contents">
+        <ion-row>
+          <ion-col col-6>
+            <img src="../../assets/images/img15.jpg" class="img">
+            <h6>秋冬穿搭必备神器!</h6>
+            <p><img src="../../assets/images/img16.jpg" class="photo">
+            听见你说<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img17.jpg" class="img">
+            <h6>完美安利一个小物！</h6>
+            <p><img src="../../assets/images/img18.jpg" class="photo">
+            柔弱<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img12.jpg" class="img">
+            <h6>马丁靴穿搭遮肉、时髦</h6>
+            <p><img src="../../assets/images/img11.jpg" class="photo">
+            梅子熟了<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img13.jpg" class="img">
+            <h6>面试妆怎么化更加分？</h6>
+            <p><img src="../../assets/images/img14.jpg" class="photo">
+            雨夜<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span></p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
   </div>
   <ion-refresher (ionRefresh)="doRefresh($event)">

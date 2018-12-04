@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
+import { HttpClientModule } from '@angular/common/http';
+
 import { RegisterPage } from '../pages/register/register';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -29,6 +31,7 @@ import { FensiPage } from '../pages/fensi/fensi';
 import { DianzanPage } from '../pages/dianzan/dianzan';
 import { PinglunPage } from '../pages/pinglun/pinglun';
 import { AitePage } from '../pages/aite/aite';
+import { SearchPage } from '../pages/search/search';
 
 @NgModule({
   declarations: [
@@ -47,22 +50,24 @@ import { AitePage } from '../pages/aite/aite';
     FeedbackPage,
     SetPage,
     AddPage,
-    WreleasePage ,
+    WreleasePage,
     AboutmeiPage,
     RegisterPage,
     ImprovePage,
     FensiPage,
     DianzanPage,
     PinglunPage,
-    AitePage
+    AitePage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp,{
-      backButtonText: '',
-      tabsHideOnSubPages:'true'
-    })
+        backButtonText: '',
+        tabsHideOnSubPages:'true'
+      })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -88,7 +93,8 @@ import { AitePage } from '../pages/aite/aite';
     FensiPage,
     DianzanPage,
     PinglunPage,
-    AitePage
+    AitePage,
+    SearchPage
   ],
   providers: [
     StatusBar,

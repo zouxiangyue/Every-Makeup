@@ -1,3 +1,19 @@
+
+.sidebar{
+    width:100%;
+    padding-left:15%;
+    color:#A683FF;
+    h3{
+       width:61%
+    }
+    .item-md{
+        color:#A683FF
+    }
+    .item-ios {
+        padding-left: 0px;
+        color:#A683FF;
+    }
+}
 // http://ionicframework.com/docs/theming/
 
 
@@ -14,6 +30,7 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
 
 
 @font-face {
@@ -48,12 +65,12 @@
 
 @font-face {
     font-family: 'iconfont';  /* project id 937912 */
-    src: url('//at.alicdn.com/t/font_937912_mdauyrsept.eot');
-    src: url('//at.alicdn.com/t/font_937912_mdauyrsept.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_937912_mdauyrsept.woff') format('woff'),
-    url('//at.alicdn.com/t/font_937912_mdauyrsept.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_937912_mdauyrsept.svg#iconfont') format('svg');
-  }
+    src: url('//at.alicdn.com/t/font_937912_oqpdyai8cz.eot');
+    src: url('//at.alicdn.com/t/font_937912_oqpdyai8cz.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_937912_oqpdyai8cz.woff') format('woff'),
+    url('//at.alicdn.com/t/font_937912_oqpdyai8cz.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_937912_oqpdyai8cz.svg#iconfont') format('svg');
+}
 .iconfont1{
     font-family:"iconfont" !important;
     font-size:16px;font-style:normal;
@@ -75,5 +92,8 @@ page-my-follows,page-my-favorites,page-privacy, page-clear,page-set,page-feedbac
         .toolbar-background-ios {
             background: #A683FF;
         }
+    }
+    .toolbar-background-md {
+        background: #A683FF;
     }
 }

@@ -10,36 +10,41 @@ page-denglu {
     }
     
     #logo{
-        width: 180px;
+        width: 220px;
         height: 180px;
-        margin-top: 5px; 
+
         display: block;
         margin: 0 auto;
     }
-
-    button{
-        font-size: 15px;
-        opacity: 0.7;
-    }
-
-    ul{
+    .message{
         margin-left: 20px;
-        display: block;
-        margin: 5 auto;
+        padding: 0;
+        margin-top: -20px;
     }
-
-    ul li{
-        list-style-type:none;
+    .iconfont1{
+        display: inline-block;
+        font-size: 1.8em;
+        color: #b85566;
+        opacity: 0.8;
     }
-
-    input{
-        height: 30px;
+    .input {
+        width: 230px;
+        height: 40px;  
         opacity: 0.3;
         margin-left: 20px;
     }
-    
+    .button-md{
+        font-size: 1.6rem; 
+        opacity: 0.7;
+    }
+
     p{
         text-align: center;
     }
-   
+    .icon2{
+        margin-left:80px ;
+        i{
+            margin-left: 20px;
+        }
+    }
 }

@@ -19,13 +19,6 @@ goTabs(){
   ionViewDidLoad() {
     setTimeout(()=>{
       this.t=true;
-    },1000)
-    
-  }
-  goDenglu(){
-    this.navCtrl.push(DengluPage)
-  }
-  goRegister(){
-    this.navCtrl.push(RegisterPage);
+    },5000)
   }
 }

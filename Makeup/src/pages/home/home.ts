@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AddPage } from '../add/add';
+import { SearchPage } from '../search/search';
 
 @Component({
   selector: 'page-home',
@@ -16,6 +17,9 @@ export class HomePage {
   }
   add(){
     this.navCtrl.push(AddPage);
+  }
+  search(){
+    this.navCtrl.push(SearchPage);
   }
 
   doRefresh(refresher) {
