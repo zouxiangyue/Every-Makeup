@@ -20,6 +20,5 @@ goTabs(){
     setTimeout(()=>{
       this.t=true;
     },5000)
-  
   }
 }
