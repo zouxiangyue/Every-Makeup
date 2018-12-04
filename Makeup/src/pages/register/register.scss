@@ -8,7 +8,7 @@ page-register {
         background-size: cover;
     }
     img{
-        width: 170px;
+        width: 200px;
         height: 170px;
         position: relative;
         text-align:center;
@@ -16,7 +16,7 @@ page-register {
         margin:0 auto;
     }
     ion-list {
-        line-height: 4em;
+        line-height: 3.5em;
     }
     ion-list label {
         line-height: 27px;
@@ -25,17 +25,18 @@ page-register {
     ion-list label span{
         float: left;
         color: rgb(196, 48, 73);
-        margin-left: 40px;
+        margin-left: 25px;
         margin-top: 5px;
         font-size: 17px;
         letter-spacing:2px;
 
     }
     ion-list label input{
-        width: 140px;
+        width: 175px;
+        border-radius:5px;
         float: right;
         opacity: 0.4; 
-        margin-right: 45px;
+        margin-right: 25px;
     }
     button{
         font-size: 17px;
@@ -43,6 +44,7 @@ page-register {
         color: aliceblue;
         width: 270px;
         height: 35px;
+        border-radius:10px;
         background-color: rgb(184, 85, 102);
         margin-left: 31px;
     }

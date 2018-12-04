@@ -27,7 +27,7 @@ export class DengluPage {
   goRegister(){
     this.navCtrl.push(RegisterPage)
   }
-
+  
   goHome(){
     this.navCtrl.popToRoot();
   }
