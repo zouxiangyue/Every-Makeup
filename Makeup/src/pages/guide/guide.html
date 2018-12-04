@@ -1,9 +1,9 @@
 <ion-content>
-  <div  [class.guide]="t">
-      <img src="assets/images/logo.png">
-      <img src="assets/images/y1.png">
+  <div id="logoDiv"  [class.guide]="t==true" >
+      <img id='logo1'  src="assets/images/logo.png">
+      <img id='logo2'  src="assets/images/y1.png">
   </div>
-  <ion-slides pager='false'  loop='false'>
+  <ion-slides pager='false'  loop='false' [class.guide]="t==false">
     <ion-slide>
       <button  class='goTabs'  (click)="goTabs()">跳过</button>
       <img src="assets/images/y2.png">
@@ -16,8 +16,6 @@
       <button class='goTabs'  (click)="goTabs()">跳过</button>
       <img src="assets/images/y4.png">
       <button class='btn' (click)="goTabs()"></button>
-      <button class='btn_Signin' (click)="goDenglu()">登录</button>
-      <button class='btn_Signup' (click)="goRegister()">注册</button>
     </ion-slide>
 </ion-slides>
 

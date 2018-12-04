@@ -1,7 +1,27 @@
-page-Guide {
+page-guide {
     .guide{
         height: 0px;
         visibility: hidden;
+    }
+    #logo1{
+        height:280px;
+        text-align: center;
+        margin-left: 10%;
+    }
+    #logo2{
+        height:300px;
+        text-align: center;
+        margin-left: 10%;
+    }
+    img{
+        display: block;
+        height:100%;
+    }
+    .swiper-slide img {
+        height: -webkit-fill-available;//自动撑满可用空间
+    }
+    .slide-zoom {
+        height: -webkit-fill-available;
     }
     .btn{
         opacity: 0;
@@ -18,19 +38,5 @@ page-Guide {
         left:72%;
         width:80px;
         height:30px;
-    }
-    .btn_Signin,.btn_Signup{
-        position: absolute;;
-        top:85%;
-        width:82px;
-        height:31px;
-        background-color: palevioletred;
-        color:white
-    }
-    .btn_Signin{
-        left:21%;
-    }
-    .btn_Signup{
-        left:58%;
     }
 }
