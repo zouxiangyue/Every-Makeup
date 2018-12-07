@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
+
 
 /**
  * Generated class for the WreleasePage page.
@@ -16,14 +18,34 @@ import { HomePage } from '../home/home';
 export class WreleasePage {
   type="beauty";
   content;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
+
+  imgUrl:string;
+  takePhoto(){
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64 (DATA_URL):
+     let base64Image = 'data:image/jpeg;base64,' + imageData;
+     this.imgUrl=base64Image;
+    }, (err) => {
+     // Handle error
+    });
+  }
+
+  constructor(private camera: Camera,public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WreleasePage');
   }
   cancel(){
-    this.navCtrl.push(HomePage);
+    this.navCtrl.popToRoot();
   }
    
   Publish(){     
