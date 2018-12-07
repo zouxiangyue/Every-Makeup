@@ -58,7 +58,7 @@ import { SearchPage } from '../pages/search/search';
     DianzanPage,
     PinglunPage,
     AitePage,
-    SearchPage
+    SearchPage,
   ],
   imports: [
     BrowserModule,
@@ -94,7 +94,7 @@ import { SearchPage } from '../pages/search/search';
     DianzanPage,
     PinglunPage,
     AitePage,
-    SearchPage
+    SearchPage,
   ],
   providers: [
     StatusBar,
