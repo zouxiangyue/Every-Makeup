@@ -64,14 +64,14 @@ import { PaPage } from '../pages/pa/pa';
     PinglunPage,
     AitePage,
     SearchPage,
-<<<<<<< HEAD
+
     ManagePage,
     SecurityPage,
     XxsetPage,
     TysetPage,
-=======
+
     PaPage
->>>>>>> 269864bb6a43153dbb9ecc38b05b0b0c22300cbc
+
   ],
   imports: [
     BrowserModule,
@@ -108,14 +108,14 @@ import { PaPage } from '../pages/pa/pa';
     PinglunPage,
     AitePage,
     SearchPage,
-<<<<<<< HEAD
+
     ManagePage,
     SecurityPage,
     XxsetPage,
     TysetPage,
-=======
+
     PaPage
->>>>>>> 269864bb6a43153dbb9ecc38b05b0b0c22300cbc
+
   ],
   providers: [
     StatusBar,
