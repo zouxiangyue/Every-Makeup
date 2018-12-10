@@ -6,6 +6,7 @@ import { DengluPage } from '../denglu/denglu';
 import { FensiPage } from '../fensi/fensi';
 import { PaPage } from '../pa/pa';
 import { DianzanPage } from '../dianzan/dianzan';
+import { MyFollowsPage } from '../my-follows/my-follows';
 
 
 /**
@@ -36,6 +37,9 @@ goDenglu(){
   }
   setting1(){
     this.navCtrl.push(SetPage);
+  }
+  gotoFollows(){
+    this.navCtrl.push(MyFollowsPage);
   }
   gotoFensi(){
     this.navCtrl.push(FensiPage);
