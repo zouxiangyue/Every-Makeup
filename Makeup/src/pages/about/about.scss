@@ -4,9 +4,9 @@ page-about {
         padding:2px 40px;
     }
     .contents{
-        .col{
+        ion-col{
             padding:10px;
-        }
+        }    
         .img{
             padding:0px;
             width:100%;
@@ -19,8 +19,9 @@ page-about {
         }
         .photo{
             border-radius:25px;
-            width:30px;
-            height:30px;
+            width:20px;
+            height:20px;
+            padding:0px 0px;
         }
         span{
             float:right;
