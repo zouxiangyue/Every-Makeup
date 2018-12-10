@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SearchPage } from '../search/search';
+import { Page } from '../page/page';
 
 
 @Component({
@@ -15,5 +16,7 @@ export class AboutPage {
   search(){
     this.navCtrl.push(SearchPage);
   }
-  
+  goSub(){
+    this.navCtrl.push(Page,{id:1});
+  }
 }

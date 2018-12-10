@@ -32,8 +32,8 @@ import { DianzanPage } from '../pages/dianzan/dianzan';
 import { PinglunPage } from '../pages/pinglun/pinglun';
 import { AitePage } from '../pages/aite/aite';
 import { SearchPage } from '../pages/search/search';
-import { PaPage } from '../pages/pa/pa';
-import { Camera } from '@ionic-native/camera';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -59,8 +59,7 @@ import { Camera } from '@ionic-native/camera';
     DianzanPage,
     PinglunPage,
     AitePage,
-    SearchPage,
-    PaPage
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -96,13 +95,12 @@ import { Camera } from '@ionic-native/camera';
     DianzanPage,
     PinglunPage,
     AitePage,
-    SearchPage,
-    PaPage
+    SearchPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    Camera,
+    //Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
