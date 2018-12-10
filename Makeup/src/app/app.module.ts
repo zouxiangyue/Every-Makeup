@@ -23,7 +23,10 @@ import { SetPage } from '../pages/set/set';
 import { AboutmeiPage } from '../pages/aboutmei/aboutmei';
 import { AddPage } from '../pages/add/add';
 import { WreleasePage } from '../pages/wrelease/wrelease';
-
+import { ManagePage} from '../pages/manage/manage';
+import { SecurityPage} from '../pages/security/security';
+import { XxsetPage} from '../pages/xxset/xxset';
+import { TysetPage} from '../pages/tyset/tyset';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -59,6 +62,10 @@ import { SearchPage } from '../pages/search/search';
     PinglunPage,
     AitePage,
     SearchPage,
+    ManagePage,
+    SecurityPage,
+    XxsetPage,
+    TysetPage,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +102,10 @@ import { SearchPage } from '../pages/search/search';
     PinglunPage,
     AitePage,
     SearchPage,
+    ManagePage,
+    SecurityPage,
+    XxsetPage,
+    TysetPage,
   ],
   providers: [
     StatusBar,
