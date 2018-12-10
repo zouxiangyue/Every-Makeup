@@ -55,15 +55,14 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {},
-<<<<<<< HEAD
-      "cordova-plugin-telerik-imagepicker": {
-        "PHOTO_LIBRARY_USAGE_DESCRIPTION": "your usage message"
-      }
-=======
-      "cordova-plugin-camera": {}
->>>>>>> 95cc2737e318bc706cc4d2b77a0635127d144b8a
+      "cordova-plugin-ionic-keyboard": {}
+
+      
+
+     
+
     },
+
     "platforms": [
       "android"
     ]

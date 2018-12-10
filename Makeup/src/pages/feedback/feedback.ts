@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ImagePicker } from '@ionic-native/image-picker';
+
 
 /**
  * Generated class for the FeedbackPage page.
@@ -16,18 +16,14 @@ import { ImagePicker } from '@ionic-native/image-picker';
 })
 export class FeedbackPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private imagePicker: ImagePicker) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedbackPage');
   }
 
-  this.imagePicker.getPictures(options).then((results) => {
-    for (var i = 0; i < results.length; i++) {
-        console.log('Image URI: ' + results[i]);
-    }
-  }, (err) => { });
+ 
 
   
 
