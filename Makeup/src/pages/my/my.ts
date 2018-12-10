@@ -4,7 +4,9 @@ import { ImprovePage } from '../improve/improve';
 import { SetPage } from '../set/set';
 import { DengluPage } from '../denglu/denglu';
 import { FensiPage } from '../fensi/fensi';
-import { MyFollowsPage } from '../my-follows/my-follows';
+import { PaPage } from '../pa/pa';
+import { DianzanPage } from '../dianzan/dianzan';
+
 
 /**
  * Generated class for the MyPage page.
@@ -35,10 +37,13 @@ goDenglu(){
   setting1(){
     this.navCtrl.push(SetPage);
   }
-  goto(){
+  gotoFensi(){
     this.navCtrl.push(FensiPage);
   }
-  gotoGuanzhu(){
-    this.navCtrl.push(MyFollowsPage);
+  gotoDianzan(){
+    this.navCtrl.push(DianzanPage);
+  }
+  goSub(){
+    this.navCtrl.push(PaPage);
   }
 }

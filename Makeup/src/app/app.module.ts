@@ -35,6 +35,8 @@ import { DianzanPage } from '../pages/dianzan/dianzan';
 import { PinglunPage } from '../pages/pinglun/pinglun';
 import { AitePage } from '../pages/aite/aite';
 import { SearchPage } from '../pages/search/search';
+import { PaPage } from '../pages/pa/pa';
+
 
 @NgModule({
   declarations: [
@@ -62,10 +64,14 @@ import { SearchPage } from '../pages/search/search';
     PinglunPage,
     AitePage,
     SearchPage,
+<<<<<<< HEAD
     ManagePage,
     SecurityPage,
     XxsetPage,
     TysetPage,
+=======
+    PaPage
+>>>>>>> 269864bb6a43153dbb9ecc38b05b0b0c22300cbc
   ],
   imports: [
     BrowserModule,
@@ -102,15 +108,19 @@ import { SearchPage } from '../pages/search/search';
     PinglunPage,
     AitePage,
     SearchPage,
+<<<<<<< HEAD
     ManagePage,
     SecurityPage,
     XxsetPage,
     TysetPage,
+=======
+    PaPage
+>>>>>>> 269864bb6a43153dbb9ecc38b05b0b0c22300cbc
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    
+    //Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
