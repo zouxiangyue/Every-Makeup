@@ -19,6 +19,6 @@ goTabs(){
   ionViewDidLoad() {
     setTimeout(()=>{
       this.t=true;
-    },5000)
+    },2000)
   }
 }

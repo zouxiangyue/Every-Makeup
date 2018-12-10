@@ -32,6 +32,7 @@ import { DianzanPage } from '../pages/dianzan/dianzan';
 import { PinglunPage } from '../pages/pinglun/pinglun';
 import { AitePage } from '../pages/aite/aite';
 import { SearchPage } from '../pages/search/search';
+import { PaPage } from '../pages/pa/pa';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { SearchPage } from '../pages/search/search';
     DianzanPage,
     PinglunPage,
     AitePage,
-    SearchPage
+    SearchPage,
+    PaPage
   ],
   imports: [
     BrowserModule,
@@ -95,7 +97,8 @@ import { SearchPage } from '../pages/search/search';
     DianzanPage,
     PinglunPage,
     AitePage,
-    SearchPage
+    SearchPage,
+    PaPage
   ],
   providers: [
     StatusBar,
