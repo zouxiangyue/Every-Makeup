@@ -5,6 +5,7 @@ import { SetPage } from '../set/set';
 import { DengluPage } from '../denglu/denglu';
 import { FensiPage } from '../fensi/fensi';
 import { PaPage } from '../pa/pa';
+import { DianzanPage } from '../dianzan/dianzan';
 
 
 /**
@@ -36,8 +37,11 @@ goDenglu(){
   setting1(){
     this.navCtrl.push(SetPage);
   }
-  goto(){
+  gotoFensi(){
     this.navCtrl.push(FensiPage);
+  }
+  gotoDianzan(){
+    this.navCtrl.push(DianzanPage);
   }
   goSub(){
     this.navCtrl.push(PaPage);

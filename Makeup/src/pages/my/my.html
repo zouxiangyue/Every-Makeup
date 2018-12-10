@@ -19,11 +19,11 @@
         <div class="care">&nbsp;&nbsp;2
             <br/>关注
         </div>
-        <div class="fans" (click)='goto()'>&nbsp;&nbsp;10
+        <div class="fans" (click)='gotoFensi()'>&nbsp;&nbsp;10
             <br/>粉丝
         </div>
-        <div class="praise">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;128
-            <br/>收藏与获赞
+        <div class="praise" (click)='gotoDianzan()'>128
+            <br/>获赞
         </div>
     </div>
     <ion-segment [(ngModel)]="icons" color="purple">
