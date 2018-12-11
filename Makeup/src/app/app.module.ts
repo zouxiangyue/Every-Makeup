@@ -64,21 +64,11 @@ import { PaPage } from '../pages/pa/pa';
     PinglunPage,
     AitePage,
     SearchPage,
-<<<<<<< HEAD
-=======
-
->>>>>>> 87c2de3113f94f5b771ef15aa50798535950c5e4
     ManagePage,
     SecurityPage,
     XxsetPage,
     TysetPage,
-<<<<<<< HEAD
     PaPage
-=======
-
-    PaPage
-
->>>>>>> 87c2de3113f94f5b771ef15aa50798535950c5e4
   ],
   imports: [
     BrowserModule,
@@ -115,21 +105,11 @@ import { PaPage } from '../pages/pa/pa';
     PinglunPage,
     AitePage,
     SearchPage,
-<<<<<<< HEAD
-=======
-
->>>>>>> 87c2de3113f94f5b771ef15aa50798535950c5e4
     ManagePage,
     SecurityPage,
     XxsetPage,
     TysetPage,
-<<<<<<< HEAD
     PaPage
-=======
-
-    PaPage
-
->>>>>>> 87c2de3113f94f5b771ef15aa50798535950c5e4
   ],
   providers: [
     StatusBar,
