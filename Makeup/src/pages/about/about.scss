@@ -7,11 +7,16 @@ page-about {
         ion-col{
             padding:10px;
         }    
-        .img{
+        .col .img{
             padding:0px;
             width:100%;
             height:150px;
+            margin-right:0px;
+            padding-right:0px;
         }
+        // .col .img{
+        //     width:100%;
+        // }
         h6{
             overflow: hidden; //把超出的内容进行隐藏；
             white-space: nowrap; //设置内容不换行；
