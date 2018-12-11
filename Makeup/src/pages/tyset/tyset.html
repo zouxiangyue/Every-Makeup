@@ -6,13 +6,34 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="purple">
     <ion-title>通用设置</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-
+    <ion-list>
+      <ion-item class="list">
+        <ion-toggle checked="false"></ion-toggle>
+        <ion-label>
+          开启横屏模式
+        </ion-label>
+        </ion-item>
+      <button ion-item class="list">
+        自动下载每妆安装包   
+        <ion-note item-end class="note">
+          仅Wi-Fi网络
+        </ion-note>
+      </button>
+      <button ion-item class="list">
+          多语言   
+          <ion-note item-end class="note">
+            跟随系统
+          </ion-note>
+      </button>
+      <button ion-item *ngFor="let item of items" (click)="itemSelected(item)" class="list">
+        {{ item }}
+      </button>
+    </ion-list>
 </ion-content>
