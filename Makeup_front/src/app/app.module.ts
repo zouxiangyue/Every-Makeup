@@ -37,6 +37,7 @@ import { AitePage } from '../pages/aite/aite';
 import { SearchPage } from '../pages/search/search';
 import { PaPage } from '../pages/pa/pa';
 import { AppShare } from './app.share';
+import { SixinPage } from '../pages/sixin/sixin';
 
 
 @NgModule({
@@ -65,7 +66,7 @@ import { AppShare } from './app.share';
     PinglunPage,
     AitePage,
     SearchPage,
-
+    SixinPage,
     ManagePage,
     SecurityPage,
     XxsetPage,
@@ -109,7 +110,7 @@ import { AppShare } from './app.share';
     PinglunPage,
     AitePage,
     SearchPage,
-
+    SixinPage,
     ManagePage,
     SecurityPage,
     XxsetPage,
