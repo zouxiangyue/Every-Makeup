@@ -1,0 +1,42 @@
+page-register {
+    ion-icon{
+        font-size:2em;
+    }
+    ion-content{
+        background: url(../../assets/images/41.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    img{
+        width: 200px;
+        height: 170px;
+        position: relative;
+        text-align:center;
+        display:block;
+        margin:0 auto;
+    }
+    ion-list {
+        line-height: 3.5em;
+    }
+    ion-list label {
+        line-height: 27px;
+        text-align: center;
+    }
+    ion-list label input{
+        width: 60%;
+        border-radius:5px;
+        opacity: 0.4; 
+        margin:0 20%;
+        padding-left:1%; 
+    }
+    button{
+        font-size: 17px;
+        opacity: 0.7; 
+        color: aliceblue;
+        width: 270px;
+        height: 35px;
+        border-radius:10px;
+        background-color: rgb(184, 85, 102);
+        margin-left: 31px;
+    }
+}

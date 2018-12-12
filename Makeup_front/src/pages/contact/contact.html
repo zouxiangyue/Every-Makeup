@@ -1,0 +1,97 @@
+<ion-header text-center>
+  <ion-navbar color="purple">
+    <button ion-button icon-only menuToggle>
+       <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      消息
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="contents">
+      <ion-row>
+        <ion-col col-3 (click)="gofensi()">
+          <i class="iconfont1" style="color:#A683FF;font-size:36px">&#xe677;</i>
+          <p>粉丝</p>
+        </ion-col>
+        <ion-col col-3 (click)="godianzan()">
+          <i class="iconfont1" style="color:#A683FF;font-size:36px">&#xe612;</i>
+          <p>点赞</p>
+        </ion-col>
+        <ion-col col-3 (click)="gopinglun()">
+          <i class="iconfont1" style="color:#A683FF;font-size:36px">&#xe64d;</i>
+          <p>评论</p>
+        </ion-col>
+        <ion-col col-3 (click)="goaite()">
+          <i class="iconfont1" style="color:#A683FF;font-size:36px">&#xe6f0;</i>
+          <p>@我</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item detail-push class="sixin">
+      <i class="iconfont1" style="font-size:2px;color:blue">&#xe633;</i>
+      <ion-img src="../../assets/images/img1.jpg"></ion-img>
+      <h4>Mike</h4>
+      <p class="neirong">
+        hello,and what's your name?
+      </p>
+      <p class="shijian">9:34</p>
+    </ion-item>
+    <ion-item detail-push class="sixin">
+      <i class="iconfont1" style="font-size:2px;color:blue">&#xe633;</i>
+      <ion-img src="../../assets/images/img2.jpg"></ion-img>
+      <h4>鸡蛋卷</h4>
+      <p class="neirong">
+        So?可以出去玩嘛？
+      </p>
+      <p class="shijian">8:34</p>
+    </ion-item>
+    <ion-item detail-push class="sixin">
+      <i class="iconfont1" style="font-size:2px;color:blue">&#xe633;</i>
+      <ion-img src="../../assets/images/img8.jpg"></ion-img>
+      <h4>sunny</h4>
+      <p class="neirong">
+        无论是贫穷还是富有a，无论是貌若天仙，还是相貌平平，只要你昂起头来，快乐会使你变得可爱--人人都喜欢的那种可爱
+      </p>
+      <p class="shijian">9:34</p>
+    </ion-item>
+    <ion-item detail-push class="sixin">
+      <i class="iconfont1" style="font-size:2px;color:blue">&#xe633;</i>
+      <ion-img src="../../assets/images/img4.jpg"></ion-img>
+      <h4>moemoeQ</h4>
+      <p class="neirong">
+        谨记：不要让昨日的沮丧令明天的梦想黯然失色
+      </p>
+      <p class="shijian">9:34</p>
+    </ion-item>   
+    <ion-item detail-push class="sixin">
+      <i class="iconfont1" style="font-size:1px;color:white">&#xe633;</i>
+      <ion-img src="../../assets/images/img5.jpg"></ion-img>
+      <h4>信仰</h4>
+      <p class="neirong">
+        生命的价值不依赖我们的所作所为，也不仰仗我们结交的人物，而是取决于我们本身
+      </p>
+      <p class="shijian">9:34</p>
+    </ion-item>
+    <ion-item detail-push class="sixin">
+      <i class="iconfont1" style="font-size:2px;color:white">&#xe633;</i>
+      <ion-img src="../../assets/images/img6.jpg"></ion-img>
+      <h4>自赎</h4>
+      <p class="neirong">
+        A strong man can save himself,a great mancan save another. 强者自救，圣者渡人
+      </p>
+      <p class="shijian">9:34</p>
+    </ion-item>
+    <ion-item detail-push class="sixin">
+      <i class="iconfont1" style="font-size:2px;color:white">&#xe633;</i>
+      <ion-img src="../../assets/images/img7.jpg"></ion-img>
+      <h4>Hi!</h4>
+      <p class="neirong">
+        Get busy living, Or get busy dying.      
+      </p>
+      <p class="shijian">9:34</p>
+    </ion-item>
+</ion-content>

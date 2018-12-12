@@ -1,0 +1,21 @@
+<ion-content padding>
+    <ion-icon name="ios-arrow-back" style="color:rgb(233, 107, 128);" (click)="goHome()"></ion-icon>
+    <img src="../../assets/images/mlogo.png">
+    <ion-list>
+      <label>
+        <input placeholder="昵称" type="text" [(ngModel)]="name">
+      </label><br/>
+      <label>
+        <input placeholder="邮箱/手机号" type="text" [(ngModel)]="email_or_phone">
+      </label><br/>
+      <label>
+        <input placeholder="密码" type="password" [(ngModel)]="pwd">
+      </label><br/>
+      <label>
+        <input placeholder="所在学校" type="text" [(ngModel)]="school">
+      </label>
+    </ion-list>
+    <br/><br/><br/><br/>
+    <button (click)="register()">注册</button>
+  </ion-content>
+  

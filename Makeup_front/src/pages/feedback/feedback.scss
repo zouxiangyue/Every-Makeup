@@ -1,0 +1,25 @@
+page-feedback {
+    .toolbar-title-md{  //“完善信息”标题
+        margin-left: 0%;
+        padding-left: 28%;
+        color:white;
+    }
+    .button-inner{  //设置返回箭头为白色
+        color: white;
+    }
+    textarea{
+        width:100%;
+        height:120px;
+        border:2px solid #eeeeee;
+    }
+    input{
+        border:0px;
+        margin-left:5%;   
+    }
+    .btn{
+        width:80%;
+        margin-top:10%;
+        margin-left:10%;
+    }
+    
+}

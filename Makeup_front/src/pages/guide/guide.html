@@ -1,0 +1,22 @@
+<ion-content>
+  <div id="logoDiv"  [class.guide]="t==true" >
+      <img id='logo1'  src="assets/images/logo.png">
+      <img id='logo2'  src="assets/images/y1.png">
+  </div>
+  <ion-slides pager='false'  loop='false' [class.guide]="t==false">
+    <ion-slide>
+      <button  class='goTabs'  (click)="goTabs()">跳过</button>
+      <img src="assets/images/y2.png">
+    </ion-slide>
+    <ion-slide>
+      <button  class='goTabs'  (click)="goTabs()">跳过</button>
+      <img src="assets/images/y3.png">
+    </ion-slide>
+    <ion-slide>
+      <button class='goTabs'  (click)="goTabs()">跳过</button>
+      <img src="assets/images/y4.png">
+      <button class='btn' (click)="goTabs()"></button>
+    </ion-slide>
+</ion-slides>
+
+</ion-content>

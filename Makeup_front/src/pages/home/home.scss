@@ -1,0 +1,64 @@
+page-home {
+    .toolbar-background-md,.toolbar-background-ios{
+      background: #A770EF; 
+      background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  
+      background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); 
+    }
+    .bar-button-default-md{
+      color:white;
+    }
+    .searchbar-md
+    .searchbar-input {
+        padding: 0 40px;
+        border-radius: 10px;
+    }
+    .sli{
+        height:150px;
+        img{
+            width: 100%;
+        }
+    }
+    #navigation{
+      ion-col{
+        background-color: white;
+        border-radius: 10px;
+        height: 80px;
+        text-align: center;
+        padding:10px;      
+      }  
+      .first{
+        background-color: pink;
+      }
+      .iconfont1{
+        display: inline-block;
+        font-size: 2em;
+        color: #A683FF;
+      }
+      p{
+        color: #A683FF;
+      }
+    }
+    .contents{
+      ion-col{
+        padding:10px;      
+      }
+      .img{
+        width: 100%;
+        height: 150px;
+      }
+      h6{
+          overflow: hidden; //把超出的内容进行隐藏；
+          white-space: nowrap; //设置内容不换行；
+          text-overflow: ellipsis; //设置超出内容为省略号
+      }
+      .photo{
+        width: 20px;
+        height: 20px;
+        border-radius:25px;
+      }
+      span{
+          float: right;
+          margin-top:5px; 
+      }
+    }
+}

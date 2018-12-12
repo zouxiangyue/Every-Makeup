@@ -1,0 +1,44 @@
+page-guide {
+    .guide{
+        height: 0px;
+        visibility: hidden;
+    }
+    #logo1{
+        height:280px;
+        text-align: center;
+        margin-left: 9%;
+    }
+    #logo2{
+        height:300px;
+        text-align: center;
+        margin-left: 10%;
+    }
+    img{
+        display: block;
+        height:100%;
+    }
+    .swiper-slide img {
+        height: -webkit-fill-available;//自动撑满可用空间
+        width: -webkit-fill-available
+    }
+    .slide-zoom {
+        height: -webkit-fill-available;
+        width: -webkit-fill-available
+    }
+    .btn{
+        opacity: 0;
+        position: absolute;;
+        top:76%;
+        left:26%;
+        width:200px;
+        height:54px;
+    }
+    .goTabs{
+        opacity: 0.6;
+        position: absolute;;
+        top:3%;
+        left:72%;
+        width:80px;
+        height:30px;
+    }
+}

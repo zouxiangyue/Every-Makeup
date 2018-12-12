@@ -1,0 +1,21 @@
+<ion-content padding>
+  <ion-icon name="ios-arrow-back" style="color:rgb(233, 107, 128);" (click)="goHome()"></ion-icon>
+  <img id="logo" src="../../assets/images/mlogo.png">
+
+  <ul class="message">
+    <li><i class="iconfont1">&#xe63c;</i><input type="text" placeholder="每妆号/邮箱" class="input" [(ngModel)]="user_id"></li><br/>
+    <li><i class="iconfont1">&#xe621;</i><input type="text" placeholder="密码" class="input" [(ngModel)]="user_pwd"></li>
+  </ul>
+  <br/>
+
+  <button ion-button block color="pin" (click)='login()' class='login'>登录</button>
+
+  <p (click)="goRegister()">新用户注册</p>
+  <br/><br/><br/>
+  <p>——————第三方登录——————</p>
+  <span class="icon2">
+    <i class="iconfont1" style="color:blue;opacity: 0.5;">&#xe61a;</i>
+    <i class="iconfont1" style="color:green;opacity: 0.5;">&#xe640;</i>
+    <i class="iconfont1" style="color:red;opacity: 0.5;">&#xe61c;</i>
+  </span>
+</ion-content>

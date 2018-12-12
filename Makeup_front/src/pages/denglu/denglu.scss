@@ -1,0 +1,50 @@
+page-denglu {
+    ion-icon{
+        font-size:2em;
+    }
+    ion-content{
+        background: url(../../assets/images/41.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+    
+    #logo{
+        width: 220px;
+        height: 180px;
+
+        display: block;
+        margin: 0 auto;
+    }
+    .message{
+        margin-left: 20px;
+        padding: 0;
+        margin-top: -20px;
+    }
+    .iconfont1{
+        display: inline-block;
+        font-size: 1.8em;
+        color: #b85566;
+        opacity: 0.8;
+    }
+    .input {
+        width: 230px;
+        height: 40px;  
+        opacity: 0.3;
+        margin-left: 20px;
+    }
+    .button-md{
+        font-size: 1.6rem; 
+        opacity: 0.7;
+    }
+
+    p{
+        text-align: center;
+    }
+    .icon2{
+        margin-left:80px ;
+        i{
+            margin-left: 20px;
+        }
+    }
+}
