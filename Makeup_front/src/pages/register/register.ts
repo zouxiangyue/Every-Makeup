@@ -46,12 +46,17 @@ export class RegisterPage {
      // console.log(this.email_or_phone);
       if(this.email_or_phone.length==11 && /\d{11}/g.test(this.email_or_phone)){
         this.phone=this.email_or_phone;
+        this.email='';
         console.log(this.phone)
       }else if(/\d+@{1}/.test(this.email_or_phone)){
         this.email=this.email_or_phone;
+        this.phone=''; 
         console.log(this.email);
       }else{
         alert('输入的邮箱或手机号不符合规定');
+        this.email_or_phone='';
+        this.email='';
+        this.phone='';
       }
       //console.log(this.name,this.pwd,this.email,this.school);
       if (this.phone || this.email) {
@@ -65,7 +70,8 @@ export class RegisterPage {
           console.log(data);
           if (data['status'] == -2) {
             alert('邮箱或手机号已被注册');
-          } else {
+            this.email_or_phone='';
+          } else if(data['status'] == 0) {
             alert('注册成功');
             this.navCtrl.push(DengluPage);
           }
