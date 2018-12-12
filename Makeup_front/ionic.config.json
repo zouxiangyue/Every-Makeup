@@ -9,5 +9,6 @@
       "proxyUrl": "http://192.168.17.144:8080/api"
     }
   ],
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "app_id": ""
 }
