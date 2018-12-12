@@ -6,13 +6,45 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>账号与安全</ion-title>
+  <ion-navbar color="purple">
+    <ion-title>账户与安全</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <ion-icon padding (click)="goBack()" name="ios-arrow-back"></ion-icon><br/>
+<ion-content>
+  <br/>
+  <ion-list>
+      <ion-item class="geshi">
+          昵称
+          <ion-note item-end>
+          Joy
+          </ion-note>
+        </ion-item>
+        <button ion-item class="geshi">
+          邮箱
+          <ion-icon name="arrow-forward" item-end></ion-icon>
+        </button>
+    <br/>
+
+    <button ion-item *ngFor="let item of items" (click)="Selected(item)" class="geshi">
+        {{ item }}
+      </button>
+      <p>如遇到账号被盗等问题，请前往安全中心</p>
+      <br/>
+    <ion-item class="geshi">
+    <ion-toggle checked="false"></ion-toggle>
+      <ion-label>
+        陌生登陆提醒
+      </ion-label>
+    </ion-item>
+    <ion-item class="geshi">
+    <ion-toggle checked="false"></ion-toggle>
+      <ion-label>
+          安全登录检查
+      </ion-label>
+    </ion-item>
+     
+  </ion-list>
 </ion-content>

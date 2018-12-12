@@ -14,10 +14,9 @@ import {DengluPage} from '../denglu/denglu';
   templateUrl: 'manage.html',
 })
 export class ManagePage {
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManagePage');
   }

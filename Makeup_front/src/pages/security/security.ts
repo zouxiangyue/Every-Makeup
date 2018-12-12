@@ -21,7 +21,19 @@ export class SecurityPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SecurityPage');
   }
-  goBack(){
-    this.navCtrl.pop();
+  items = [
+    '修改密码',
+    '最近登录记录',
+    '安全中心',
+  ];
+  items1 = [
+    '昵称',
+    '邮箱',
+  ];
+  Selected(item: string) {
+    console.log("Selected Item", item);
+  }
+  Selected1(item1: string) {
+    console.log("Selected Item1", item1);
   }
 }
