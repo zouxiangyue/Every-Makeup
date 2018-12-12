@@ -36,6 +36,7 @@ import { PinglunPage } from '../pages/pinglun/pinglun';
 import { AitePage } from '../pages/aite/aite';
 import { SearchPage } from '../pages/search/search';
 import { PaPage } from '../pages/pa/pa';
+import { AppShare } from './app.share';
 
 
 @NgModule({
@@ -120,6 +121,7 @@ import { PaPage } from '../pages/pa/pa';
   providers: [
     StatusBar,
     SplashScreen,
+    AppShare,
     //Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
