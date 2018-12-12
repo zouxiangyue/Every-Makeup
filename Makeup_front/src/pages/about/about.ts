@@ -16,7 +16,7 @@ export class AboutPage {
   search(){
     this.navCtrl.push(SearchPage);
   }
-  goSub(){
+  goPa(){
     this.navCtrl.push(PaPage);
   }
 }

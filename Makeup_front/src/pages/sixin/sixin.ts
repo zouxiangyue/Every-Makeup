@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {DengluPage} from '../denglu/denglu';
+
 /**
- * Generated class for the ManagePage page.
+ * Generated class for the SixinPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,17 +10,16 @@ import {DengluPage} from '../denglu/denglu';
 
 @IonicPage()
 @Component({
-  selector: 'page-manage',
-  templateUrl: 'manage.html',
+  selector: 'page-sixin',
+  templateUrl: 'sixin.html',
 })
-export class ManagePage {
+export class SixinPage {
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ManagePage');
+    console.log('ionViewDidLoad SixinPage');
   }
-  go(){
-    this.navCtrl.push(DengluPage);
-  }
+
 }

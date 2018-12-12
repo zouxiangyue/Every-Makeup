@@ -5,6 +5,7 @@ import { DianzanPage } from '../dianzan/dianzan';
 import { PinglunPage } from '../pinglun/pinglun';
 import { AitePage } from '../aite/aite';
 import { ModalController, ViewController } from 'ionic-angular';
+import { SixinPage } from '../sixin/sixin';
 
 // import { HttpClient } from '@angular/common/http';
 
@@ -28,6 +29,9 @@ export class ContactPage {
   }
   goaite(){
     this.navCtrl.push(AitePage);
+  }
+  goSixin(){
+    this.navCtrl.push(SixinPage);
   }
   
 

@@ -36,6 +36,8 @@ import { PinglunPage } from '../pages/pinglun/pinglun';
 import { AitePage } from '../pages/aite/aite';
 import { SearchPage } from '../pages/search/search';
 import { PaPage } from '../pages/pa/pa';
+import { AppShare } from './app.share';
+import { SixinPage } from '../pages/sixin/sixin';
 
 
 @NgModule({
@@ -64,7 +66,7 @@ import { PaPage } from '../pages/pa/pa';
     PinglunPage,
     AitePage,
     SearchPage,
-
+    SixinPage,
     ManagePage,
     SecurityPage,
     XxsetPage,
@@ -108,7 +110,7 @@ import { PaPage } from '../pages/pa/pa';
     PinglunPage,
     AitePage,
     SearchPage,
-
+    SixinPage,
     ManagePage,
     SecurityPage,
     XxsetPage,
@@ -120,6 +122,7 @@ import { PaPage } from '../pages/pa/pa';
   providers: [
     StatusBar,
     SplashScreen,
+    AppShare,
     //Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

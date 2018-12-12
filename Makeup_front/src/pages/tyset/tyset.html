@@ -6,13 +6,40 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="purple">
     <ion-title>通用设置</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-
+    <ion-list>
+      <ion-item class="list">
+        <ion-toggle checked="false"></ion-toggle>
+        <ion-label>
+          开启横屏模式
+        </ion-label>
+        </ion-item>
+      <br/>
+      <ion-item>
+      <ion-label id="label">自动下载每妆安装包</ion-label>
+        <ion-select [(ngModel)]="download">
+          <ion-option value="f">仅Wi-Fi网络</ion-option>
+          <ion-option value="m">从不</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label id="label">多语言</ion-label>
+        <ion-select [(ngModel)]="language" interface="action-sheet">
+          <ion-option value="moren">跟随系统</ion-option>
+          <ion-option value="English">English</ion-option>
+          <ion-option value="简体中文">简体中文</ion-option>
+          <ion-option value="日语">日语</ion-option>
+          <ion-option value="韩语">韩语</ion-option>
+        </ion-select>
+      </ion-item>
+      <button ion-item *ngFor="let item of items" (click)="itemSelected(item)" class="list">
+        {{ item }}
+      </button>
+    </ion-list>
 </ion-content>

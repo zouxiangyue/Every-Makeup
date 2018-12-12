@@ -84,4 +84,10 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <engine name="android" spec="7.0.0" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="cordova-plugin-qqsdk" spec="^0.9.7">
+        <variable name="QQ_APP_ID" value="1105786989" />
+    </plugin>
+    <plugin name="cordova-plugin-wechat" spec="https://github.com/wowgeeker/cordova-plugin-wechat">
+        <variable name="WECHATAPPID" value="wx7b22a8079fcd2f45" />
+    </plugin>
 </widget>
