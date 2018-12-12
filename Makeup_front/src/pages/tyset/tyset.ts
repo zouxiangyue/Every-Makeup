@@ -21,5 +21,15 @@ export class TysetPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad TysetPage');
   }
+  items = [
+    '字体大小',
+    '照片、视频和文件',
+    '辅助功能',
+    '流量统计',
+    '清理缓存'
+  ];
 
+  itemSelected(item: string) {
+    console.log("Selected Item", item);
+  }
 }
