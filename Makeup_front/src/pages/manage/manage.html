@@ -7,22 +7,52 @@
 <ion-header>
 
   <ion-navbar color="purple">
-    <ion-title class="guanli">账号管理</ion-title>
-    <ion-title class="bianji">编辑</ion-title>
+    <ion-title>账号管理</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-item  class="contents">
-    <ion-img src="../../assets/images/img9.jpg" class="photo"></ion-img>
-    <h1>Mike</h1>
-  </ion-item>
-  <ion-item  class="contents">
-    <ion-img src="../../assets/images/img10.jpg" class="photo"></ion-img>
-    <h1>草莓</h1>
-  </ion-item>
+  <ion-list>
+      <ion-item-sliding>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="../../assets/images/img9.jpg">
+            </ion-avatar>
+            <h1>Mike</h1>
+          </ion-item>
+          <ion-item-options>
+            <button ion-button color="purple" icon-start>
+              <ion-icon name="text"></ion-icon>
+              编辑
+            </button>
+            <button ion-button color="purple" icon-start>
+              <ion-icon name="trash"></ion-icon>
+              删除
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+
+        <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-start>
+                <img src="../../assets/images/img10.jpg">
+              </ion-avatar>
+              <h1>草莓</h1>
+            </ion-item>
+            <ion-item-options>
+              <button ion-button color="purple" icon-start>
+                <ion-icon name="text"></ion-icon>
+                编辑
+              </button>
+              <button ion-button color="purple" icon-start>
+                <ion-icon name="trash"></ion-icon>
+                删除
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+   </ion-list>
   <ion-item  no-lines class="contents">
   <ion-icon name="ios-add-circle-outline" (click)="go()"></ion-icon>
    <h2>新账号</h2>

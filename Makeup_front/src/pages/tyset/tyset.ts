@@ -28,7 +28,8 @@ export class TysetPage {
     '流量统计',
     '清理缓存'
   ];
-
+  download: string = "f";
+  language: string = 'moren';
   itemSelected(item: string) {
     console.log("Selected Item", item);
   }

@@ -20,18 +20,24 @@
           开启横屏模式
         </ion-label>
         </ion-item>
-      <button ion-item class="list">
-        自动下载每妆安装包   
-        <ion-note item-end class="note">
-          仅Wi-Fi网络
-        </ion-note>
-      </button>
-      <button ion-item class="list">
-          多语言   
-          <ion-note item-end class="note">
-            跟随系统
-          </ion-note>
-      </button>
+      <br/>
+      <ion-item>
+      <ion-label id="label">自动下载每妆安装包</ion-label>
+        <ion-select [(ngModel)]="download">
+          <ion-option value="f">仅Wi-Fi网络</ion-option>
+          <ion-option value="m">从不</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label id="label">多语言</ion-label>
+        <ion-select [(ngModel)]="language" interface="action-sheet">
+          <ion-option value="moren">跟随系统</ion-option>
+          <ion-option value="English">English</ion-option>
+          <ion-option value="简体中文">简体中文</ion-option>
+          <ion-option value="日语">日语</ion-option>
+          <ion-option value="韩语">韩语</ion-option>
+        </ion-select>
+      </ion-item>
       <button ion-item *ngFor="let item of items" (click)="itemSelected(item)" class="list">
         {{ item }}
       </button>
