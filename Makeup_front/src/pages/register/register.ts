@@ -29,6 +29,7 @@ export class RegisterPage {
   email='';
   phone='';
   school='';
+  userdata='';
   headers = new HttpHeaders({
     header:'hello register',
   });
@@ -73,7 +74,13 @@ export class RegisterPage {
             this.email_or_phone='';
           } else if(data['status'] == 0) {
             alert('注册成功');
-            this.navCtrl.push(DengluPage);
+            var data: Object = {
+              callback: data => {
+                console.log(data);
+                this.userdata = JSON.parse(window.localStorage.getItem('user'));
+              }
+            };
+            this.navCtrl.push(DengluPage, data);
           }
         }, err => {
           console.log(err.message);
