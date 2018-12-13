@@ -37,7 +37,7 @@ export class DengluPage {
     this.navCtrl.push(RegisterPage)
   }
   goHome() {
-    this.navCtrl.popToRoot();
+    this.navCtrl.pop();
   };
   login() {
     if(!this.user_id){
@@ -52,10 +52,16 @@ export class DengluPage {
         console.log(data);
         if(data['status']==-1){
           alert('该用户未注册');
-        }else if(data['status']==0){
-          alert('登录成功');
-          this.navCtrl.push(MyPage);
         }else if(data['status']==1){
+          var userDetail=JSON.stringify(data) 
+          //console.log('userDetail',userDetail);
+          window.localStorage.setItem('user',userDetail);
+          console.log(window.localStorage.getItem('user'));
+          var callback = this.navParams.get('callback');  
+          callback(data); //会返回登录的用户信息给MyPage;
+          console.log('登录成功');
+          this.navCtrl.pop();
+        }else if(data['status']==-2){
           alert('该账号已被登录');
         }else{
           alert('登录失败，未知错误');

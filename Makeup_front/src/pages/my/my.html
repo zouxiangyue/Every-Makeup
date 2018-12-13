@@ -2,10 +2,10 @@
 <ion-content>
     <div class="div1">
         <ion-icon name="share" class="icon1" (click)="share($event)"></ion-icon>
-        <p class="title">未登录</p>
+        <p class="title">{{userdata.name}}</p>
     </div>
     <div>
-        <img class="fish" (click)="goDenglu()" src="../../assets/images/1.jpg" >
+        <img class="fish" (click)="clickHead()" src="../../assets/images/1.jpg" >
     </div>
     <div class="div2" (click)='setting()'>
         <ion-icon ios="ios-card" md="md-card"></ion-icon> 完善信息
@@ -14,7 +14,7 @@
         <ion-icon ios="ios-settings" md="md-settings"></ion-icon> 设置
     </div>
     <br/><br/><br/><br/>
-    <p class="p1">每妆号：********</p>
+    <p class="p1">每妆号：{{userdata.mei_id}}</p>
     <!-- <p class="p1">每妆号：21199320</p> -->
     <div>
         <div class="care" (click)='gotoFollows()'>

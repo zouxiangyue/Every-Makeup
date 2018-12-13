@@ -14,7 +14,7 @@
   <ion-item detail-push no-lines (click)="setting3()">通用设置</ion-item>
   <ion-item detail-push no-lines (click)="setting4()">关于每妆</ion-item>
   <br/><br/><br/>
-  <button (click)="goDenglu()" class="btn1" ion-button block color="purple">退出当前账号</button>
-
+  <button  *ngIf="denglustatus" (click)="exitDenglu()" class="btn1" ion-button block color="purple">退出当前账号</button>
+  <!-- *ngIf="denglustatus",当denglustatus=1，显示button，当denglustatus=0退出当前登录，不显示button -->
 
 </ion-content>
