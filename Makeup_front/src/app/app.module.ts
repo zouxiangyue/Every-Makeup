@@ -27,6 +27,8 @@ import { ManagePage} from '../pages/manage/manage';
 import { SecurityPage} from '../pages/security/security';
 import { XxsetPage} from '../pages/xxset/xxset';
 import { TysetPage} from '../pages/tyset/tyset';
+import { Camera} from '@ionic-native/camera';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,6 +40,14 @@ import { SearchPage } from '../pages/search/search';
 import { PaPage } from '../pages/pa/pa';
 import { AppShare } from './app.share';
 import { SixinPage } from '../pages/sixin/sixin';
+import { ImprovenamePage } from '../pages/improvename/improvename';
+import { ImprovenumberPage } from '../pages/improvenumber/improvenumber';
+import { ImproveschoolPage } from '../pages/improveschool/improveschool';
+import { ImprovesexPage } from '../pages/improvesex/improvesex';
+import { ImprovebirthdayPage } from '../pages/improvebirthday/improvebirthday';
+import { ImprovesignaturePage } from '../pages/improvesignature/improvesignature';
+
+
 
 
 @NgModule({
@@ -72,8 +82,13 @@ import { SixinPage } from '../pages/sixin/sixin';
     XxsetPage,
     TysetPage,
 
-    PaPage
-
+    PaPage,
+    ImprovenamePage,
+    ImprovenumberPage,
+    ImproveschoolPage,
+    ImprovesexPage,
+    ImprovebirthdayPage,
+    ImprovesignaturePage
   ],
   imports: [
     BrowserModule,
@@ -116,14 +131,20 @@ import { SixinPage } from '../pages/sixin/sixin';
     XxsetPage,
     TysetPage,
 
-    PaPage
+    PaPage,
+    ImprovenamePage,
+    ImprovenumberPage,
+    ImproveschoolPage,
+    ImprovesexPage,
+    ImprovebirthdayPage,
+    ImprovesignaturePage
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AppShare,
-    //Camera,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

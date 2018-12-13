@@ -1,0 +1,22 @@
+<ion-header text-center>
+  <ion-navbar color="purple">
+    <ion-title>修改性别<div class="keep" (click)='keep()'>保存</div></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list radio-group [(ngModel)]="usersex">
+  <ion-item (click)="keepsex('女')">
+    <ion-label>女</ion-label>
+    <ion-radio  value="女" checked color="purple"></ion-radio>
+  </ion-item>
+  <ion-item (click)="keepsex('男')">
+    <ion-label>男</ion-label>
+    <ion-radio value="男" color="purple"></ion-radio>
+  </ion-item>
+  <ion-item  (click)="keepsex('无')">
+    <ion-label>不显示</ion-label>
+    <ion-radio value="无" color="purple"></ion-radio>
+  </ion-item>
+  </ion-list>
+</ion-content>

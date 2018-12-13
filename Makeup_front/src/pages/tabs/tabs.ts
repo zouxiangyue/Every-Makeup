@@ -18,6 +18,7 @@ export class TabsPage {
   tab4Root = MyPage;
 
   constructor(public navCtrl:NavController) {
+    console.log(window.localStorage.getItem('user'))
 
   }
 }

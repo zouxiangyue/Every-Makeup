@@ -1,4 +1,11 @@
 page-improve {
+    .title1{
+        float: left;
+    }
+    .title2{
+        position: absolute;
+        margin-left: 240px;
+    }
     .toolbar-title-ios{
         font-weight: normal;
     }
@@ -17,5 +24,8 @@ page-improve {
     }
     .sp2{
         margin-left: 20px;
+    }
+    .iconfont1{
+        float: right;
     }
 }

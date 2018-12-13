@@ -1,0 +1,13 @@
+<ion-header text-center>
+  <ion-navbar color="purple">
+    <ion-title>修改个性签名<div class="keep" (click)='keep()'>保存</div></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label color="purple" stacked>我的个性签名</ion-label>
+    <ion-input type="text" placeholder="记得填写个性签名哦" [(ngModel)]="usersignature"></ion-input>
+  </ion-item>
+</ion-content>
+
