@@ -1,0 +1,12 @@
+<ion-header text-center>
+  <ion-navbar color="purple">
+    <ion-title>修改学校<div class="keep" (click)='keep()'>保存</div></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label color="purple" stacked>我的学校</ion-label>
+    <ion-input type="text" placeholder="记得填写学校哦" [(ngModel)]="userschool"></ion-input>
+  </ion-item>
+</ion-content>

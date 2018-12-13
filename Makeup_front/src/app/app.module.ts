@@ -38,6 +38,14 @@ import { SearchPage } from '../pages/search/search';
 import { PaPage } from '../pages/pa/pa';
 import { AppShare } from './app.share';
 import { SixinPage } from '../pages/sixin/sixin';
+import { ImprovenamePage } from '../pages/improvename/improvename';
+import { ImprovenumberPage } from '../pages/improvenumber/improvenumber';
+import { ImproveschoolPage } from '../pages/improveschool/improveschool';
+import { ImprovesexPage } from '../pages/improvesex/improvesex';
+import { ImprovebirthdayPage } from '../pages/improvebirthday/improvebirthday';
+import { ImprovesignaturePage } from '../pages/improvesignature/improvesignature';
+
+
 
 
 @NgModule({
@@ -72,8 +80,13 @@ import { SixinPage } from '../pages/sixin/sixin';
     XxsetPage,
     TysetPage,
 
-    PaPage
-
+    PaPage,
+    ImprovenamePage,
+    ImprovenumberPage,
+    ImproveschoolPage,
+    ImprovesexPage,
+    ImprovebirthdayPage,
+    ImprovesignaturePage
   ],
   imports: [
     BrowserModule,
@@ -116,7 +129,13 @@ import { SixinPage } from '../pages/sixin/sixin';
     XxsetPage,
     TysetPage,
 
-    PaPage
+    PaPage,
+    ImprovenamePage,
+    ImprovenumberPage,
+    ImproveschoolPage,
+    ImprovesexPage,
+    ImprovebirthdayPage,
+    ImprovesignaturePage
 
   ],
   providers: [
