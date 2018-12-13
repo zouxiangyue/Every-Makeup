@@ -27,6 +27,8 @@ import { ManagePage} from '../pages/manage/manage';
 import { SecurityPage} from '../pages/security/security';
 import { XxsetPage} from '../pages/xxset/xxset';
 import { TysetPage} from '../pages/tyset/tyset';
+import { Camera} from '@ionic-native/camera';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -142,7 +144,7 @@ import { ImprovesignaturePage } from '../pages/improvesignature/improvesignature
     StatusBar,
     SplashScreen,
     AppShare,
-    //Camera,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
