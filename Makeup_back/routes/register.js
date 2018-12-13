@@ -25,6 +25,7 @@ router.post('/',function(req,res){
   var school=req.body.school;
   var phone=req.body.phone || '';
   var mei_id;
+  var status=0;
   
   con.query('select * from users',(err,results)=>{
     for(var i=0;i<results.length;i++){
@@ -40,7 +41,7 @@ router.post('/',function(req,res){
         mei_id=''+d.getFullYear()+(d.getMonth()+1)+d.getDate()+d.getHours()+d.getMinutes()+d.getSeconds();
         console.log(mei_id);
         var status=0;
-       con.query('insert into users values(?,?,?,?,?,?,?)',[mei_id,name,pwd,email,school,status,phone],
+       con.query('insert into users values(?,?,?,?,?,?,?)',[mei_id,name,pwd,email,school,phone,status],
          (err,result)=>{
              if(err){
                console.log(err.message);
