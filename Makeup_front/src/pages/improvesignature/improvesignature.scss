@@ -1,0 +1,16 @@
+page-improvesignature {
+    .keep{
+        float: right;
+        size: 20px;
+        color:palevioletred;
+    }
+    .toolbar-title-md{
+        margin-left: 40px;
+    }
+    .label-md[stacked] {
+        font-size: 1.8rem;
+    }
+    .item-input-has-focus .label-md[stacked], .input-has-focus .label-md[stacked]{
+        color:#A683FF;
+    }
+}

@@ -1,0 +1,13 @@
+<ion-header text-center>
+  <ion-navbar color="purple">
+    <ion-title>修改生日<div class="keep" (click)='keep()'>保存</div></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="userbirthday"></ion-datetime>
+  </ion-item>   
+
+</ion-content>

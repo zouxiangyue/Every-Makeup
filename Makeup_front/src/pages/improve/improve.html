@@ -6,10 +6,10 @@
 
 <ion-content>
   <ion-item detail-push no-lines>头像</ion-item>
-  <ion-item detail-push no-lines>昵称<span>鲸鱼</span></ion-item>
-  <ion-item detail-push no-lines>每妆号<span class="sp1">62619838</span></ion-item>
-  <ion-item detail-push no-lines>学校<span>河北师范大学</span></ion-item>
-  <ion-item detail-push no-lines>性别<span>女</span></ion-item>
-  <ion-item detail-push no-lines>生日<span>1998-8-9</span></ion-item>
-  <ion-item detail-push no-lines>个性签名<span class="sp2">ztt爱水炸弹！</span></ion-item>
+  <ion-item detail-push no-lines (click)="name()">昵称<span>{{username}}</span><i class="iconfont1">&#xe652;</i></ion-item>
+  <ion-item detail-push no-lines (click)="number()">每妆号<span class="sp1">{{usernumber}}</span><i class="iconfont1">&#xe652;</i></ion-item>
+  <ion-item detail-push no-lines (click)="school()">学校<span>{{userschool}}</span><i class="iconfont1">&#xe652;</i></ion-item>
+  <ion-item detail-push no-lines (click)="sex()">性别<span>{{usersex}}</span><i class="iconfont1">&#xe652;</i></ion-item>
+  <ion-item detail-push no-lines (click)="birthday()">生日<span>{{userbirthday}}</span><i class="iconfont1">&#xe652;</i></ion-item>
+  <ion-item detail-push no-lines (click)="signature()">个性签名<span class="sp2">{{usersignature}}</span><i class="iconfont1">&#xe652;</i></ion-item>
 </ion-content>
