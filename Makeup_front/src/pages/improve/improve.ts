@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import { ImprovenamePage } from '../improvename/improvename';
-import { ImprovenumberPage } from '../improvenumber/improvenumber';
+//import { ImprovenumberPage } from '../improvenumber/improvenumber';
 import { ImproveschoolPage } from '../improveschool/improveschool';
 import { ImprovesexPage } from '../improvesex/improvesex';
 import { ImprovebirthdayPage } from '../improvebirthday/improvebirthday';
@@ -21,13 +21,13 @@ import { ImprovesignaturePage } from '../improvesignature/improvesignature';
 })
 export class ImprovePage {
   username;
-  usernumber;
+  //usernumber;
   userschool;
   usersex;
   userbirthday;
   usersignature;
   profileModal_name=this.modalCtrl.create(ImprovenamePage);
-  profileModal_num=this.modalCtrl.create(ImprovenumberPage);
+  //profileModal_num=this.modalCtrl.create(ImprovenumberPage);
   profileModal_school=this.modalCtrl.create(ImproveschoolPage);
   profileModal_sex=this.modalCtrl.create(ImprovesexPage);
   profileModal_birthday=this.modalCtrl.create(ImprovebirthdayPage);
@@ -53,11 +53,11 @@ export class ImprovePage {
         console.log(data.usersignature);
         this.usersignature=data.usersignature;
       });
-      this.profileModal_num.onDidDismiss(data => {
-        console.log(data.usernumber);
-        this.usernumber=data.usernumber;
-        console.log(this.usernumber);
-      });
+      // this.profileModal_num.onDidDismiss(data => {
+      //   console.log(data.usernumber);
+      //   this.usernumber=data.usernumber;
+      //   console.log(this.usernumber);
+      // });
   }
 
   ionViewDidLoad() {
@@ -67,9 +67,9 @@ export class ImprovePage {
   name(){
     this.profileModal_name.present();
   }
-  number(){
-    this.profileModal_num.present();
-  }
+  // number(){
+  //   this.profileModal_num.present();
+  // }
   school(){
     this.profileModal_school.present();
   }
