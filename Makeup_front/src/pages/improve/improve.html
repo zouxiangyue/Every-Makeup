@@ -1,15 +1,18 @@
-<ion-header text-center>
+<ion-header>
   <ion-navbar color="purple">
     <ion-title>完善信息</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-item detail-push no-lines>头像</ion-item>
-  <ion-item detail-push no-lines (click)="name()">昵称<span>{{username}}</span><i class="iconfont1">&#xe652;</i></ion-item>
-  <!-- <ion-item detail-push no-lines (click)="number()">每妆号<span class="sp1">{{usernumber}}</span><i class="iconfont1">&#xe652;</i></ion-item> -->
-  <ion-item detail-push no-lines (click)="school()">学校<span>{{userschool}}</span><i class="iconfont1">&#xe652;</i></ion-item>
-  <ion-item detail-push no-lines (click)="sex()">性别<span>{{usersex}}</span><i class="iconfont1">&#xe652;</i></ion-item>
-  <ion-item detail-push no-lines (click)="birthday()">生日<span>{{userbirthday}}</span><i class="iconfont1">&#xe652;</i></ion-item>
-  <ion-item detail-push no-lines (click)="signature()">个性签名<span class="sp2">{{usersignature}}</span><i class="iconfont1">&#xe652;</i></ion-item>
+  <div class="pic">
+    <img src="../../assets/images/1.jpg" id="head-portrait" alt="">
+  </div>
+  
+  <ion-item detail-push (click)="name()">昵称<span>{{username}}</span><i class="iconfont1">&#xe652;</i></ion-item>
+  <!-- <ion-item detail-push no-lines (click)="number()">每妆号<span>{{usernumber}}</span><i class="iconfont1">&#xe652;</i></ion-item> -->
+  <ion-item detail-push (click)="school()">学校<span>{{userschool}}</span><i class="iconfont1">&#xe652;</i></ion-item>
+  <ion-item detail-push (click)="sex()">性别<span>{{usersex}}</span><i class="iconfont1">&#xe652;</i></ion-item>
+  <ion-item detail-push (click)="birthday()">生日<span>{{userbirthday}}</span><i class="iconfont1">&#xe652;</i></ion-item>
+  <ion-item detail-push (click)="signature()">个性签名<span class="special">{{usersignature}}</span><i class="iconfont1">&#xe652;</i></ion-item>
 </ion-content>

@@ -1,31 +1,31 @@
 page-improve {
-    .title1{
-        float: left;
-    }
-    .title2{
-        position: absolute;
-        margin-left: 240px;
-    }
-    .toolbar-title-ios{
-        font-weight: normal;
-    }
+
     .toolbar-title-md{
-        padding-right: 50%;
-    }
-    .button-inner{
-        margin:0px 0px;
-        padding:0px 0px;
+         padding: 0 50px;
     }
     span{
-        margin-left:55px;
+        float: right;
+        margin-right:20px;
     }
-    .sp1{
-        margin-left: 35px;
-    }
-    .sp2{
-        margin-left: 20px;
+    .special{
+        width:150px;
+        overflow: hidden; //把超出的内容进行隐藏；
+        white-space: nowrap; //设置内容不换行；
+        text-overflow: ellipsis; //设置超出内容为省略号
     }
     .iconfont1{
-        float: right;
+        position: absolute;
+        right:3%;
+        margin-top: 4px;
+    }
+    .pic{
+        margin-top: 10px;
+    }
+    #head-portrait{
+        display:block;
+        width:100px;
+        height:100px;
+        margin:0 auto;
+        border-radius: 50%;
     }
 }
