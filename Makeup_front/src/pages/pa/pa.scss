@@ -1,5 +1,12 @@
 page-about {
-
+    .tou{
+        float: left;
+        
+    }
+    .guan{
+        
+        float: right;
+    }
     p{
         font:"幼圆" bolder 1.5em  ;
     }
@@ -9,15 +16,6 @@ page-about {
     .contents{
         ion-col{
             padding:10px;
-        }
-        .img{
-            width:90%;
-            height:150px;
-        }
-        h6{
-            overflow: hidden; //把超出的内容进行隐藏；
-            white-space: nowrap; //设置内容不换行；
-            text-overflow: ellipsis; //设置超出内容为省略号
         }
         .photo{
             border-radius:25px;
