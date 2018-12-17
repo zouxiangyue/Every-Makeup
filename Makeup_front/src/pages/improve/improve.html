@@ -6,7 +6,7 @@
 
 <ion-content>
   <div class="pic">
-    <img src="../../assets/images/1.jpg" id="head-portrait" alt="">
+    <img src="{{imgUrl}}" id="head-portrait" alt="" (click)='clickHead()'>
   </div>
   
   <ion-item detail-push (click)="name()">昵称<span>{{username}}</span><i class="iconfont1">&#xe652;</i></ion-item>

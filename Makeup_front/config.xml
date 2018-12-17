@@ -89,5 +89,6 @@
     <plugin name="cordova-plugin-wechat" spec="https://github.com/wowgeeker/cordova-plugin-wechat">
         <variable name="WECHATAPPID" value="wx7b22a8079fcd2f45" />
     </plugin>
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
     <engine name="android" spec="7.0.0" />
 </widget>

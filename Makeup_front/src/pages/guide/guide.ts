@@ -9,16 +9,10 @@ import { RegisterPage } from '../register/register';
   templateUrl: 'guide.html',
 })
 export class GuidePage {
-  t=false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
 goTabs(){
   this.navCtrl.setRoot(TabsPage);
 }
-  ionViewDidLoad() {
-    setTimeout(()=>{
-      this.t=true;
-    },2000)
-  }
 }

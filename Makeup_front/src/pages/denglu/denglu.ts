@@ -57,7 +57,7 @@ export class DengluPage {
           //console.log('userDetail',userDetail);
           window.localStorage.setItem('user',userDetail);
           console.log(window.localStorage.getItem('user'));
-          var callback = this.navParams.get('callback');  
+          var callback = this.navParams.get('callback');
           callback(data); //会返回登录的用户信息给MyPage;
           console.log('登录成功');
           this.navCtrl.pop();
