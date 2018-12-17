@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AddPage } from '../add/add';
 import { SearchPage } from '../search/search';
+import { PaPage } from '../pa/pa';
 
 @Component({
   selector: 'page-home',
@@ -22,6 +23,9 @@ export class HomePage {
     this.navCtrl.push(SearchPage);
   }
 
+  goPa(){
+    this.navCtrl.push(PaPage);
+  }
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
 
@@ -30,4 +34,5 @@ export class HomePage {
       refresher.complete();
     }, 2000);
   }
+
 }
