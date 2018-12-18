@@ -61,6 +61,7 @@ export class SetPage {
   exitDenglu(){
     var user=JSON.parse(window.localStorage.getItem('user'));
     var mei_id=user['mei_id'];
+    console.log(mei_id);
     this.http.post('api/login/status',{mei_id:mei_id,status:0},{}).subscribe(data=>{
       console.log(data);
       if(data['status']==0){

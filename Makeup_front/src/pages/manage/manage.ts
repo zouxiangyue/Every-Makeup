@@ -16,11 +16,19 @@ import {DengluPage} from '../denglu/denglu';
 export class ManagePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  
+  user=JSON.parse(window.localStorage.getItem('user'));
+  manageusers=JSON.parse(window.localStorage.getItem('manageusers'));
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManagePage');
+    console.log(this.user);
+    console.log(this.manageusers)
   }
-  go(){
-    this.navCtrl.push(DengluPage);
+  addUser(){
+    var data: Object = {
+      callback: data => {
+        console.log(data);
+        //this.user = JSON.parse(window.localStorage.getItem('user'));
+      }}
+    this.navCtrl.push(DengluPage,data);
   }
 }

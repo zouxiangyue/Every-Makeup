@@ -15,7 +15,8 @@ import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angula
 })
 export class ImprovesignaturePage {
   data;
-  usersignature;
+  user = JSON.parse(window.localStorage.getItem('user'))
+  usersignature=this.user.usersignature;
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
   }
 

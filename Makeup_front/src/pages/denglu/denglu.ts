@@ -18,6 +18,7 @@ import { MyPage } from '../my/my';
 export class DengluPage {
   user_id:string='';
   user_pwd:string='';
+  manageusers=JSON.parse(window.localStorage.getItem('manageusers')) || [];
   headers = new HttpHeaders({
     header:'hello login',
   });
@@ -32,9 +33,14 @@ export class DengluPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DengluPage');
   }
-
   goRegister() {
-    this.navCtrl.push(RegisterPage)
+    var data: Object = {
+      callback: data => {
+        console.log(data);
+        //this.userdata = JSON.parse(window.localStorage.getItem('user'));
+      }
+    };
+    this.navCtrl.push(RegisterPage,data)
   }
   goHome() {
     this.navCtrl.pop();
@@ -57,8 +63,11 @@ export class DengluPage {
           //console.log('userDetail',userDetail);
           window.localStorage.setItem('user',userDetail);
           console.log(window.localStorage.getItem('user'));
+          this.manageusers.push(data);//将新登录的用户添加进入用户管理
+          window.localStorage.setItem('manageusers',JSON.stringify(this.manageusers));
+          console.log(window.localStorage.getItem('manageusers'));
           var callback = this.navParams.get('callback');
-          callback(data); //会返回登录的用户信息给MyPage;
+          callback(data); //会返回登录的用户信息;
           console.log('登录成功');
           this.navCtrl.pop();
         }else if(data['status']==-2){

@@ -27,21 +27,22 @@ export class MyPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public appShare: AppShare, public actionSheetCtrl: ActionSheetController) {
   }
-  userdata = {//接受登录页传输的用户数据
-    mei_id: '*******',
-    name: '未登录'
-  };
+  user:object={};
+  denglustatus:boolean=false;
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyPage');
   };
   ionViewWillEnter(){
     if (window.localStorage.hasOwnProperty('user')) {
-      this.userdata = JSON.parse(window.localStorage.getItem('user'))
+      this.denglustatus=true;
+      this.user = JSON.parse(window.localStorage.getItem('user'));
     } else {
-      this.userdata = {//接受登录页传输的用户数据 
+      this.user = {//接受登录页传输的用户数据 
         mei_id: '*******',
-        name: '未登录'
+        name: '未登录',
+        headimg:'../../assets/images/1.jpg'
       };
+      this.denglustatus=false;
       console.log('未登录');
     }
   }
@@ -51,9 +52,9 @@ export class MyPage {
       console.log('上传头像');
     } else {
       var data: Object = {
-        callback: data => {
+          callback: data => {
           console.log(data);
-          this.userdata = JSON.parse(window.localStorage.getItem('user'));
+          this.user = JSON.parse(window.localStorage.getItem('user'));
         }
       };
       this.navCtrl.push(DengluPage, data);

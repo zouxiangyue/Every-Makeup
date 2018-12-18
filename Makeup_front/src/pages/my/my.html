@@ -2,19 +2,19 @@
 <ion-content>
     <div class="div1">
         <ion-icon name="share" class="icon1" (click)="share($event)"></ion-icon>
-        <p class="title">{{userdata.name}}</p>
+        <p class="title">{{user.name}}</p>
     </div>
     <div>
-        <img class="fish" (click)="clickHead()" src="../../assets/images/1.jpg" >
+        <img class="fish" (click)="clickHead()" src="{{user.headimg}}" >
     </div>
-    <div class="div2" (click)='setting()'>
+    <div class="div2" *ngIf='denglustatus' (click)='setting()'>
         <ion-icon ios="ios-card" md="md-card"></ion-icon> 完善信息
     </div>
     <div class="div21" (click)='setting1()'>
         <ion-icon ios="ios-settings" md="md-settings"></ion-icon> 设置
     </div>
     <br/><br/><br/><br/>
-    <p class="p1">每妆号：{{userdata.mei_id}}</p>
+    <p class="p1">每妆号：{{user.mei_id}}</p>
     <!-- <p class="p1">每妆号：21199320</p> -->
     <div>
         <div class="care" (click)='gotoFollows()'>

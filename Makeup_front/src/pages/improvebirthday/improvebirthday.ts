@@ -15,7 +15,8 @@ import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angula
 })
 export class ImprovebirthdayPage {
   data;
-  userbirthday='';
+  user = JSON.parse(window.localStorage.getItem('user'))
+  userbirthday=this.user.birthday;
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
   }
 

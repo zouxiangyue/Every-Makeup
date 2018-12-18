@@ -15,7 +15,8 @@ import { IonicPage, NavController, NavParams ,ViewController} from 'ionic-angula
 })
 export class ImprovesexPage {
   data;
-  usersex;
+  user = JSON.parse(window.localStorage.getItem('user'))
+  usersex=this.user.sex;
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
   }
 

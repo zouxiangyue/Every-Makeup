@@ -16,7 +16,8 @@ import { ImprovePage } from '../improve/improve';
 })
 export class ImprovenamePage {
   data;
-  username='';
+  user = JSON.parse(window.localStorage.getItem('user'))
+  username=this.user.name;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public viewCtrl:ViewController) {
   }
