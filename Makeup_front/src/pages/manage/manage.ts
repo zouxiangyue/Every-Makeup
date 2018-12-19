@@ -17,11 +17,20 @@ export class ManagePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
   user=JSON.parse(window.localStorage.getItem('user'));
-  manageusers=JSON.parse(window.localStorage.getItem('manageusers'));
+  manageusers
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManagePage');
     console.log(this.user);
     console.log(this.manageusers)
+  }
+  ionViewWillEnter(){
+    if(this.user){
+      this.manageusers=JSON.parse(window.localStorage.getItem('manageusers')) || [];
+      console.log(this.manageusers);
+    }else{
+      this.manageusers=[];
+      console.log(this.manageusers);
+    }
   }
   addUser(){
     var data: Object = {
