@@ -5,24 +5,24 @@ const express = require('express'),
     bodyParser=require('body-parser');
     
 var login=require('./routes/login.js'),
-    register=require('./routes/register.js');
+    register=require('./routes/register.js'),
+    improve=require('./routes/improve.js');
 
 
 //app.use(function(req, res) {
  // console.log('hello app');
 //});
 
-//app.all('*', function(req, res, next) {
+//app.all('*', function(req, res) {
 
 //res.header("Access-Control-Allow-Origin", "*");
-
 
 //res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
       //res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
                   //res.header("X-Powered-By",' 3.2.1')
       //res.header("Content-Type", "application/json;charset=utf-8");
-    //next();
+   // next();
 
 //});
 
@@ -34,5 +34,6 @@ app.use(bodyParser.json());
 
 app.use('/api/login',login);
 app.use('/api/register',register);
+app.use('/api/improve',improve);
 http.createServer(app).listen(8080);
 module.exports = app;
