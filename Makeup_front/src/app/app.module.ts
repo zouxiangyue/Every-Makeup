@@ -28,8 +28,9 @@ import { SecurityPage} from '../pages/security/security';
 import { XxsetPage} from '../pages/xxset/xxset';
 import { TysetPage} from '../pages/tyset/tyset';
 import { Camera} from '@ionic-native/camera';
-
-
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FensiPage } from '../pages/fensi/fensi';
@@ -96,7 +97,8 @@ import { ImprovesignaturePage } from '../pages/improvesignature/improvesignature
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp,{
         backButtonText: '',
-        tabsHideOnSubPages:'true'
+        tabsHideOnSubPages:'true',
+        iconMode: 'ios',
       })
   ],
   bootstrap: [IonicApp],
@@ -145,6 +147,9 @@ import { ImprovesignaturePage } from '../pages/improvesignature/improvesignature
     SplashScreen,
     AppShare,
     Camera,
+    FilePath,
+    FileChooser,
+    FileTransfer, 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

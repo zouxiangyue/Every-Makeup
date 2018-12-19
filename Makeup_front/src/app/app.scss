@@ -65,12 +65,12 @@
 
 @font-face {
     font-family: 'iconfont';  /* project id 937912 */
-    src: url('//at.alicdn.com/t/font_937912_wowvgmezx8f.eot');
-    src: url('//at.alicdn.com/t/font_937912_wowvgmezx8f.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_937912_wowvgmezx8f.woff') format('woff'),
-    url('//at.alicdn.com/t/font_937912_wowvgmezx8f.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_937912_wowvgmezx8f.svg#iconfont') format('svg');
-}
+    src: url('//at.alicdn.com/t/font_937912_ensu8o2eojc.eot');
+    src: url('//at.alicdn.com/t/font_937912_ensu8o2eojc.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_937912_ensu8o2eojc.woff') format('woff'),
+    url('//at.alicdn.com/t/font_937912_ensu8o2eojc.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_937912_ensu8o2eojc.svg#iconfont') format('svg');
+  }
 .iconfont1{
     font-family:"iconfont" !important;
     font-size:16px;font-style:normal;
@@ -95,5 +95,12 @@ page-my-follows,page-my-favorites,page-privacy, page-clear,page-set,page-feedbac
     }
     .toolbar-background-md {
         background: #A683FF;
+    }
+}
+.platform-android,.platform-ios{
+    .toolbar-ios {
+        .toolbar-background-ios {
+            background: #A683FF;
+        }
     }
 }

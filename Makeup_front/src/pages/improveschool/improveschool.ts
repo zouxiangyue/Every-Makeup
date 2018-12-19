@@ -15,7 +15,8 @@ import { IonicPage, NavController, NavParams ,ViewController} from 'ionic-angula
 })
 export class ImproveschoolPage {
   data;
-  userschool;
+  user = JSON.parse(window.localStorage.getItem('user'))
+  userschool=this.user.school;
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
   }
 
