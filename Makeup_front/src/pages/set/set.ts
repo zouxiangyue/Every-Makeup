@@ -73,6 +73,8 @@ export class SetPage {
             this.userdata = JSON.parse(window.localStorage.getItem('user'));
           }}
           console.log(window.localStorage.getItem('user'));
+          window.localStorage.removeItem('manageusers');
+          console.log(window.localStorage.getItem('manageusers'));
         this.navCtrl.push(DengluPage,data);
         console.log('退出登录成功');
         this.denglustatus=0;

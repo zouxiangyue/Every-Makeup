@@ -31,7 +31,7 @@ export class MyApp {
   constructor(private storage: Storage,
     platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     this.storage.get('guide').then(key=>{
-      key=false;
+      //key=false;
       console.log(key);
       if(key){
         this.rootPage=TabsPage;
