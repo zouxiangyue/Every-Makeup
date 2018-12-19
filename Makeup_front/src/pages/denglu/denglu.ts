@@ -18,6 +18,7 @@ import { MyPage } from '../my/my';
 export class DengluPage {
   user_id:string='';
   user_pwd:string='';
+  //用户组管理
   manageusers=JSON.parse(window.localStorage.getItem('manageusers')) || [];
   headers = new HttpHeaders({
     header:'hello login',

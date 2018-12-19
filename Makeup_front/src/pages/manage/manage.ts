@@ -28,6 +28,8 @@ export class ManagePage {
       callback: data => {
         console.log(data);
         //this.user = JSON.parse(window.localStorage.getItem('user'));
+        this.manageusers=JSON.parse(window.localStorage.getItem('manageusers'));
+        console.log(this.manageusers)
       }}
     this.navCtrl.push(DengluPage,data);
   }
