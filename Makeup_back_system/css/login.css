@@ -1,0 +1,41 @@
+body{ 
+    background-image: url(../imgs/01.jpg); 
+} 
+#content{
+	margin-top: 8%;
+}
+img{
+	width: 320px;
+	height: 260px;
+    margin-left: 40%;
+}
+.icon{
+	width: 25px;
+	height:25px;
+}
+.form-horizontal{
+	margin-top: 3% ;
+	margin-left: -5%;
+}
+.checkbox label, .radio label{
+	color: gray;
+}
+.form-control {
+	width: 20%;
+	opacity: 0.5;
+}
+#a{
+	margin-left: 10%;
+	width: 200px;
+	height:32px;
+	background-color:#E38F8F;
+	border-color:#E38F8F;
+}
+#inputName3{
+	width: 350px;
+	height: 35px;
+}
+#inputPassword3{
+	width: 350px;
+	height: 35px;
+}
