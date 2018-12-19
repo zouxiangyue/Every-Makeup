@@ -4,9 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
+    <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
     <title>Document</title>
+    <style>
+         body{
+            background-color: #F0F0F0;
+        }
+        .bui-grid-hd-inner{
+          text-align: center;
+        }
+        .bui-grid-table .bui-grid-hd-title{
+          padding: 0px;
+        }
+        .content-top{
+            width: 100%;
+            height: 76px;
+            background-color: white;
+        }
+        .demo-content{
+            float: left;
+            margin-top: 40px;
+          margin-left:180px;
+        }
+        .page{
+          text-align:center;
+          float: left;
+          margin-left: 180px;
+          margin-top: 30px;
+        }
+        .page a,.page span{
+          text-decoration: none;
+          border:1px solid black;
+          padding:5px 7px;
+          color:red;
+        }
+        .content-top-search{
+            float: left;
+            margin-top: 20px;
+            margin-left: 350px;
+        }
+      </style>
 </head>
 <body>
-    <p name="view_frame">推送管理</p>
+    <div class="content-top">
+    <div class="content-top-search">
+		<input type="text" class="input-text" style="width:250px" placeholder="搜索推送ID或作者" id="" name="">
+        <button type="submit" class="btn btn-success radius" id="" name="">添加推送</button>
+        
+      </div>
+      <div class="demo-content" name="manage_frame">
+        <div class="row">
+            <div class="span16">
+                <div id="grid">
+                </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="page">
+      <span>上一页</span>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">6</a>
+      <a href="#">7</a>
+      <a href="#">8</a>
+      <span>下一页</span>
+    </div>
 </body>
 </html>
+<script src="http://g.tbcdn.cn/fi/bui/jquery-1.8.1.min.js"></script>
+<script src="http://g.alicdn.com/bui/seajs/2.3.0/sea.js"></script>
+<script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>
+
+<script type="text/javascript">
+     BUI.use(['bui/grid','bui/data'],function(Grid,Data){
+        var 
+      Store = Data.Store,
+      enumObj = {"1" : "选项一","2" : "选项二","3" : "选项三"},
+      columns = [
+        {title : '推送编号',dataIndex :'a',editor : {xtype : 'number',validator : validFn}}, 
+        {title : '作者每妆号', dataIndex :'b',editor : {xtype : 'number',validator : validFn}},
+        {title : '作者昵称', dataIndex :'c',editor : {xtype : 'text',rules : {required : true}}},
+        {title : '内容类别',dataIndex :'d', editor : {xtype : 'text',rules : {required : true}}},
+        {title : '操作',dataIndex :'e',editor : {xtype : 'text',validator : validFn}},
+      
+      ],
+      data = [{a:'201801101',b:'201801177',c:'昵称1',d:'文章',e:'✎编辑'},{a:'201801202',b:'201801512',c:'昵称2',d:'视频',e:'✎编辑'},{a:'201801301',b:'201801324',c:'昵称3',d:'视频',e:'✎编辑'}]
+    function valid(value){
+      if(value === '1'){
+        return '不能选择1';
+      }
+    }
+    var editing = new Grid.Plugins.CellEditing({
+      triggerSelected : false //触发编辑的时候不选中行
+    }),
+      store = new Store({
+        data : data,
+        autoLoad:true
+      }),
+      grid = new Grid.Grid({
+        render:'#grid',
+        columns : columns,
+        width : 700,
+        forceFit : true,
+        tbar:{ //添加、删除
+            items : [{
+              btnCls : 'button button-small',
+              text : '<i class="icon-plus"></i>添加',
+              listeners : {
+                'click' : addFunction
+              }
+            },
+            {
+              btnCls : 'button button-small',
+              text : '<i class="icon-remove"></i>删除',
+              listeners : {
+                'click' : delFunction
+              }
+            }]
+        },
+        plugins : [editing,Grid.Plugins.CheckSelection,Grid.Plugins.ColumnChecked],
+        store : store
+      });
+
+    grid.render();
+
+    
+
+    function validFn (value,obj) {
+      var records = store.getResult(),
+        rst = '';
+      BUI.each(records,function (record) {
+        if(record.a == value && obj != record){
+          rst = '文本不能重复';
+          return false;
+        }
+      });
+      return rst;
+    }
+
+    //添加记录
+    function addFunction(){
+      var newData = {b : 0};
+      store.addAt(newData,0);
+      editing.edit(newData,'a'); //添加记录后，直接编辑
+    }
+    //删除选中的记录
+    function delFunction(){
+      var selections = grid.getSelection();
+      store.remove(selections);
+    }          
+  });
+</script>
