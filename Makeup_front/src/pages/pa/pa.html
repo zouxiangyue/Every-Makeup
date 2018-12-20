@@ -2,7 +2,7 @@
     <ion-navbar color="fenzi">
         <ion-title>文章详情</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only>
+            <button ion-button icon-only (click)="share($event)">
                 <ion-icon name="more"></ion-icon>
             </button>
         </ion-buttons>
@@ -34,50 +34,55 @@
     </div>
     <hr style="width:100%;height:3px;border:none;border-top:1px #F09595" />
     <!-- <br/> -->
-    
-    <h1>2018秋冬穿搭!秋冬穿搭法则!</h1>
-    <p>NO.1柔软百搭——毛衣</p>
-    <p>毛衣就是秋冬最适合穿着的衣服,穿衣当然得既要温度也有
+
+    <h2 style="margin: 5px;">2018秋冬穿搭!秋冬穿搭法则!</h2>
+    <h5 style="margin: 5px;">穿搭类</h5>
+    <p style="margin: 5px;">NO.1柔软百搭——毛衣</p>
+    <p style="margin: 5px;">毛衣就是秋冬最适合穿着的衣服,穿衣当然得既要温度也有
       风度,备一件最容易穿出fashion范儿的毛衣单品很重要!毛衣衬衣叠穿也好,毛衣
       裙加打底裤也好,简单或繁杂的穿搭都可以统统搞定。有了毛衣,整个秋冬都不用愁
       穿什么啦!</p>
-    <p>NO.2毛衣+牛仔裤</p> <p>灰色毛衣+牛仔裤,简直就是时尚界屹立不倒的标配,怕冷的妹
+    <p style="margin: 5px;">NO.2毛衣+牛仔裤</p> 
+    <p style="margin: 5px;">灰色毛衣+牛仔裤,简直就是时尚界屹立不倒的标配,怕冷的妹
       子还可系一个印花围巾,还能弥补全身过于单调的色彩!毛衣+纯色基础款裙子还不
       知道长款毛衣+及膝裙的时髦程度,还好意思过这个秋冬?粗毛线的慵懒毛衣不仅不
       会让你看上去显矮,搭配及膝裙还会让你离街拍潮人更进一步</p>
-    
-      <br>
-      <hr style="width:100%;height:3px;border:none;border-top:1px #F09595" />
-      <p>相关推荐</p> 
-      
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+    <!-- <br> -->
+    <hr style="width:100%;height:3px;border:none;border-top:1px #F09595" />
+    <h5 style="margin: 5px;color:#F09595;">相关推荐</h5>
+    <ion-grid class="contents">
+        <ion-row>
+          <ion-col col-6>
+            <img src="../../assets/images/img12.jpg" class="img" style="width: 100%;height: 180px;">
+            <h6>马丁靴穿搭遮肉、时髦</h6>
+            <p><img src="../../assets/images/img11.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
+            她说
+            <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img13.jpg" class="img" style="width: 100%;height: 180px;">
+            <h6>面试妆怎么化更加分？</h6>
+            <p><img src="../../assets/images/img14.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
+            雨夜
+            <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img15.jpg" class="img" style="width: 100%;height: 180px;">
+            <h6>秋冬穿搭必备神器!</h6>
+            <p><img src="../../assets/images/img16.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
+            听见你说
+            <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+          <ion-col col-6>
+            <img src="../../assets/images/img17.jpg" class="img" style="width: 100%;height: 180px;">
+            <h6>完美安利一个小物！</h6>
+            <p><img src="../../assets/images/img18.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
+            柔弱
+            <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
     </ion-content>
 <ion-footer>
     <ion-toolbar color="gray">
