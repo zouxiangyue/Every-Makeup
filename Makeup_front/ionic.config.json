@@ -6,9 +6,12 @@
   "proxies": [
     {
       "path": "/api",
+<<<<<<< HEAD
       "proxyUrl": "http://47.93.3.217:8080/api"
+=======
+      "proxyUrl": "http://192.168.133.144:8080/api"
+>>>>>>> 12120435bd7632f0352319b9be2dd3df27dd4bed
     }
   ],
-  "type": "ionic-angular",
-  "app_id": ""
+  "type": "ionic-angular"
 }
