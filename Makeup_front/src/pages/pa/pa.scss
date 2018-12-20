@@ -1,35 +1,41 @@
 page-about {
-    .tou{
-        float: left;
-        
+    .bar-button-default-md{
+        color:white;
     }
-    .guan{
-        
-        float: right;
+    .title title-md{
+        width: 40px;
     }
-    p{
-        font:"幼圆" bolder 1.5em  ;
-    }
-    img{
-        padding: 5px;
-    }
-    .contents{
-        ion-col{
-            padding:10px;
-        }
-        .photo{
-            border-radius:25px;
-            width:20px;
-            height:20px;
-        }
-        span{
-            float:right;
-            margin-top:5px; 
+    .sli{
+        height:120px;
+        img{
+            width: 100%;
         }
     }
-    .foot{
-        button{
-            padding: 20px;
-        }
-    }
+
+    
+    // p{
+    //     font:"幼圆" bolder 1.5em  ;
+    // }
+    // img{
+    //     padding: 5px;
+    // }
+    // .contents{
+    //     ion-col{
+    //         padding:10px;
+    //     }
+    //     .photo{
+    //         border-radius:25px;
+    //         width:20px;
+    //         height:20px;
+    //     }
+    //     span{
+    //         float:right;
+    //         margin-top:5px; 
+    //     }
+    // }
+    // .foot{
+    //     button{
+    //         padding: 20px;
+    //     }
+    // }
 }
