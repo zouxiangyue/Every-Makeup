@@ -45,6 +45,7 @@ import { ImproveschoolPage } from '../pages/improveschool/improveschool';
 import { ImprovesexPage } from '../pages/improvesex/improvesex';
 import { ImprovebirthdayPage } from '../pages/improvebirthday/improvebirthday';
 import { ImprovesignaturePage } from '../pages/improvesignature/improvesignature';
+import { CommentPage } from '../pages/comment/comment';
 
 
 
@@ -87,7 +88,9 @@ import { ImprovesignaturePage } from '../pages/improvesignature/improvesignature
     ImproveschoolPage,
     ImprovesexPage,
     ImprovebirthdayPage,
-    ImprovesignaturePage
+    ImprovesignaturePage,
+
+    CommentPage
   ],
   imports: [
     BrowserModule,
@@ -137,8 +140,9 @@ import { ImprovesignaturePage } from '../pages/improvesignature/improvesignature
     ImproveschoolPage,
     ImprovesexPage,
     ImprovebirthdayPage,
-    ImprovesignaturePage
+    ImprovesignaturePage,
 
+    CommentPage
   ],
   providers: [
     StatusBar,
