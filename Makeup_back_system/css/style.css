@@ -203,12 +203,6 @@ ul.sidebar-menu li a.active i {
     color: #fff;
     letter-spacing: 1px;
 }
-.footer p a {
-    color: #744e7d;
-}
-.footer p a:hover {
-    color: #fff;
-}
 .header {
     left:0;
     right:0;
@@ -751,8 +745,23 @@ ul.top-menu>li>a:hover,ul.top-menu>li>a:focus {
     color:#fff;
     text-align: left;
 }
-.market-update-right i.fa.fa-shopping-cart{
-     font-size:3em;
+.market-update-right i.fa.fa-thumbs-up{
+    font-size:3em;
+    color:#fff;
+    text-align: left;
+}
+.market-update-right i.fa.fa-comments{
+    font-size:3em;
+    color:#fff;
+    text-align: left;
+}
+.market-update-right i.fa.fa-star{
+    font-size:3em;
+    color:#fff;
+    text-align: left;
+}
+.market-update-right i.fa.fa-phone-square{
+    font-size:3em;
     color:#fff;
     text-align: left;
 }
@@ -1629,6 +1638,7 @@ ul.bs-glyphicons-list {
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    margin-top:30px;
 }
 .form-w3layouts{
 	background: #eef9f0;
