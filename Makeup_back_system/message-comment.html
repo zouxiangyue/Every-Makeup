@@ -161,13 +161,12 @@
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="images/img1.jpg">
-                <span class="username">John Doe</span>
+                <span class="username">鲸鱼！</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                <li><a href="#"><i class="fa fa-cog"></i>设置</a></li>
+                <li><a href="login.html"><i class="fa fa-key"></i> 退出登录</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->
@@ -349,13 +348,16 @@
       BUI.use(['bui/grid','bui/data'],function(Grid,Data){
           var Store = Data.Store,
         columns = [
-          {title : '点赞编号',dataIndex :'a',editor : {xtype : 'number',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
-          {title : '被点赞人每妆号',dataIndex : 'b', editor : {xtype :'number'}},
-          {title : '点赞人每妆号',dataIndex :'c', editor : {xtype : 'number'},rules : {required : true}},
-          {title : '被点赞作品编号',dataIndex : 'd', editor : {xtype : 'number'}}
+          {title : '评论编号',dataIndex :'a',editor : {xtype : 'number',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
+          {title : '评论人每妆号',dataIndex : 'b', editor : {xtype :'number'}},
+          {title : '被评论人每妆号',dataIndex :'c', editor : {xtype : 'number'},rules : {required : true}},
+          {title : '评论时间',dataIndex :'d', editor : {xtype : 'date'},renderer : Grid.Format.dateRenderer},
+          {title : '评论内容',dataIndex : 'e', editor : {xtype:'text'}},
+          {title : '被评论作品编号',dataIndex : 'f', editor : {xtype : 'number'}},
 
         ],
-        data = [{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018}];
+
+        data = [{a:1234567890,b:20180111,c:20180351,d:2018-01-02,e:'Really???',f:20180141},{a:1234567890,b:20180111,c:20180351,d:2018-01-02,e:'Really???',f:20180141},{a:1234567890,b:20180111,c:20180351,d:2018-01-02,e:'Really???',f:20180141},{a:1234567890,b:20180111,c:20180351,d:2018-01-02,e:'Really???',f:20180141},{a:1234567890,b:20180111,c:20180351,d:2018-01-02,e:'Really???',f:20180141},{a:1234567890,b:20180111,c:20180351,d:2018-01-02,e:'Really???',f:20180141}];
       function valid(value){
         // if(value === '1'){
         //   return '不能选择1';
