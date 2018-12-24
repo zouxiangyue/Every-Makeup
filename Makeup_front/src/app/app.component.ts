@@ -30,6 +30,7 @@ export class MyApp {
   
   constructor(private storage: Storage,
     platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+      //window.localStorage.removeItem('user');
     this.storage.get('guide').then(key=>{
       //key=false;
       console.log(key);

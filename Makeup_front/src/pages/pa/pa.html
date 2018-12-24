@@ -23,13 +23,14 @@
     </ion-slides> 
     <div class="person" style="width:100%;height:60px;float:left;">
       <div class="pic" style="width:50px;height:50px;float:left;">
-        <img src="../../assets/images/img5.jpg" style="width: 40px;height: 40px;border-radius:50%;margin-top:10px;margin-left: 10px;">
+        <img src="{{work_user.headimg}}" style="width: 40px;height: 40px;border-radius:50%;margin-top:10px;margin-left: 10px;">
       </div>
       <div class="name" style="width:150px;height:50px;font-size:1.2em;margin: 20px 10px;float:left;">
-        梅子熟了
+        {{work_user.name}}
       </div>
       <div class="follow" style="float:right;">
-        <button ion-button color="fenzi" round outline style="width:2rem;height:2.8rem;font-size:1.2rem;margin-top: 10px;">关注</button>
+        <button *ngIf='isfollow==0' ion-button color='light' round outline style="width:2rem;height:2.8rem;font-size:1.2rem;margin-top: 10px;background-color: #F09595" (click)='follow(0)'>关注</button>
+        <button *ngIf='isfollow==1' ion-button color='light'   round outline style="width:2rem;height:2.8rem;font-size:1.2rem;margin-top: 10px;background-color:white;color:black" (click)='follow(1)'>已关注</button>
       </div>
     </div>
     <hr style="width:100%;height:3px;border:none;border-top:1px #F09595" />
@@ -88,8 +89,9 @@
     <ion-toolbar color="gray">
     <div>
         <span style="padding-left: 10px;" >
-            <i class="iconfont1" style="font-size:28px;color:white;" >&#xe645;</i>
-            <span style="font-size: 1.2em;color:white;">赞·258</span>
+            <i *ngIf='islike==0'  (click)='like(0)' class="iconfont1" style="font-size:28px;color:white;" >&#xe645;</i>
+            <i *ngIf='islike==1' (click)='like(1)' class="iconfont1" style="font-size:28px;color:#F09595;" >&#xe645;</i>
+            <span style="font-size: 1.2em;color:white;" >赞</span>
             <span style="margin-left:5px;color:white;">丨</span>
         </span>
         <span style="padding-left: 10px;" >

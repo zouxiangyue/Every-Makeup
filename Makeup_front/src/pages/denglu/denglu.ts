@@ -67,8 +67,10 @@ export class DengluPage {
           this.manageusers.push(data);//将新登录的用户添加进入用户管理
           window.localStorage.setItem('manageusers',JSON.stringify(this.manageusers));
           console.log(window.localStorage.getItem('manageusers'));
-          var callback = this.navParams.get('callback');
-          callback(data); //会返回登录的用户信息;
+          if(this.navParams.get('callback')){
+            var callback = this.navParams.get('callback');
+            callback(data); //会返回登录的用户信息;
+          };
           console.log('登录成功');
           this.navCtrl.pop();
         }else if(data['status']==-2){

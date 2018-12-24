@@ -25,8 +25,6 @@ export class RegisterPage {
   }
   name='';
   pwd='';
-  email_or_phone='';
-  email='';
   phone='';
   school='';
   userdata='';
@@ -39,39 +37,22 @@ export class RegisterPage {
       alert('昵称不能为空');
     }else if(!this.pwd){
       alert('密码不能为空');
-    }else if(!this.email_or_phone){
-      alert('邮箱/手机号不能为空');
+    }else if(!this.phone){
+      alert('手机号不能为空');
     }else if(!this.school){
       alert('学校不能为空');
     }else{
-     // console.log(this.email_or_phone);
-      if(this.email_or_phone.length==11 && /\d{11}/g.test(this.email_or_phone)){
-        this.phone=this.email_or_phone;
-        this.email='';
-        console.log(this.phone)
-      }else if(/\d+@{1}/.test(this.email_or_phone)){
-        this.email=this.email_or_phone;
-        this.phone=''; 
-        console.log(this.email);
-      }else{
-        alert('输入的邮箱或手机号不符合规定');
-        this.email_or_phone='';
-        this.email='';
-        this.phone='';
-      }
-      //console.log(this.name,this.pwd,this.email,this.school);
-      if (this.phone || this.email) {
+      if(this.phone.length==11 && /\d{11}/g.test(this.phone)){
         this.http.post('/api/register', {
           name: this.name,
           pwd: this.pwd,
-          email: this.email,
           phone: this.phone,
           school: this.school,
         }, { headers: this.headers }).subscribe(data => {
           console.log(data);
           if (data['status'] == -2) {
-            alert('邮箱或手机号已被注册');
-            this.email_or_phone='';
+            alert('手机号已被注册');
+            this.phone='';
           } else if(data['status'] == 0) {
             alert('注册成功');
             var callback = this.navParams.get('callback');
@@ -81,6 +62,9 @@ export class RegisterPage {
         }, err => {
           console.log(err.message);
         });
+        
+      }else{
+        alert('输入手机号不符合规定');
       }
     };
 

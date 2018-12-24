@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { AddPage } from '../add/add';
 import { SearchPage } from '../search/search';
 import { PaPage } from '../pa/pa';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'page-home',
@@ -10,10 +11,11 @@ import { PaPage } from '../pa/pa';
 })
 export class HomePage {
   isActive=0;
+  works;
   isClick(i){
     this.isActive =i;
   }
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,public http:HttpClient) {
 
   }
   add(){
@@ -22,17 +24,20 @@ export class HomePage {
   search(){
     this.navCtrl.push(SearchPage);
   }
-
-  goPa(){
-    this.navCtrl.push(PaPage);
+  ngOnInit() {
+    this.http.get('api/home').subscribe(data=>{
+      console.log(data);
+      this.works=data;
+    })
+  }
+  goPa(i){
+    this.navCtrl.push(PaPage,{work_user:this.works[i][1],work_id:this.works[i][0].work_id});
   }
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
-
     setTimeout(() => {
       console.log('Async operation has ended');
       refresher.complete();
     }, 2000);
   }
-
 }
