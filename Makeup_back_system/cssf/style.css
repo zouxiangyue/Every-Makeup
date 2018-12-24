@@ -68,10 +68,10 @@ a:hover{color:#267A01;text-decoration:underline;}
 textarea{height:80px; background:none;}
 
 /*button样式*/
-.button{display:inline-block;width:135px; height:35px; background:url(../img/skin_/formbtnbg.png);border:none; border-radius:3px;color:#fff; font-size:16px; cursor:pointer; font-family:'Microsoft Yahei','微软雅黑';}
+.button{display:inline-block;width:135px; height:35px; background:url(../images/formbtnbg.png);border:none; border-radius:3px;color:#fff; font-size:16px; cursor:pointer; font-family:'Microsoft Yahei','微软雅黑';}
 
-.button:active{background:url(../img/skin_/formbtnbg.png);border:none; }
-.button.normal{width:133px; height:33px;background:url(../img/skin_/dialogbtn.png);color:#000;border:1px solid #c0c0c0;}
+.button:active{background:url(../images/formbtnbg.png);border:none; }
+.button.normal{width:133px; height:33px;background:url(../images/dialogbtn.png);color:#000;border:1px solid #c0c0c0;}
 .button.long2{width:100px;}
 
 /*====================================

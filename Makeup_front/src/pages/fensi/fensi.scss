@@ -23,15 +23,13 @@ page-fensi {
             text-overflow: ellipsis; //设置超出内容为省略号
        
         }
-        button{
-            position: absolute;
-            margin-left: 250px;
-            background-color: #C1B7B7;
-        }
-        .guanzhu{
+        input{
             position: absolute;
             margin-left: 250px;
             width:60px;
+            background-color: #C1B7B7;
+        }
+        .guanzhu{
             background-color: #E17579;
         }
     }
