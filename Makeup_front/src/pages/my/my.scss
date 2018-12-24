@@ -3,10 +3,13 @@ page-my {
     .icon1{
         font-size: 2em;
         padding-left: 90%;
+        margin-top: 10px;
+        color:white;
     }
     .title{
         font-size:2em;
         text-align: center;
+        color:white;
         margin:0px;
     }
     .div1{
@@ -61,6 +64,8 @@ page-my {
 
     .p1{
         text-indent:2em;
+        font-size:1.2em;
+        margin-top: 0;
     }
 
     
@@ -68,7 +73,7 @@ page-my {
         width:80px;
         height:40px;
         float: left;
-        margin-left: 18%;
+        margin-left: 25%;
     }
     .fans{
         width:80px;
@@ -95,6 +100,9 @@ page-my {
     // ion-content .div4:hover{
     //     background: #A683FF;
     // }
+    .segment-md-fenzi .segment-button.segment-activated{
+        font-size: 1.1em;
+    }
     .contents{
         ion-col{
             padding:10px;
