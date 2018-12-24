@@ -16,6 +16,9 @@
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="css/font.css" type="text/css"/>
 <link href="css/font-awesome.css" rel="stylesheet">
+<link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
+<link rel="stylesheet" href="css/table.css" type="text/css"/>
+
 <style>
 	.logoimg{
 		width: 70%;
@@ -154,9 +157,6 @@
 <div class="top-nav clearfix">
     <!--search & user info start-->
     <ul class="nav pull-right top-menu">
-        <li>
-            <input type="text" class="form-control search" placeholder=" Search">
-        </li>
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -190,19 +190,19 @@
                     </a>
                 </li>
                 <li class="sub-menu">
-                    <a href="glyphicon.html">
+                    <a href="user-manage.html">
                         <i class="fa fa-users"></i>
                         <span>用户管理</span>
                     </a>
                 </li>
                 <li>
-                    <a href="fontawesome.html">
+                    <a href="work-manage.html">
                         <i class="fa fa-video-camera"></i>
                         <span>作品管理 </span>
                     </a>
                 </li>
                 <li class="sub-menu">
-                    <a class="active" href="responsive_table.html">
+                    <a class="active" href="message-manage.html">
                         <i class="fa fa-comments"></i>
                         <span>消息管理</span>
                     </a>
@@ -222,197 +222,102 @@
 <section id="main-content">
 	<section class="wrapper">
             <div class="market-updates">
-                    <div class="col-md-3 market-update-gd">
-                        <div class="market-update-block clr-block-2">
-                            <div class="col-md-4 market-update-right">
-                                <i class="fa fa-eye"> </i>
-                            </div>
-                             <div class="col-md-8 market-update-left">
-                             <h4>Visitors</h4>
+                <a href="message-manage.html">
+                <div class="col-md-3 market-update-gd">
+                    <div class="market-update-block clr-block-2">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-thumbs-up fa-3x"> </i>
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>点赞</h4>
                             <h3>13,500</h3>
                             <p>Other hand, we denounce</p>
-                          </div>
-                          <div class="clearfix"> </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 market-update-gd">
-                        <div class="market-update-block clr-block-1">
-                            <div class="col-md-4 market-update-right">
-                                <i class="fa fa-users" ></i>
-                            </div>
-                            <div class="col-md-8 market-update-left">
-                            <h4>Users</h4>
-                                <h3>1,250</h3>
-                                <p>Other hand, we denounce</p>
-                            </div>
-                          <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 market-update-gd">
-                        <div class="market-update-block clr-block-3">
-                            <div class="col-md-4 market-update-right">
-                                <i class="fa fa-usd"></i>
-                            </div>
-                            <div class="col-md-8 market-update-left">
-                                <h4>Sales</h4>
-                                <h3>1,500</h3>
-                                <p>Other hand, we denounce</p>
-                            </div>
-                          <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 market-update-gd">
-                        <div class="market-update-block clr-block-4">
-                            <div class="col-md-4 market-update-right">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            </div>
-                            <div class="col-md-8 market-update-left">
-                                <h4>Orders</h4>
-                                <h3>1,500</h3>
-                                <p>Other hand, we denounce</p>
-                            </div>
-                          <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                   <div class="clearfix"> </div>
+                    <div class="clearfix"> </div>
                 </div>
+                </a>
+            </div>
+            <div class="col-md-3 market-update-gd">
+                <a href="message-comment.html">
+                    <div class="market-update-block clr-block-1">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-comments" ></i>
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>评论</h4>
+                            <h3>1,250</h3>
+                            <p>Other hand, we denounce</p>
+                        </div>
+                    <div class="clearfix"> </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 market-update-gd">
+                <a href="#" class="active">
+                <div class="market-update-block clr-block-3">
+                    <div class="col-md-4 market-update-right">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="col-md-8 market-update-left">
+                        <h4>收藏</h4>
+                        <h3>1,500</h3>
+                        <p>Other hand, we denounce</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-3 market-update-gd">
+                <a href="message-aite.html">
+                <div class="market-update-block clr-block-4">
+                    <div class="col-md-4 market-update-right">
+                        <i class="fa fa-phone-square" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-8 market-update-left">
+                        <h4>@我</h4>
+                        <h3>1,500</h3>
+                        <p>Other hand, we denounce</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                </a>
+            </div>
+                   <div class="clearfix"> </div>
+               
     <div class="table-agile-info">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Responsive Table
-    </div>
-    <div class="row w3-res-tb">
-      <div class="col-sm-5 m-b-xs">
-        <select class="input-sm form-control w-sm inline v-middle">
-          <option value="0">Bulk action</option>
-          <option value="1">Delete selected</option>
-          <option value="2">Bulk edit</option>
-          <option value="3">Export</option>
-        </select>
-        <button class="btn btn-sm btn-default">Apply</button>                
-      </div>
-      <div class="col-sm-4">
-      </div>
-      <div class="col-sm-3">
-        <div class="input-group">
-          <input type="text" class="input-sm form-control" placeholder="Search">
-          <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Go!</button>
-          </span>
+        <div class="panel panel-default">
+             <footer class="panel-footer">
+                <!-- 表格 -->
+                <div class="demo-content">
+                        <div class="row">
+                            <div class="span16">
+                                <div id="grid">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    <p class="row">
+                        <form class="span8 offset3" id="J_Form" action="" method="post">
+                            <input type="hidden" name="gridValue">
+                                <button type="sumbmit" class="button button-primary">提交</button>
+                        </form>
+                    </p>
+                    <div class="row">
+                        <div class="col-sm-7 text-right text-center-xs">                
+                        <ul class="pagination pagination-sm m-t-none m-b-none">
+                            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                            <li><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
-      </div>
     </div>
-    <div class="table-responsive">
-      <table class="table table-striped b-t b-light">
-        <thead>
-          <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
-              </label>
-            </th>
-            <th>Project</th>
-            <th>Task</th>
-            <th>Date</th>
-            <th style="width:30px;"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Idrawfast prototype design prototype design prototype design prototype design prototype design</td>
-            <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
-            <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
-            <td>
-              <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Formasa</td>
-            <td>8c</td>
-            <td>Jul 22, 2013</td>
-            <td>
-              <a href="" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Avatar system</td>
-            <td>15c</td>
-            <td>Jul 15, 2013</td>
-            <td>
-              <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Throwdown</td>
-            <td>4c</td>
-            <td>Jul 11, 2013</td>
-            <td>
-              <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Idrawfast</td>
-            <td>4c</td>
-            <td>Jul 7, 2013</td>
-            <td>
-              <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Formasa</td>
-            <td>8c</td>
-            <td>Jul 3, 2013</td>
-            <td>
-              <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Avatar system</td>
-            <td>15c</td>
-            <td>Jul 2, 2013</td>
-            <td>
-              <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Videodown</td>
-            <td>4c</td>
-            <td>Jul 1, 2013</td>
-            <td>
-              <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <footer class="panel-footer">
-      <div class="row">
-        
-        <div class="col-sm-5 text-center">
-          <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
-        </div>
-        <div class="col-sm-7 text-right text-center-xs">                
-          <ul class="pagination pagination-sm m-t-none m-b-none">
-            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </div>
-</div>
 </section>
  <!-- footer -->
 		  <div class="footer">
@@ -431,5 +336,92 @@
 <script src="js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
+<script src="http://g.tbcdn.cn/fi/bui/jquery-1.8.1.min.js"></script>
+<script src="http://g.alicdn.com/bui/seajs/2.3.0/sea.js"></script>
+<script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>
+<style>
+    .bui-grid-table .bui-grid-hd-title{
+        padding:0 0;
+    }
+</style>
+<!-- script start --> 
+  <script type="text/javascript">
+      BUI.use(['bui/grid','bui/data'],function(Grid,Data){
+          var Store = Data.Store,
+        columns = [
+          {title : '点赞编号',dataIndex :'a',editor : {xtype : 'number',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
+          {title : '被点赞人每妆号',dataIndex : 'b', editor : {xtype :'number'}},
+          {title : '点赞人每妆号',dataIndex :'c', editor : {xtype : 'number'},rules : {required : true}},
+          {title : '被点赞作品编号',dataIndex : 'd', editor : {xtype : 'number'}}
+
+        ],
+        data = [{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018}];
+      function valid(value){
+        // if(value === '1'){
+        //   return '不能选择1';
+        // }
+      }
+      var editing = new Grid.Plugins.CellEditing({
+        triggerSelected : false //触发编辑的时候不选中行
+      }),
+        store = new Store({
+          data : data,
+          autoLoad:true
+        }),
+        grid = new Grid.Grid({
+          render:'#grid',
+          columns : columns,
+          width : 1000,          //此处从700改为1100px
+          forceFit : true,
+          tbar:{ //添加、删除
+              items : [{
+                btnCls : 'button button-small',
+                text : '<i class="icon-plus"></i>添加',
+                listeners : {
+                  'click' : addFunction
+                }
+              },
+              {
+                btnCls : 'button button-small',
+                text : '<i class="icon-remove"></i>删除',
+                listeners : {
+                  'click' : delFunction
+                }
+              }]
+          },
+          plugins : [editing,Grid.Plugins.CheckSelection,Grid.Plugins.ColumnChecked],
+          store : store
+        });
+
+      grid.render();
+
+      
+
+      function validFn (value,obj) {
+        var records = store.getResult(),
+          rst = '';
+        BUI.each(records,function (record) {
+          if(record.a == value && obj != record){
+            rst = '文本不能重复';
+            return false;
+          }
+        });
+        return rst;
+      }
+
+      //添加记录
+      function addFunction(){
+        var newData = {b : 0};
+        store.addAt(newData,0);
+        editing.edit(newData,'a'); //添加记录后，直接编辑
+      }
+      //删除选中的记录
+      function delFunction(){
+        var selections = grid.getSelection();
+        store.remove(selections);
+      }          
+    });
+  </script>
+<!-- script end -->
 </body>
 </html>

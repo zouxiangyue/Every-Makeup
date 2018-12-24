@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>Home</title>
+<title>Basic_table</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -15,22 +15,19 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="css/font.css" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet"> 
-<link rel="stylesheet" href="css/morris.css" type="text/css"/>
-<!-- calendar -->
-<link rel="stylesheet" href="css/monthly.css">
-<!-- //calendar -->
-<!-- //font-awesome icons -->
-<script src="js/jquery2.0.3.min.js"></script>
-<script src="js/raphael-min.js"></script>
-<script src="js/morris.js"></script>
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
+<link rel="stylesheet" href="css/table.css" type="text/css"/>
+
 <style>
 	.logoimg{
 		width: 70%;
 		height:70%;
 		margin-top:-40px;
 	}
-</style>
+</style> 
+<!-- //font-awesome icons -->
+<script src="js/jquery2.0.3.min.js"></script>
 </head>
 <body>
 <section id="container">
@@ -38,6 +35,7 @@
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
+
     <a href="index.html" class="logo">
         <img src="images/logo.png" class="logoimg">
     </a>
@@ -46,6 +44,7 @@
     </div>
 </div>
 <!--logo end-->
+
 <div class="nav notify-row" id="top_menu">
     <!--  notification start -->
     <ul class="nav top-menu">
@@ -190,7 +189,6 @@
                         <span>首页</span>
                     </a>
                 </li>
-                
                 <li class="sub-menu">
                     <a href="user-manage.html">
                         <i class="fa fa-users"></i>
@@ -200,11 +198,11 @@
                 <li>
                     <a href="work-manage.html">
                         <i class="fa fa-video-camera"></i>
-                        <span>作品管理</span>
+                        <span>作品管理 </span>
                     </a>
                 </li>
                 <li class="sub-menu">
-                    <a href="message-manage.html">
+                    <a class="active" href="message-manage.html">
                         <i class="fa fa-comments"></i>
                         <span>消息管理</span>
                     </a>
@@ -223,122 +221,112 @@
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-		<div class="agil-info-calendar">
-
-		<div class="col-md-6 w3agile-notifications">
-			<div class="clearfix"> </div>
-		</div>
-			<!-- tasks -->
-			<div class="agile-last-grids">
-				
-				<div class="clearfix"> </div>
-			</div>
-		<!-- //tasks -->
-		<div class="agileits-w3layouts-stats">
-					<div class="col-md-4 stats-info widget">
-						<div class="stats-info-agileits">
-							<div class="stats-title">
-								<h4 class="title">Browser Stats</h4>
-							</div>
-							<div class="stats-body">
-								<ul class="list-unstyled">
-									<li>GoogleChrome <span class="pull-right">85%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar green" style="width:85%;"></div> 
-										</div>
-									</li>
-									<li>Firefox <span class="pull-right">35%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar yellow" style="width:35%;"></div>
-										</div>
-									</li>
-									<li>Internet Explorer <span class="pull-right">78%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar red" style="width:78%;"></div>
-										</div>
-									</li>
-									<li>Safari <span class="pull-right">50%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar blue" style="width:50%;"></div>
-										</div>
-									</li>
-									<li>Opera <span class="pull-right">80%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar light-blue" style="width:80%;"></div>
-										</div>
-									</li>
-									<li class="last">Others <span class="pull-right">60%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar orange" style="width:60%;"></div>
-										</div>
-									</li> 
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-8 stats-info stats-last widget-shadow">
-						<div class="stats-last-agile">
-							<table class="table stats-table ">
-								<thead>
-									<tr>
-										<th>S.NO</th>
-										<th>PRODUCT</th>
-										<th>STATUS</th>
-										<th>PROGRESS</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<th scope="row">1</th>
-										<td>Lorem ipsum</td>
-										<td><span class="label label-success">In progress</span></td>
-										<td><h5>85% <i class="fa fa-level-up"></i></h5></td>
-									</tr>
-									<tr>
-										<th scope="row">2</th>
-										<td>Aliquam</td>
-										<td><span class="label label-warning">New</span></td>
-										<td><h5>35% <i class="fa fa-level-up"></i></h5></td>
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td>Lorem ipsum</td>
-										<td><span class="label label-danger">Overdue</span></td>
-										<td><h5 class="down">40% <i class="fa fa-level-down"></i></h5></td>
-									</tr>
-									<tr>
-										<th scope="row">4</th>
-										<td>Aliquam</td>
-										<td><span class="label label-info">Out of stock</span></td>
-										<td><h5>100% <i class="fa fa-level-up"></i></h5></td>
-									</tr>
-									<tr>
-										<th scope="row">5</th>
-										<td>Lorem ipsum</td>
-										<td><span class="label label-success">In progress</span></td>
-										<td><h5 class="down">10% <i class="fa fa-level-down"></i></h5></td>
-									</tr>
-									<tr>
-										<th scope="row">6</th>
-										<td>Aliquam</td>
-										<td><span class="label label-warning">New</span></td>
-										<td><h5>38% <i class="fa fa-level-up"></i></h5></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
+            <div class="market-updates">
+                <a href="#" class="active">
+                <div class="col-md-3 market-update-gd">
+                    <div class="market-update-block clr-block-2">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-thumbs-up fa-3x"> </i>
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>点赞</h4>
+                            <h3>13,500</h3>
+                            <p>Other hand, we denounce</p>
+                        </div>
+                    <div class="clearfix"> </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-3 market-update-gd">
+                <a href="message-comment.html">
+                    <div class="market-update-block clr-block-1">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-comments" ></i>
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>评论</h4>
+                            <h3>1,250</h3>
+                            <p>Other hand, we denounce</p>
+                        </div>
+                    <div class="clearfix"> </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 market-update-gd">
+                <a href="message-star.html">
+                <div class="market-update-block clr-block-3">
+                    <div class="col-md-4 market-update-right">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="col-md-8 market-update-left">
+                        <h4>收藏</h4>
+                        <h3>1,500</h3>
+                        <p>Other hand, we denounce</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-3 market-update-gd">
+                <a href="message-aite.html">
+                <div class="market-update-block clr-block-4">
+                    <div class="col-md-4 market-update-right">
+                        <i class="fa fa-phone-square" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-8 market-update-left">
+                        <h4>@我</h4>
+                        <h3>1,500</h3>
+                        <p>Other hand, we denounce</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                </a>
+            </div>
+                   <div class="clearfix"> </div>
+               
+    <div class="table-agile-info">
+        <div class="panel panel-default">
+             <footer class="panel-footer">
+                <!-- 表格 -->
+                <div class="demo-content">
+                        <div class="row">
+                            <div class="span16">
+                                <div id="grid">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    <p class="row">
+                        <form class="span8 offset3" id="J_Form" action="" method="post">
+                            <input type="hidden" name="gridValue">
+                                <button type="sumbmit" class="button button-primary">提交</button>
+                        </form>
+                    </p>
+                    <div class="row">
+                        <div class="col-sm-7 text-right text-center-xs">                
+                        <ul class="pagination pagination-sm m-t-none m-b-none">
+                            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                            <li><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
 </section>
  <!-- footer -->
 		  <div class="footer">
 			<div class="wthree-copyright">
-			  <p>Copyright &copy; 2018.Company name All rights reserved.</p>
-			</div>
+                <p>Copyright &copy; 2018.Company name All rights reserved.</p>			</div>
 		  </div>
   <!-- / footer -->
 </section>
+
 <!--main content end-->
 </section>
 <script src="js/bootstrap.js"></script>
@@ -348,21 +336,92 @@
 <script src="js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
-<!-- morris JavaScript -->	
-<script>
-	$(document).ready(function() {
-		//BOX BUTTON SHOW AND CLOSE
-	   jQuery('.small-graph-box').hover(function() {
-		  jQuery(this).find('.box-button').fadeIn('fast');
-	   }, function() {
-		  jQuery(this).find('.box-button').fadeOut('fast');
-	   });
-	   jQuery('.small-graph-box .box-close').click(function() {
-		  jQuery(this).closest('.small-graph-box').fadeOut(200);
-		  return false;
-	   });
-	   
-	});
-	</script>
+<script src="http://g.tbcdn.cn/fi/bui/jquery-1.8.1.min.js"></script>
+<script src="http://g.alicdn.com/bui/seajs/2.3.0/sea.js"></script>
+<script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>
+<style>
+    .bui-grid-table .bui-grid-hd-title{
+        padding:0 0;
+    }
+</style>
+<!-- script start --> 
+  <script type="text/javascript">
+      BUI.use(['bui/grid','bui/data'],function(Grid,Data){
+          var Store = Data.Store,
+        columns = [
+          {title : '点赞编号',dataIndex :'a',editor : {xtype : 'number',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
+          {title : '被点赞人每妆号',dataIndex : 'b', editor : {xtype :'number'}},
+          {title : '点赞人每妆号',dataIndex :'c', editor : {xtype : 'number'},rules : {required : true}},
+          {title : '被点赞作品编号',dataIndex : 'd', editor : {xtype : 'number'}}
+
+        ],
+        data = [{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018}];
+      function valid(value){
+        // if(value === '1'){
+        //   return '不能选择1';
+        // }
+      }
+      var editing = new Grid.Plugins.CellEditing({
+        triggerSelected : false //触发编辑的时候不选中行
+      }),
+        store = new Store({
+          data : data,
+          autoLoad:true
+        }),
+        grid = new Grid.Grid({
+          render:'#grid',
+          columns : columns,
+          width : 1000,          //此处从700改为1100px
+          forceFit : true,
+          tbar:{ //添加、删除
+              items : [{
+                btnCls : 'button button-small',
+                text : '<i class="icon-plus"></i>添加',
+                listeners : {
+                  'click' : addFunction
+                }
+              },
+              {
+                btnCls : 'button button-small',
+                text : '<i class="icon-remove"></i>删除',
+                listeners : {
+                  'click' : delFunction
+                }
+              }]
+          },
+          plugins : [editing,Grid.Plugins.CheckSelection,Grid.Plugins.ColumnChecked],
+          store : store
+        });
+
+      grid.render();
+
+      
+
+      function validFn (value,obj) {
+        var records = store.getResult(),
+          rst = '';
+        BUI.each(records,function (record) {
+          if(record.a == value && obj != record){
+            rst = '文本不能重复';
+            return false;
+          }
+        });
+        return rst;
+      }
+
+      //添加记录
+      function addFunction(){
+        var newData = {b : 0};
+        store.addAt(newData,0);
+        editing.edit(newData,'a'); //添加记录后，直接编辑
+      }
+      //删除选中的记录
+      function delFunction(){
+        var selections = grid.getSelection();
+        store.remove(selections);
+      }          
+    });
+  </script>
+<!-- script end -->
 </body>
 </html>
