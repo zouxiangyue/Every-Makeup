@@ -222,113 +222,264 @@
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-		<div class="agil-info-calendar">
-
-		<div class="col-md-6 w3agile-notifications">
-			<div class="clearfix"> </div>
-		</div>
-			<!-- tasks -->
-			<div class="agile-last-grids">
-				
-				<div class="clearfix"> </div>
-			</div>
-		<!-- //tasks -->
+            <div class="agil-info-calendar">
+                    <!-- calendar -->
+                    <div class="col-md-6 agile-calendar">
+                        <div class="calendar-widget">
+                            <div class="panel-heading ui-sortable-handle">
+                                <span class="panel-icon">
+                                  <i class="fa fa-calendar-o"></i>
+                                </span>
+                                <span class="panel-title">日历表</span>
+                            </div>
+                            <!-- grids -->
+                                <div class="agile-calendar-grid">
+                                    <div class="page">
+                                        
+                                        <div class="w3l-calendar-left">
+                                            <div class="calendar-heading">
+                                                
+                                            </div>
+                                            <div class="monthly" id="mycalendar"></div>
+                                        </div>
+                                        
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <!-- //calendar -->
+                    <div class="col-md-6 w3agile-notifications">
+                            <div class="notifications">
+                                    <header class="panel-heading">
+                                        通知 
+                                    </header>
+                                    <div class="notify-w3ls">
+                                        <div class="alert alert-info clearfix">
+                                            <span class="alert-icon"><i class="fa fa-envelope-o"></i></span>
+                                            <div class="notification-info">
+                                                <ul class="clearfix notification-meta">
+                                                    <li class="pull-left notification-sender"><span><a href="#">Jonathan Smith</a></span> send you a mail </li>
+                                                    <li class="pull-right notification-time">1 min ago</li>
+                                                </ul>
+                                                <p>
+                                                    Urgent meeting for next proposal
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-danger">
+                                            <span class="alert-icon"><i class="fa fa-facebook"></i></span>
+                                            <div class="notification-info">
+                                                <ul class="clearfix notification-meta">
+                                                    <li class="pull-left notification-sender"><span><a href="#">Jonathan Smith</a></span> mentioned you in a post </li>
+                                                    <li class="pull-right notification-time">7 Hours Ago</li>
+                                                </ul>
+                                                <p>
+                                                    Very cool photo jack
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-success ">
+                                            <span class="alert-icon"><i class="fa fa-comments-o"></i></span>
+                                            <div class="notification-info">
+                                                <ul class="clearfix notification-meta">
+                                                    <li class="pull-left notification-sender">You have 5 message unread</li>
+                                                    <li class="pull-right notification-time">1 min ago</li>
+                                                </ul>
+                                                <p>
+                                                    <a href="#">Anjelina Mewlo, Jack Flip</a> and <a href="#">3 others</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-warning ">
+                                            <span class="alert-icon"><i class="fa fa-bell-o"></i></span>
+                                            <div class="notification-info">
+                                                <ul class="clearfix notification-meta">
+                                                    <li class="pull-left notification-sender">Domain Renew Deadline 7 days ahead</li>
+                                                    <li class="pull-right notification-time">5 Days Ago</li>
+                                                </ul>
+                                                <p>
+                                                    Next 5 July Thursday is the last day
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-info clearfix">
+                                            <span class="alert-icon"><i class="fa fa-envelope-o"></i></span>
+                                            <div class="notification-info">
+                                                <ul class="clearfix notification-meta">
+                                                    <li class="pull-left notification-sender"><span><a href="#">Jonathan Smith</a></span> send you a mail </li>
+                                                    <li class="pull-right notification-time">1 min ago</li>
+                                                </ul>
+                                                <p>
+                                                    Urgent meeting for next proposal
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                
+                                </div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="agile-last-grids">
+                                <div class="col-md-4 agile-last-left agile-last-middle">
+                                        <div class="agile-last-grid">
+                                            <div class="area-grids-heading">
+                                                <h3>下载量/卸载量</h3>
+                                            </div>
+                                            <div id="graph8"></div>
+                                            <script>
+                                            /* data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type */
+                                            var day_data = [
+                                              {"period": "2018-12-18", "licensed": 10, "sorned": 1},
+                                              {"period": "2018-12-19", "licensed": 16, "sorned": 2},
+                                              {"period": "2018-12-20", "licensed": 20, "sorned": 1},
+                                              {"period": "2018-12-21", "licensed": 24, "sorned": 4},
+                                              {"period": "2018-12-22", "licensed": 25, "sorned": 0},
+                                              {"period": "2018-12-23", "licensed": 27, "sorned": 0},
+                                              {"period": "2018-12-24", "licensed": 31, "sorned": 1},
+                                              {"period": "2018-12-25", "licensed": 35, "sorned": 5},
+                                              {"period": "2018-12-26", "licensed": 35, "sorned": 0},
+                                              {"period": "2018-12-27", "licensed": 37, "sorned": 7},
+                                              {"period": "2018-12-28", "licensed": 39, "sorned": 4},
+                                              {"period": "2018-12-29", "licensed": 50,"sorned": 2}
+                                            ];
+                                            Morris.Bar({
+                                              element: 'graph8',
+                                              data: day_data,
+                                              xkey: 'period',
+                                              ykeys: ['licensed', 'sorned'],
+                                              labels: ['下载量', '卸载量'],
+                                              xLabelAngle: 60
+                                            });
+                                            </script>
+                                        </div>
+                                    </div>
+                                <div class="col-md-4 agile-last-left agile-last-right">
+                                        <div class="agile-last-grid">
+                                            <div class="area-grids-heading">
+                                                <h3>用户量</h3>
+                                            </div>
+                                            <div id="graph9"></div>
+                                            <script>
+                                            var day_data = [
+                                              {"elapsed": "2018-12-18", "value": 10},
+                                              {"elapsed": "2018-12-19", "value": 16},
+                                              {"elapsed": "2018-12-20", "value": 20},
+                                              {"elapsed": "2018-12-21", "value": 24},
+                                              {"elapsed": "2018-12-22", "value": 25},
+                                              {"elapsed": "2018-12-23", "value": 27},
+                                              {"elapsed": "2018-12-24", "value": 31},
+                                              {"elapsed": "2018-12-25", "value": 35},
+                                              {"elapsed": "2018-12-26", "value": 35},
+                                              {"elapsed": "2018-12-27", "value": 37},
+                                              {"elapsed": "2018-12-28", "value": 39},
+                                              {"elapsed": "2018-12-29", "value": 50}
+                                            ];
+                                            Morris.Line({
+                                              element: 'graph9',
+                                              data: day_data,
+                                              xkey: 'elapsed',
+                                              ykeys: ['value'],
+                                              labels: ['value'],
+                                              parseTime: false
+                                            });
+                                            </script>
+                        
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 agile-last-left">
+                                            <div class="agile-last-grid">
+                                                <div class="area-grids-heading">
+                                                    <h3>话题讨论量</h3>
+                                                </div>
+                                                <div id="graph4"></div>
+                                                <script>
+                                                 Morris.Donut({
+                                                    element: 'graph4',
+                                                    data: [
+                                                      {value: 20, label: '面试', formatted: 'at least 20%' },
+                                                      {value: 15, label: '旅行', formatted: 'approx. 15%' },
+                                                      {value: 35, label: '约会', formatted: 'approx. 35%' },
+                                                      {value: 30, label: '日常', formatted: 'at most 30%' }
+                                                    ],
+                                                    formatter: function (x, data) { return data.formatted; }
+                                                  });
+                                                </script>
+                        
+                                            </div>
+                                        </div>
+                                <div class="clearfix"></div>
+                            </div>
+                           
 		<div class="agileits-w3layouts-stats">
-					<div class="col-md-4 stats-info widget">
-						<div class="stats-info-agileits">
-							<div class="stats-title">
-								<h4 class="title">Browser Stats</h4>
-							</div>
-							<div class="stats-body">
-								<ul class="list-unstyled">
-									<li>GoogleChrome <span class="pull-right">85%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar green" style="width:85%;"></div> 
-										</div>
-									</li>
-									<li>Firefox <span class="pull-right">35%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar yellow" style="width:35%;"></div>
-										</div>
-									</li>
-									<li>Internet Explorer <span class="pull-right">78%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar red" style="width:78%;"></div>
-										</div>
-									</li>
-									<li>Safari <span class="pull-right">50%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar blue" style="width:50%;"></div>
-										</div>
-									</li>
-									<li>Opera <span class="pull-right">80%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar light-blue" style="width:80%;"></div>
-										</div>
-									</li>
-									<li class="last">Others <span class="pull-right">60%</span>  
-										<div class="progress progress-striped active progress-right">
-											<div class="bar orange" style="width:60%;"></div>
-										</div>
-									</li> 
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-8 stats-info stats-last widget-shadow">
-						<div class="stats-last-agile">
-							<table class="table stats-table ">
-								<thead>
-									<tr>
-										<th>S.NO</th>
-										<th>PRODUCT</th>
-										<th>STATUS</th>
-										<th>PROGRESS</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<th scope="row">1</th>
-										<td>Lorem ipsum</td>
-										<td><span class="label label-success">In progress</span></td>
-										<td><h5>85% <i class="fa fa-level-up"></i></h5></td>
-									</tr>
-									<tr>
-										<th scope="row">2</th>
-										<td>Aliquam</td>
-										<td><span class="label label-warning">New</span></td>
-										<td><h5>35% <i class="fa fa-level-up"></i></h5></td>
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td>Lorem ipsum</td>
-										<td><span class="label label-danger">Overdue</span></td>
-										<td><h5 class="down">40% <i class="fa fa-level-down"></i></h5></td>
-									</tr>
-									<tr>
-										<th scope="row">4</th>
-										<td>Aliquam</td>
-										<td><span class="label label-info">Out of stock</span></td>
-										<td><h5>100% <i class="fa fa-level-up"></i></h5></td>
-									</tr>
-									<tr>
-										<th scope="row">5</th>
-										<td>Lorem ipsum</td>
-										<td><span class="label label-success">In progress</span></td>
-										<td><h5 class="down">10% <i class="fa fa-level-down"></i></h5></td>
-									</tr>
-									<tr>
-										<th scope="row">6</th>
-										<td>Aliquam</td>
-										<td><span class="label label-warning">New</span></td>
-										<td><h5>38% <i class="fa fa-level-up"></i></h5></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
+		    <div class="col-md-12 stats-info stats-last widget-shadow">
+				<div class="stats-last-agile">
+					<div class="stats-title">
+                            <h4 class="title">用户粉丝top榜</h4>
+                        </div>
+					<table class="table stats-table ">
+						<thead>
+							<tr>
+								<th>每妆号</th>
+								<th>昵称</th>
+								<th>粉丝数量</th>
+								<th>状态</th>
+								<th>发展</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">00001212</th>
+								<td>Lorem ipsum</td>
+								<td>4320000</td>
+								<td><span class="label label-danger">Always</span></td>
+								<td><h5>5% <i class="fa fa-level-up"></i></h5></td>
+							</tr>
+							<tr>
+								<th scope="row">00001542</th>
+								<td>Aliquam</td>
+								<td>2750000</td>
+								<td><span class="label label-warning">New</span></td>
+								<td><h5>45% <i class="fa fa-level-up"></i></h5></td>
+							</tr>
+							<tr>
+								<th scope="row">00001951</th>
+								<td>sunny</td>
+								<td>2500000</td>
+								<td><span class="label label-info">Up and Down</span></td>
+								<td><h5 class="down">30% <i class="fa fa-level-down"></i></h5></td>
+							</tr>
+							<tr>
+								<th scope="row">00005024</th>
+								<td>懵</td>
+								<td>2490000</td>
+								<td><span class="label label-info">Up and Down</span></td>
+								<td><h5>10% <i class="fa fa-level-up"></i></h5></td>
+							</tr>
+							<tr>
+								<th scope="row">00006521</th>
+								<td>不在线的某某某</td>
+								<td>2300000</td>
+								<td><span class="label label-success">In progress</span></td>
+								<td><h5 class="down">10% <i class="fa fa-level-down"></i></h5></td>
+							</tr>
+							<tr>
+								<th scope="row">00003675</th>
+								<td>moemoe</td>
+								<td>2000000</td>
+								<td><span class="label label-warning">New</span></td>
+								<td><h5>38% <i class="fa fa-level-up"></i></h5></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
+            </div>
+            
+				<div class="clearfix"> </div>
+        </div>
+      
 </section>
  <!-- footer -->
 		  <div class="footer">
@@ -362,6 +513,38 @@
 	   });
 	   
 	});
+    </script>
+    <!-- calendar -->
+	<script type="text/javascript" src="js/monthly.js"></script>
+	<script type="text/javascript">
+		$(window).load( function() {
+
+			$('#mycalendar').monthly({
+				mode: 'event',
+				
+			});
+
+			$('#mycalendar2').monthly({
+				mode: 'picker',
+				target: '#mytarget',
+				setWidth: '250px',
+				startHidden: true,
+				showTrigger: '#mytarget',
+				stylePast: true,
+				disablePast: true
+			});
+
+		switch(window.location.protocol) {
+		case 'http:':
+		case 'https:':
+		// running on a server, should be good.
+		break;
+		case 'file:':
+		// alert('Just a heads-up, events will not work when run locally.');
+		}
+
+		});
 	</script>
+	<!-- //calendar -->
 </body>
 </html>

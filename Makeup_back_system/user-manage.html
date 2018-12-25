@@ -26,6 +26,11 @@
 </style>
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
+<!-- charts -->
+<script src="js/raphael-min.js"></script>
+<script src="js/morris.js"></script>
+<link rel="stylesheet" href="css/morris.css">
+<!-- //charts -->
 </head>
 <body>
 <section id="container">
@@ -219,6 +224,46 @@
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
+            <div class="chart_agile">
+                <div class="col-md-11 floatcharts_w3layouts_left">
+				<div class="floatcharts_w3layouts_top">
+					<div class="floatcharts_w3layouts_bottom">
+                        <div class="area-grids-heading">
+                            <h3>用户中男女比例</h3>
+                        </div>
+						<div id="graph5"></div>
+						<script>
+						// Use Morris.Bar
+						Morris.Bar({
+						  element: 'graph5',
+						  data: [
+							{x: '2018-12-18', y: 2, z: 8},
+							{x: '2018-12-19', y: 4, z: 8},
+							{x: '2018-12-20', y: 5, z: 15},
+							{x: '2018-12-21', y: 6, z: 18},
+							{x: '2018-12-22', y: 9, z: 16},
+							{x: '2018-12-23', y: 10, z: 21},
+							{x: '2018-12-24', y: 11, z: 24},
+							{x: '2018-12-25', y: 11, z: 24},
+							{x: '2018-12-26', y: 12, z: 25},
+							{x: '2018-12-27', y: 13, z: 26},
+							{x: '2018-12-28', y: 15, z: 37}
+						  ],
+						  xkey: 'x',
+						  ykeys: ['y', 'z'],
+						  labels: ['男', '女'],
+						  stacked: true
+						});
+						</script>
+
+					</div>
+
+				</div>
+			</div>
+                   
+                <div class="clearfix"></div>
+            </div>
+
             <div class="demo-content">
                     <div class="row">
                         <div class="span16">
