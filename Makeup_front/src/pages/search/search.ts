@@ -14,10 +14,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'search.html',
 })
 export class SearchPage {
-
+  input="";
+  history=[];
+  hot=['冬季时尚穿搭','枫叶妆','补水爽肤水','学生平价马丁靴','面试妆','秋冬穿搭必备神器'];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  search(){
+    if(this.input!=""){
+      this.history.push(this.input);
+      this.input="";
+    }
+  }
+  clear(){
+    this.history=[];
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
   }

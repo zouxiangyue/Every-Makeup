@@ -1,15 +1,32 @@
 <ion-header>
   <ion-navbar color="fenzi">
-    <ion-searchbar placeholder="秋季时尚穿搭"></ion-searchbar> 
+    <div class="search">
+      <ion-icon name="search"></ion-icon>
+      <input type="text" placeholder="秋冬时尚穿搭" [(ngModel)]="input">
+    </div>
+    <ion-buttons end (click)="search()">
+      <button ion-button>搜索</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <h5 style="color:#F09595">热门搜索</h5>
-  <button ion-button round outline>冬季时尚穿搭</button>
+  <!-- <button ion-button round outline>冬季时尚穿搭</button>
   <button ion-button round outline>枫叶妆</button>
   <button ion-button round outline>补水爽肤水</button>
   <button ion-button round outline>学生平价马丁靴</button>
   <button ion-button round outline>面试妆</button>
-  <button ion-button round outline>秋冬穿搭必备神器</button>
+  <button ion-button round outline>秋冬穿搭必备神器</button> -->
+  <span class="list" *ngFor="let item of hot;let i=index">
+      <button ion-button round outline>{{item}}</button>
+  </span>
+  <br/><br/>
+  <hr>
+  <span style="color:#585757;font-size: 1.2em;">历史记录</span>
+  <ion-icon name="trash" (click)="clear()" style="color:#585757;font-size: 1.5em;float: right;"></ion-icon>
+  <br/><br/>
+  <span class="list" *ngFor="let item of history">
+      <button ion-button round outline style="border-color: #585757; color: #585757;">{{item}}</button>
+  </span>
 </ion-content>
