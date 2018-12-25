@@ -211,6 +211,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="system-manage.html">
+                        <i class="fa fa-cog"></i>
+                        <span>系统管理</span>
+                    </a>
+                </li>
+                <li>
                     <a href="login.html">
                         <i class="fa fa-user"></i>
                         <span>Login Page</span>
@@ -321,7 +327,7 @@
           {title : '个性签名',dataIndex : 'g',editor : {xtype : 'text'}}
 
         ],
-        data = [{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好呀'}];
+        data = [{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180011,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好'},{a:20180111,b:'sunshine',c:'河北农业大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180711,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好'},{a:20180111,b:'sunshine',c:'河北科技大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好呀'}];
       function valid(value){
         // if(value === '1'){
         //   return '不能选择1';
@@ -332,7 +338,8 @@
       }),
         store = new Store({
           data : data,
-          autoLoad:true
+          autoLoad:true,
+          pageSize:6
         }),
         grid = new Grid.Grid({
           render:'#grid',
@@ -355,6 +362,10 @@
                 }
               }]
           },
+          bbar:{
+                // pagingBar:表明包含分页栏
+                pagingBar:true
+            },
           plugins : [editing,Grid.Plugins.CheckSelection,Grid.Plugins.ColumnChecked],
           store : store
         });
