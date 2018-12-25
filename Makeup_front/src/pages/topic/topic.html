@@ -7,9 +7,10 @@
     </div>
     <div class="bottom">
       <p>
+        <br/>
         <span class="span1">面试-留下美好初印象</span><br/><br/>
-        <span class="span2">每日抽取100人随机赠送精美礼品
-          <span class="span3">24
+        <span class="span2">#职场#面试穿搭#妆容
+          <span class="span3">4
             <!-- <ion-icon name="text"></ion-icon> -->
             <i class="iconfont1">&#xe60e;</i>
           </span>
@@ -20,63 +21,81 @@
 
   <div class="div2">
     <div class="tit">精彩讨论</div><hr/>
-    <div class="single">
-      <div class="detail">
-        <div class="left"><img src="../../assets/images/touxiang.png" class="imgs"></div>
+    <div *ngIf='istop'>
+    <div class="single" *ngFor='let topic of top_arr'>
+        <div class="detail">
+        <div class="left"><img src="{{com.headimg}}" class="imgs"></div>
         <div class="right">
-          <span>圣约翰</span><br/>
-          <span class="span5">12月24日22:27</span>
+          <span class="name">{{com.name}}</span><br/>
+          <span class="span5">{{com.time}}</span>
           <div class="dianzan">
             <span class="span6">9</span>
             <ion-icon name="thumbs-up"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="pinglun">不要太浓或太艳哦！</div>
+      <div class="pinglun">{{com.com}}</div>
+    </div>
+    <hr/>
+    </div>
+
+    <div class="single">
+      <div class="detail">
+        <div class="left"><img src="../../assets/images/touxiang.png" class="imgs"></div>
+        <div class="right">
+          <span class="name">圣约翰</span><br/>
+          <span class="span5">12-21 22:27</span>
+          <div class="dianzan">
+            <span class="span6">9</span>
+            <ion-icon name="heart-outline" style="float:right;"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="pinglun">主意着装干净整洁，不要画浓妆哦。</div>
     </div>
     <hr/>
 
     <div class="single">
         <div class="detail">
-          <div class="left"><img src="../../assets/images/touxiang.png" class="imgs"></div>
+          <div class="left"><img src="../../assets/images/女头1.jpg" class="imgs"></div>
           <div class="right">
-            <span>圣约翰</span><br/>
-            <span class="span5">12月24日22:27</span>
+            <span class="name">淡默</span><br/>
+            <span class="span5">12-19 10:27</span>
             <div class="dianzan">
-              <span class="span6">9</span>
-              <ion-icon name="thumbs-up"></ion-icon>
+              <span class="span6">23</span>
+              <ion-icon name="heart-outline" style="float:right;"></ion-icon>
             </div>
           </div>
         </div>
-        <div class="pinglun">不要太浓或太艳哦！</div>
+        <div class="pinglun">最好穿正装哦。</div>
       </div>
       <hr/>
 
       <div class="single">
         <div class="detail">
-          <div class="left"><img src="../../assets/images/touxiang.png" class="imgs"></div>
+          <div class="left"><img src="../../assets/images/鲸鱼.png" class="imgs"></div>
           <div class="right">
-            <span>圣约翰</span><br/>
-            <span class="span5">12月24日22:27</span>
+            <span class="name">鲸鱼</span><br/>
+            <span class="span5">12-18 09:12</span>
             <div class="dianzan">
-              <span class="span6">9</span>
-              <ion-icon name="thumbs-up"></ion-icon>
+              <span class="span6">10</span>
+              <ion-icon name="heart-outline" style="float:right;"></ion-icon>
             </div>
           </div>
         </div>
-        <div class="pinglun">不要太浓或太艳哦！</div>
+        <div class="pinglun">面试一定要认真对待，大方得体最重要。</div>
       </div>
       <hr/>
 
       <div class="single">
         <div class="detail">
-          <div class="left"><img src="../../assets/images/touxiang.png" class="imgs"></div>
+          <div class="left"><img src="../../assets/images/img4.jpg" class="imgs"></div>
           <div class="right">
-            <span>圣约翰</span><br/>
-            <span class="span5">12月24日22:27</span>
+            <span class="name">听见她说</span><br/>
+            <span class="span5">12-16 07:22</span>
             <div class="dianzan">
-              <span class="span6">9</span>
-              <ion-icon name="thumbs-up"></ion-icon>
+              <span class="span6">6</span>
+              <ion-icon name="heart-outline" style="float:right;"></ion-icon>
             </div>
           </div>
         </div>
@@ -84,21 +103,7 @@
       </div>
       <hr/>
 
-      <div class="single">
-          <div class="detail">
-          <div class="left"><img src="../../assets/images/touxiang.png" class="imgs"></div>
-          <div class="right">
-            <span>圣约翰</span><br/>
-            <span class="span5">12月24日22:27</span>
-            <div class="dianzan">
-              <span class="span6">9</span>
-              <ion-icon name="thumbs-up"></ion-icon>
-            </div>
-          </div>
-        </div>
-        <div class="pinglun">不要太浓或太艳哦！</div>
-      </div>
-      <hr/>
+
   </div> 
 
 
