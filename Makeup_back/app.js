@@ -1,4 +1,3 @@
-
 const express = require('express'),
     http=require('http'),
     app=express(),
@@ -7,10 +6,11 @@ const express = require('express'),
 var login=require('./routes/login.js'),
     register=require('./routes/register.js'),
     improve=require('./routes/improve.js');
-
+    home=require('./routes/home.js');
 
 //app.use(function(req, res) {
- // console.log('hello app');
+ //console.log('hello app');
+ //res.end('hello app');
 //});
 
 //app.all('*', function(req, res) {
@@ -35,5 +35,6 @@ app.use(bodyParser.json());
 app.use('/api/login',login);
 app.use('/api/register',register);
 app.use('/api/improve',improve);
+app.use('/api/home',home);
 http.createServer(app).listen(8080);
 module.exports = app;

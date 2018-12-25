@@ -20,7 +20,6 @@ router.post('/',function(req,res){
  
  //获取新用户信息
   var name=req.body.name;
-  var email=req.body.email || '';
   var pwd=req.body.pwd;
   var school=req.body.school;
   var phone=req.body.phone || '';
@@ -28,21 +27,28 @@ router.post('/',function(req,res){
   var status=0;
   
   con.query('select * from users',(err,results)=>{
-    for(var i=0;i<results.length;i++){
+    for(var i=0;i<=results.length;i++){
       console.log(results[i]);
-      console.log(results[i].email===email,results[i].phone===phone)
-      if((results[i].email && results[i].email===email) ||(results[i].phone && results[i].phone===phone)){
-        console.log('该邮箱或手机号已被注册');
+      //console.log(results[i].email===email,results[i].phone===phone)
+      if(results[i]!=undefined && results[i].phone && results[i].phone===phone){
+        console.log('该手机号已被注册');
         res.json({'status':-2});
         break;
-      }else if(i==results.length-1){
+      }else if(i==results.length-1 || i==0){
         //获得当前时间
         var d=new Date();
-        mei_id=''+d.getFullYear()+(d.getMonth()+1)+d.getDate()+d.getHours()+d.getMinutes()+d.getSeconds();
+        var dm= d.getMonth()<10 ? '0'+(d.getMonth()+1):d.getMonth()+1+'';
+        var dd=d.getDate()<10 ? '0'+d.getDate():d.getDate()+'';
+        var dh=d.getHours()<10 ? '0'+d.getHours():d.getHours()+'';
+        var dmi=d.getMinutes()<10 ? '0'+d.getMinutes():d.getMinutes()+'';
+        var ds=d.getSeconds()<10 ? '0'+d.getSeconds():d.getSeconds()+'';
+        mei_id=''+d.getFullYear()+dm+dd+dh+dmi+ds;
         console.log(mei_id);
         var status=0;
+        var follownum=0;
+        var fannum=0;
         var headimg='../../assets/images/1.jpg'
-       con.query('insert into users(mei_id,name,pwd,email,school,phone,status,headimg) values(?,?,?,?,?,?,?,?)',[mei_id,name,pwd,email,school,phone,status,headimg],
+       con.query('insert into users(mei_id,name,pwd,school,phone,status,headimg,follownum,fannum) values(?,?,?,?,?,?,?,?,?)',[mei_id,name,pwd,school,phone,status,headimg,follownum,fannum],
          (err,result)=>{
              if(err){
                console.log(err.message);
