@@ -38,6 +38,14 @@ export class MyPage {
   mylikes;
   mylikes_users;
   ionViewWillEnter(){
+    this.http.post('api/login/myworks',{mei_id:this.user['mei_id']}).subscribe(data=>{
+      console.log(data);
+      this.myworks=data;
+      for(var i=0;i<this.myworks.length;i++){
+        this.myworks[i].img=(this.myworks[i].img).split(',')
+        console.log(this.myworks);
+      }
+    })
     this.mylikes=JSON.parse(window.localStorage.getItem('mylikes'));
     //console.log(JSON.parse(window.localStorage.getItem('mylikes_users')))
     if (window.localStorage.hasOwnProperty('user')) {
@@ -56,14 +64,6 @@ export class MyPage {
   myworks;
   ngOnInit() {
     //console.log(this.mylikes)
-    this.http.post('api/login/myworks',{mei_id:this.user['mei_id']}).subscribe(data=>{
-      console.log(data);
-      this.myworks=data;
-      for(var i=0;i<this.myworks.length;i++){
-        this.myworks[i].img=(this.myworks[i].img).split(',')
-        console.log(this.myworks);
-      }
-    })
   }
 
   clickHead() {

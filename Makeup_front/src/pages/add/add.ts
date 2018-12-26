@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController,App} from 'ionic-angular';
 import { WreleasePage } from '../wrelease/wrelease';
 
 /**
@@ -16,7 +16,8 @@ import { WreleasePage } from '../wrelease/wrelease';
 })
 export class AddPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public viewCtrl: ViewController,public appCtrl: App) {
   }
 
   close(){
@@ -24,7 +25,8 @@ export class AddPage {
   }
 
   write(){
-    this.navCtrl.push(WreleasePage);
+    this.viewCtrl.dismiss();
+    this.appCtrl.getRootNav().push(WreleasePage);
   }
 
 

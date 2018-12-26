@@ -46,33 +46,12 @@
   <h5 *ngIf='isuser_work' style="margin: 5px;color:#F09595;">相关推荐</h5>
   <ion-grid class="contents" *ngIf='isuser_work'>
       <ion-row>
-        <ion-col col-6>
-          <img src="../../assets/images/img12.jpg" class="img" style="width: 100%;height: 180px;">
-          <h6>马丁靴穿搭遮肉、时髦</h6>
-          <p><img src="../../assets/images/img11.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
-          她说
-          <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
-        </ion-col>
-        <ion-col col-6>
-          <img src="../../assets/images/img13.jpg" class="img" style="width: 100%;height: 180px;">
-          <h6>面试妆怎么化更加分？</h6>
-          <p><img src="../../assets/images/img14.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
-          雨夜
-          <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span></p>
-        </ion-col>
-        <ion-col col-6>
-          <img src="../../assets/images/img15.jpg" class="img" style="width: 100%;height: 180px;">
-          <h6>秋冬穿搭必备神器!</h6>
-          <p><img src="../../assets/images/img16.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
-          听见你说
-          <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
-        </ion-col>
-        <ion-col col-6>
-          <img src="../../assets/images/img17.jpg" class="img" style="width: 100%;height: 180px;">
-          <h6>完美安利一个小物！</h6>
-          <p><img src="../../assets/images/img18.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
-          柔弱
-          <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+        <ion-col col-6 *ngFor='let work of relate_works,let i=index' (click)='goPa(i)'>
+          <img src="{{work[0].img[1]}}" class="img" style="width: 100%;height: 180px;">
+          <h6>{{work[0].title}}</h6>
+          <p><img src="{{work[1].headimg}}" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
+          {{work[1].name}}
+          <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>{{work[0].likenum}}</span></p>
         </ion-col>
       </ion-row>
     </ion-grid>  

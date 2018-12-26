@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController  } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, App } from 'ionic-angular';
+import { ViewController } from 'ionic-angular';
 import { AppShare } from '../../app/app.share';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { DengluPage } from '../denglu/denglu';
@@ -22,7 +23,8 @@ export class PaPage {
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public appShare: AppShare, public actionSheetCtrl: ActionSheetController,
-    public http:HttpClient) {
+    public http:HttpClient,public viewCtrl:ViewController,
+    public appCtrl: App) {
   }
   work_user;
   islike=0;
@@ -31,6 +33,7 @@ export class PaPage {
   mylikes;
   mylikes_users;
   mystars;
+  relate_works;
   ngOnInit() {
     this.user=JSON.parse(window.localStorage.getItem('user'));
     this.work_user = this.navParams.get('work_user') || this.user;
@@ -39,6 +42,14 @@ export class PaPage {
     this.mystars=JSON.parse(window.localStorage.getItem('mystars')) || [];
     if(this.navParams.get('work')){
       this.isuser_work=true;
+      this.http.post('api/home/relate',{kind:this.work['kind']}).subscribe(data=>{
+        this.relate_works=data;
+        console.log(this.relate_works);
+        for(var i=0;i<this.relate_works.length;i++){
+          this.relate_works[i][0].img=(this.relate_works[i][0].img).split(',')
+          //console.log(this.works);
+        }
+      })
     }else if(this.navParams.get('mywork')){
       if(typeof(this.work['img'])=='string'){this.changeimg()};
       this.isuser_work=false;
@@ -193,5 +204,9 @@ export class PaPage {
 
   goComment(){
     this.navCtrl.push(CommentPage);
+  }
+  goPa(i){
+    this.viewCtrl.dismiss();
+    this.appCtrl.getRootNav().push(PaPage,{work_user:this.relate_works[i][1],work:this.relate_works[i][0]})
   }
 }

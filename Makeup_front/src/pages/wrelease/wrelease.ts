@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController,ViewController,App} from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { PaPage } from '../pa/pa';
@@ -21,7 +21,7 @@ export class WreleasePage {
   type="beauty";
   content='';
   title='';
-  kind='';
+  kind='美妆类';
   imgUrl:string;
   takePhoto(){
     const options: CameraOptions = {
@@ -43,7 +43,7 @@ export class WreleasePage {
 
   constructor(public camera:Camera,public navCtrl: NavController, 
     public navParams: NavParams,public alertCtrl: AlertController,
-   public http:HttpClient) {
+   public http:HttpClient,public viewCtrl:ViewController,public appCtrl: App) {
   }
 
   ionViewDidLoad() {
@@ -103,7 +103,8 @@ export class WreleasePage {
       }
       this.http.post('api/login/creatework',options,{}).subscribe(data=>{
         console.log(data);
-        this.navCtrl.push(PaPage,{mywork:data})
+        this.viewCtrl.dismiss();
+        this.appCtrl.getRootNav().push(PaPage,{mywork:data});
       })
     }
     //内容为空

@@ -18,11 +18,11 @@
     <!-- <p class="p1">每妆号：21199320</p> -->
     <div>
         <div class="care" (click)='gotoFollows()'>
-            &nbsp;&nbsp;&nbsp;0
+            &nbsp;&nbsp;&nbsp;{{user.follownum}}
             <br/>关注
         </div>
         <div class="fans" (click)='gotoFensi()'>
-            &nbsp;&nbsp;&nbsp;0
+            &nbsp;&nbsp;&nbsp;{{user.fannum}}
             <br/>粉丝
         </div>
         <div class="praise" (click)='gotoDianzan()'>
@@ -47,6 +47,10 @@
                     <ion-col (click)="goPa(i,0)" *ngFor='let mywork of myworks,let i=index' col-6>
                         <img src="{{mywork.img[0]}}" class="img">
                         <h6>{{mywork.title}}</h6>
+                        <p>
+                            <img src="{{user.headimg}}" class="photo">{{user.name}}
+                            <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>{{mywork.likenum}}</span>
+                        </p>
                     </ion-col>
                 </ion-row>
             </ion-grid>
