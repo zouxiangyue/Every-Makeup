@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SearchPage } from '../search/search';
 import { PaPage } from '../pa/pa';
+import { TopicPage } from '../topic/topic';
 
 
 @Component({
@@ -18,5 +19,8 @@ export class AboutPage {
   }
   goPa(){
     this.navCtrl.push(PaPage);
+  }
+  goTopic(){
+    this.navCtrl.push(TopicPage);
   }
 }

@@ -23,20 +23,7 @@
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
 <script src="js/raphael-min.js"></script>
-<script src="js/morris.js"></script><link rel="stylesheet" type="text/css" href="cssf/style.css" />
-<link rel="stylesheet" type="text/css" href="cssf/WdatePicker.css" />
-<link rel="stylesheet" type="text/css" href="cssf/skin_/form.css" />
-<link href="umeditorf/themes/default/_css/umeditor.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="jsf/jquery.js"></script>
-<script type="text/javascript" src="jsf/global.js"></script>
-<script type="text/javascript" src="jsf/jquery.select.js"></script>
-<script type="text/javascript" src="jsf/WdatePicker.js"></script>
-<script type="text/javascript">
-window.UMEDITOR_HOME_URL = 'umeditorf/';  // 请换成绝对路径
-</script>
-<script type="text/javascript" src="jsf/umeditor.config.js"></script>
-<script type="text/javascript" src="jsf/editor_api.js"></script>
-<script type="text/javascript" src="umeditorf/lang/zh-cn/zh-cn.js"></script>
+<script src="js/morris.js"></script>
 <style>
 	.logoimg{
 		width: 70%;
@@ -179,7 +166,7 @@ window.UMEDITOR_HOME_URL = 'umeditorf/';  // 请换成绝对路径
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="system-manage.html"><i class="fa fa-cog"></i> 设置</a></li>
+                <li><a href="system-manage.html"><i class="fa fa-cog"></i>设置</a></li>
                 <li><a href="login.html"><i class="fa fa-key"></i>退出登录</a></li>
             </ul>
         </li>
@@ -197,7 +184,7 @@ window.UMEDITOR_HOME_URL = 'umeditorf/';  // 请换成绝对路径
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="index.html">
+                    <a href="index.html">
                         <i class="glyphicon glyphicon-home"></i>
                         <span>首页</span>
                     </a>
@@ -222,7 +209,7 @@ window.UMEDITOR_HOME_URL = 'umeditorf/';  // 请换成绝对路径
                     </a>
                 </li>
                 <li>
-                    <a href="system-manage.html">
+                    <a href="#" class="active">
                         <i class="fa fa-cog"></i>
                         <span>系统管理</span>
                     </a>
@@ -233,7 +220,6 @@ window.UMEDITOR_HOME_URL = 'umeditorf/';  // 请换成绝对路径
                         <span>Login Page</span>
                     </a>
                 </li>
-                
             </ul>            </div>
         <!-- sidebar menu end-->
     </div>
@@ -242,70 +228,72 @@ window.UMEDITOR_HOME_URL = 'umeditorf/';  // 请换成绝对路径
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-                <div id="main">
-                    <h2 class="subfild">
-                        <span>基本信息</span>
-                    </h2>
-                    <div class="subfild-content base-info">
-                        <div class="kv-item ue-clear">
-                            <label><span class="impInfo">*</span>文章标题</label>
-                            <div class="kv-item-content">
-                                <input type="text" placeholder="文章标题" />
-                            </div>
-                            <span class="kv-item-tip">标题字数限制在35个字符</span>
-                        </div>
-                        <div class="kv-item ue-clear time">
-                            <label><span class="impInfo">*</span>发布时间</label>
-                            <div class="kv-item-content">
-                                <input type="text" placeholder="文章标题" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" />
-                                <i class="time-icon"></i>
-                            </div>
-                            <span class="kv-item-tip error">这是一个错误信息</span>
-                        </div>
-                        
-                        <div class="kv-item ue-clear">
-                            <label>文章类别</label>
-                            <div class="kv-item-content">
-                                <select>
-                                    <option>美妆类</option>
-                                    <option>穿搭类</option>
-                                    <option>护肤类</option>
-                                    <option>香氛类</option>
-                                    <option>健身类</option>
-                                    <option>其他类</option>
-                                </select>
-                            </div>
-                            <span class="kv-item-tip success">成功信息</span>
-                        </div>                   
-                        
-                        <div class="kv-item ue-clear">
-                            <label><span class="impInfo">*</span>缩略图</label>
-                            <div class="kv-item-content file">
-                                <span class="text"></span>
-                                <input type="file" />
-                                <input type="button" class="button normal long2" value="浏览.." />
-                            </div>
-                            <span class="kv-item-tip">标题字数限制在35个字符</span>
-                        </div>
-                    </div>
-                    
-                    <h2 class="subfild">
-                        <span>备注资料</span>
-                    </h2>
-                    
-                    <div class="subfild-content remarkes-info">
-                        <div class="kv-item ue-clear">
-                            <label><span class="impInfo">*</span>文章内容</label>
-                            <div class="kv-item-content">
-                                <textarea placeholder="文章内容" id="content" style="width:800px;height:240px;"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="buttons">
-                        <input class="button" type="button" value="确认修改" />
-                    </div>
-                </div>
+        <div class="table-agile-info">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                后台管理员信息
+               </div>
+               <div>
+                 <table class="table" ui-jq="footable" ui-options='{
+                   "paging": {
+                     "enabled": true
+                   },
+                   "filtering": {
+                     "enabled": true
+                   },
+                   "sorting": {
+                     "enabled": true
+                   }}'>
+                   <thead>
+                     <tr>
+                       <th data-breakpoints="xs">ID</th>
+                       <th>昵称</th>
+                       <th>真实姓名</th>
+                       <th data-breakpoints="xs sm md" data-title="DOB">出生日期</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr data-expanded="true">
+                       <td>1</td>
+                       <td>sunny</td>
+                       <td>邹香月</td>
+                       <td>July 25th 1998</td>
+                     </tr>
+                     <tr>
+                       <td>2</td>
+                       <td>Elodia</td>
+                       <td>武滨</td>
+                       <td>March 30th 1992</td>
+                     </tr>
+                     <tr>
+                       <td>3</td>
+                       <td>Raeann</td>
+                       <td>李悦</td>                      
+                       <td>February 26th 1966</td>
+                     </tr>
+                     <tr>
+                       <td>4</td>
+                       <td>Junie</td>
+                       <td>张腾</td>
+                       <td>March 29th 1966</td>
+                     </tr>
+                     <tr>
+                       <td>5</td>
+                       <td>Solomon</td>
+                       <td>郝芸婷</td>
+                       <td>September 22nd 1964</td>
+                     </tr>
+                     <tr>
+                       <td>6</td>
+                       <td>Bar</td>
+                       <td>李欣芸</td>
+                       <td>August 4th 1991</td>
+                     </tr>
+                   </tbody>
+                 </table>
+               </div>
+             </div>
+           </div>  
 </section>
  <!-- footer -->
 		  <div class="footer">
@@ -340,10 +328,7 @@ window.UMEDITOR_HOME_URL = 'umeditorf/';  // 请换成绝对路径
 	   
 	});
     </script>
-    <script type="text/javascript">
-        $('select').select();
-        showRemind('input[type=text],textarea','color5');
-        UM.getEditor('content');
-    </script>
+    <!-- calendar -->
+	
 </body>
 </html>

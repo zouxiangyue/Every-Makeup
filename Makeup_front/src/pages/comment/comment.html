@@ -1,12 +1,110 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>comment</ion-title>
+<ion-header text-center>
+  <ion-navbar color="fenzi">
+    <ion-title>评论列表</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name=""></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
+  
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content padding id='content'>
+  <div>
+    <div class='com_user'>
+      <img src='../../assets/images/img10.jpg'>
+      <p class='name'>淡默</p>
+      <br/>
+      <br/>
+      <p class='comment'>毛衣好看</p>
+      <div>
+        <p class='time'>11-27 13:00</p>
+        <span class='huifu'>
+          <span>回复·</span>
+          <i class="iconfont1" id='like'  (click)='like($event)' >&#xe62b;</i>{{likenum}}
+        </span>
+      </div>
+    </div>
+    <ul class='bycom_user'>
+      <li>
+        <img src='../../assets/images/img11.jpg'>
+        <p class='name'>雨夜</p>
+        <p class='comment'>好看,也想要</p>
+        <div>
+          <p class='time'>11-28 9:34</p>
+          <span class='huifu'  style='margin-left:25px'>
+            <span>回复·</span>
+            <i class="iconfont1" id='like'    (click)='like($event)'>&#xe62b;</i>6
+          </span>
+        </div>
+      </li>
+      <li>
+        <img src='../../assets/images/img15.jpg'>
+        <p class='name'>梅子熟了</p>
+        <p class='comment'>在哪里买的</p>
+        <div>
+          <p class='time'>11-28 17:03</p>
+          <span class='huifu' style='margin-left:15px'>
+            <span>回复·</span>
+            <i class="iconfont1" id='like'  (click)='like($event)'>&#xe62b;</i>9
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <div class='com_user'>
+      <img src='../../assets/images/img12.jpg'>
+      <p class='name'>liyue</p>
+      <br/>
+      <br/>
+      <p class='comment'>搭配很好看</p>
+      <div>
+        <p class='time'>11-27 13:00</p>
+        <span class='huifu'>
+          <span>回复·</span>
+          <i class="iconfont1" id='like' (click)='like($event)'>&#xe62b;</i>5
+        </span>
+      </div>
+    </div>
+    <ul class='bycom_user'>
+      <li>
+        <img src='../../assets/images/img16.jpg'>
+        <p class='name'>迦南</p>
+        <p class='comment'>一般一般</p>
+        <div>
+          <p class='time'>11-28 9:34</p>
+          <span class='huifu' style='margin-left:25px'>
+            <span>回复·</span>
+            <i class="iconfont1" id='like' (click)='like($event)'>&#xe62b;</i>4
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf='iscom'>
+    <div class='com_user' *ngFor='let com of com_arr'>
+      <img src='{{com.headimg}}'>
+      <p class='name'>{{com.name}}</p>
+      <br/>
+      <br/>
+      <p class='comment'>{{com.com}}</p>
+      <div>
+        <p class='time'>{{com.time}}</p>
+        <span class='huifu'>
+          <span>回复·</span>
+          <i class="iconfont1" id='like' (click)='like($event)'>&#xe62b;</i>10
+        </span>
+      </div>
+    </div>
+  </div>
 </ion-content>
+<ion-footer>
+  <ion-toolbar color="fenzi">
+    <img src='../../assets/images/chui.jpg'>
+    <input (keydown)="comment($event)" type='text' [(ngModel)]='com_txt'>
+    <button *ngIf='com_enpty==0' (click)='com()'>发布</button>
+    <button *ngIf='com_enpty==1' style='background-color:#ff5151;color:white' (click)='com()'>发布</button>
+  </ion-toolbar>
+</ion-footer>

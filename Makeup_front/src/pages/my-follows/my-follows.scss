@@ -1,4 +1,9 @@
 page-my-follows {
+    .toolbar-title-md{  
+        margin-left: 0%;
+        padding-left: 28%;
+        color:white;
+    }
     ion-content{
         ion-grid{
             color:black;
@@ -60,6 +65,14 @@ page-my-follows {
                     button{
                         background-color:rgb(225, 225, 225);
                     }
+                    .fan_num{
+                        position: absolute;
+                        left: 140px;
+                        top: 45px;
+                        font-size:14px
+                    }
+                }
+                .interest{
                     .fan_num{
                         position: absolute;
                         left: 140px;

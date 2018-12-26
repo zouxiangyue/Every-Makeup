@@ -1,0 +1,136 @@
+page-topic {
+    content{
+        opacity: 0.5;
+    }
+    .div1{
+        //background-color: #F09595;
+        background-image: url(../../assets/images/面试3.jpg);
+        background-size: 100% 100%;
+        // border:1px solid pink;
+        width:100%;
+        height:30%;
+    }
+    .top{
+        // border:1px solid green;
+        width:100%;
+        height:40%;
+        padding: 5px 10px;
+    }
+    .bottom{
+        // border:1px solid green;
+        width:100%;
+        height:110px;
+        padding: 0px 10px;
+    }
+    .spanT{
+        font-size: 30px;
+        padding-left: 35%;
+        color: rgb(245, 115, 115);
+        font-weight: bolder;
+        font-family: '幼圆'
+    }
+    .iconfont1{
+        font-size: 20px;
+        color:rgb(245, 115, 115);
+        font-weight: bolder;
+    }
+    .icon1{
+        float: right;
+        font-size: 30px;
+        margin-top:5px;
+        color:rgb(245, 115, 115);
+        font-weight: bolder;
+    }
+    .span1{
+        font-size: 24px;
+        color:rgb(245, 115, 115);
+        font-weight: bolder;
+        font-family: '幼圆'
+    }
+    .span2{
+        color:rgb(245, 115, 115);
+        font-weight: bold;
+        font-size:18px;
+        font-family: '幼圆'
+    }
+    .span3{
+        float: right;
+        font-size: 20px;
+    }
+
+    .div2{
+        // border:1px solid pink;
+        width:100%;
+        height:100%;
+    }
+    .tit{
+        font-size: 18px;
+        margin-top:10px;
+        margin-left: 15px;
+    }
+    .single{
+        // border:1px solid green;
+        width:100%;
+        height:15%;
+    }
+    .detail{
+        // border:1px solid red;
+        width:100%;
+        height:70px;
+    }
+    .left{
+        // border:1px solid red;
+        width:45px;
+        height:50px;
+        float:left;
+        margin-top:10px;
+        margin-left: 15px;
+    }
+    .imgs{
+        border-radius: 50%;
+        width:40px;
+        height:40px;
+        // margin-top:10px;
+        // margin-left: 15px;
+        // float: left;
+    }
+    .right{
+        // border:1px solid red;
+        width:285px;
+        height:50px;
+        float:right;
+        margin-top:10px;
+        margin-right: 5px;
+    }
+    .name{
+        font-size: 16px;
+    }
+    .span5{
+        font-weight: lighter;
+    }
+    .span6{
+        font-size: 16px;
+    }
+    .dianzan{
+        // border:1px solid red;
+        width:40px;
+        height:30px;
+        float: right;
+    }    
+    .pinglun{
+        width:100%;
+        margin-left: 15px;
+        font-size: 16px;
+    }
+    .btn{
+        position: fixed;
+        top:80%;
+        left:80%;
+        opacity: 0.6;
+        background-color:rgb(245, 115, 115);
+    }
+    #edit{
+        color:white;
+        font-size: 30px;
+    }
+}

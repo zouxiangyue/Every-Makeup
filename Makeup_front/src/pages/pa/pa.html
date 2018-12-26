@@ -1,109 +1,110 @@
 <ion-header text-center>
-    <ion-navbar color="fenzi">
-        <ion-title>文章详情</ion-title>
-        <ion-buttons end>
-            <button ion-button icon-only (click)="share($event)">
-                <ion-icon name="more"></ion-icon>
-            </button>
-        </ion-buttons>
-    </ion-navbar>
+  <ion-navbar color="fenzi">
+      <ion-title>文章详情</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="share($event)">
+              <ion-icon name="more"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <ion-slides pager="true" autoplay="1000" loop="true" class="sli" style="height: 220px;">
-      <ion-slide>
-        <img src="../../assets/images/img26.jpg">
-      </ion-slide>
-      <ion-slide>
-        <img src="../../assets/images/img25.jpg">
-      </ion-slide>
-      <ion-slide>
-        <img src="../../assets/images/img27.jpg">
-      </ion-slide>
-    </ion-slides> 
-    <div class="person" style="width:100%;height:60px;float:left;">
-      <div class="pic" style="width:50px;height:50px;float:left;">
-        <img src="{{work_user.headimg}}" style="width: 40px;height: 40px;border-radius:50%;margin-top:10px;margin-left: 10px;">
-      </div>
-      <div class="name" style="width:150px;height:50px;font-size:1.2em;margin: 20px 10px;float:left;">
-        {{work_user.name}}
-      </div>
-      <div class="follow" style="float:right;">
-        <button *ngIf='isfollow==0' ion-button color='light' round outline style="width:2rem;height:2.8rem;font-size:1.2rem;margin-top: 10px;background-color: #F09595" (click)='follow(0)'>关注</button>
-        <button *ngIf='isfollow==1' ion-button color='light'   round outline style="width:2rem;height:2.8rem;font-size:1.2rem;margin-top: 10px;background-color:white;color:black" (click)='follow(1)'>已关注</button>
-      </div>
+  <ion-slides pager="true" autoplay="1000" loop="true" class="sli" style="height: 220px;">
+    <ion-slide>
+      <img src="../../assets/images/img26.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/img25.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/img27.jpg">
+    </ion-slide>
+  </ion-slides> 
+  <div class="person" style="width:100%;height:60px;float:left;">
+    <div class="pic" style="width:50px;height:50px;float:left;">
+      <img src="{{work_user.headimg}}" style="width: 40px;height: 40px;border-radius:50%;margin-top:10px;margin-left: 10px;">
     </div>
-    <hr style="width:100%;height:3px;border:none;border-top:1px #F09595" />
-    <!-- <br/> -->
+    <div class="name" style="width:150px;height:50px;font-size:1.2em;margin: 20px 10px;float:left;">
+      {{work_user.name}}
+    </div>
+    <div class="follow" style="float:right;">
+      <button *ngIf='isfollow==0' ion-button color='light' round outline style="width:2rem;height:2.8rem;font-size:1.2rem;margin-top: 10px;background-color: #F09595" (click)='follow(0)'>关注</button>
+      <button *ngIf='isfollow==1' ion-button color='light'   round outline style="width:2rem;height:2.8rem;font-size:1.2rem;margin-top: 10px;background-color:white;color:black" (click)='follow(1)'>已关注</button>
+    </div>
+  </div>
+  <hr style="width:100%;height:3px;border:none;border-top:1px #F09595" />
+  <!-- <br/> -->
 
-    <h2 style="margin: 5px;">2018秋冬穿搭!秋冬穿搭法则!</h2>
-    <h5 style="margin: 5px;">穿搭类</h5>
-    <p style="margin: 5px;">NO.1柔软百搭——毛衣</p>
-    <p style="margin: 5px;">毛衣就是秋冬最适合穿着的衣服,穿衣当然得既要温度也有
-      风度,备一件最容易穿出fashion范儿的毛衣单品很重要!毛衣衬衣叠穿也好,毛衣
-      裙加打底裤也好,简单或繁杂的穿搭都可以统统搞定。有了毛衣,整个秋冬都不用愁
-      穿什么啦!</p>
-    <p style="margin: 5px;">NO.2毛衣+牛仔裤</p> 
-    <p style="margin: 5px;">灰色毛衣+牛仔裤,简直就是时尚界屹立不倒的标配,怕冷的妹
-      子还可系一个印花围巾,还能弥补全身过于单调的色彩!毛衣+纯色基础款裙子还不
-      知道长款毛衣+及膝裙的时髦程度,还好意思过这个秋冬?粗毛线的慵懒毛衣不仅不
-      会让你看上去显矮,搭配及膝裙还会让你离街拍潮人更进一步</p>
+  <h2 style="margin: 10px;">2018秋冬穿搭!秋冬穿搭法则!</h2>
+  <h5 style="margin: 10px;">穿搭类</h5>
+  <p style="margin: 10px;">NO.1柔软百搭——毛衣</p>
+  <p style="margin: 10px;">毛衣就是秋冬最适合穿着的衣服,穿衣当然得既要温度也有
+    风度,备一件最容易穿出fashion范儿的毛衣单品很重要!毛衣衬衣叠穿也好,毛衣
+    裙加打底裤也好,简单或繁杂的穿搭都可以统统搞定。有了毛衣,整个秋冬都不用愁
+    穿什么啦!</p>
+  <p style="margin: 10px;">NO.2毛衣+牛仔裤</p> 
+  <p style="margin: 10px;">灰色毛衣+牛仔裤,简直就是时尚界屹立不倒的标配,怕冷的妹
+    子还可系一个印花围巾,还能弥补全身过于单调的色彩!毛衣+纯色基础款裙子还不
+    知道长款毛衣+及膝裙的时髦程度,还好意思过这个秋冬?粗毛线的慵懒毛衣不仅不
+    会让你看上去显矮,搭配及膝裙还会让你离街拍潮人更进一步</p>
 
-    <!-- <br> -->
-    <hr style="width:100%;height:3px;border:none;border-top:1px #F09595" />
-    <h5 style="margin: 5px;color:#F09595;">相关推荐</h5>
-    <ion-grid class="contents">
-        <ion-row>
-          <ion-col col-6>
-            <img src="../../assets/images/img12.jpg" class="img" style="width: 100%;height: 180px;">
-            <h6>马丁靴穿搭遮肉、时髦</h6>
-            <p><img src="../../assets/images/img11.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
-            她说
-            <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
-          </ion-col>
-          <ion-col col-6>
-            <img src="../../assets/images/img13.jpg" class="img" style="width: 100%;height: 180px;">
-            <h6>面试妆怎么化更加分？</h6>
-            <p><img src="../../assets/images/img14.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
-            雨夜
-            <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span></p>
-          </ion-col>
-          <ion-col col-6>
-            <img src="../../assets/images/img15.jpg" class="img" style="width: 100%;height: 180px;">
-            <h6>秋冬穿搭必备神器!</h6>
-            <p><img src="../../assets/images/img16.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
-            听见你说
-            <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
-          </ion-col>
-          <ion-col col-6>
-            <img src="../../assets/images/img17.jpg" class="img" style="width: 100%;height: 180px;">
-            <h6>完美安利一个小物！</h6>
-            <p><img src="../../assets/images/img18.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
-            柔弱
-            <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
-          </ion-col>
-        </ion-row>
-      </ion-grid>  
-    </ion-content>
+  <!-- <br> -->
+  <hr style="width:100%;height:3px;border:none;border-top:1px #F09595" />
+  <h5 style="margin: 5px;color:#F09595;">相关推荐</h5>
+  <ion-grid class="contents">
+      <ion-row>
+        <ion-col col-6>
+          <img src="../../assets/images/img12.jpg" class="img" style="width: 100%;height: 180px;">
+          <h6>马丁靴穿搭遮肉、时髦</h6>
+          <p><img src="../../assets/images/img11.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
+          她说
+          <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+        </ion-col>
+        <ion-col col-6>
+          <img src="../../assets/images/img13.jpg" class="img" style="width: 100%;height: 180px;">
+          <h6>面试妆怎么化更加分？</h6>
+          <p><img src="../../assets/images/img14.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
+          雨夜
+          <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span></p>
+        </ion-col>
+        <ion-col col-6>
+          <img src="../../assets/images/img15.jpg" class="img" style="width: 100%;height: 180px;">
+          <h6>秋冬穿搭必备神器!</h6>
+          <p><img src="../../assets/images/img16.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
+          听见你说
+          <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+        </ion-col>
+        <ion-col col-6>
+          <img src="../../assets/images/img17.jpg" class="img" style="width: 100%;height: 180px;">
+          <h6>完美安利一个小物！</h6>
+          <p><img src="../../assets/images/img18.jpg" class="photo" style="width: 20px;height: 20px;border-radius:50%;">
+          柔弱
+          <span style="float: right;margin-top:5px; "><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>  
+  </ion-content>
 <ion-footer>
-    <ion-toolbar color="gray">
-    <div>
-        <span style="padding-left: 10px;" >
-            <i *ngIf='islike==0'  (click)='like(0)' class="iconfont1" style="font-size:28px;color:white;" >&#xe645;</i>
-            <i *ngIf='islike==1' (click)='like(1)' class="iconfont1" style="font-size:28px;color:#F09595;" >&#xe645;</i>
-            <span style="font-size: 1.2em;color:white;" >赞</span>
-            <span style="margin-left:5px;color:white;">丨</span>
-        </span>
-        <span style="padding-left: 10px;" >
-            <i class="iconfont1" style="font-size:25px;color:white;" >&#xe64d;</i>
-            <span style="font-size: 1.2em;color:white;">评论·28</span>
-            <span style="margin-left:5px;color:white;">丨</span>
-        </span>
-        <span style="padding-left: 10px;" >
-            <i class="iconfont1" style="font-size:26px;color:white;" >&#xe687;</i>
-            <span style="font-size: 1.2em;color:white;">收藏·58</span>
-        </span>
-    </div>
-    </ion-toolbar>
+  <ion-toolbar color="gray">
+  <div>
+      <span style="padding-left: 20px;">
+          <i *ngIf='islike==0'  (click)='like(0)' class="iconfont1" style="font-size:28px;color:white;" >&#xe645;</i>
+          <i *ngIf='islike==1' (click)='like(1)' class="iconfont1" style="font-size:28px;color:#ff5151" >&#xe645;</i>
+          <span style="font-size: 1.2em;color:white;" >赞·{{work.likenum}}</span>
+          <span style="color:white;position: absolute;left:33.3%;top:35%">丨</span>
+      </span>
+      <span style="padding-left: 40px;"  (click)='goComment()'>
+          <i class="iconfont1" style="font-size:25px;color:white;">&#xe64d;</i>
+          <span style="font-size: 1.2em;color:white;">评论·{{work.commentnum}}</span>
+          <span style="color:white;position: absolute;left:66.6%;top:35%">丨</span>
+      </span>
+      <span style="padding-left: 35px;" >
+          <i *ngIf='isstar==0' class="iconfont1" style="font-size:26px;color:white;" (click)='star(0)'>&#xe687;</i>
+          <i *ngIf='isstar==1' class="iconfont1" style="font-size:26px;color:#ffe153;" (click)='star(1)'>&#xe687;</i>
+          <span style="font-size: 1.2em;color:white;">收藏·{{work.starnum}}</span>
+      </span>
+  </div>
+  </ion-toolbar>
 </ion-footer>
-   
+ 

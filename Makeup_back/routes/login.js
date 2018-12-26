@@ -89,5 +89,122 @@ router.post('/status',function(req,res){
       })
   }})
 })
+router.post('/work',(req,res)=>{
+  var work_id=req.body.work_id;
+  con.query('select * from works where work_id=?',[work_id],(err,result)=>{
+    if(err){console.log(err.message)}
+    else{
+      res.json(result[0]);
+    }
+  })
+})
+
+router.post('/scan',(req,res)=>{
+  var work_id=req.body.work_id;
+ con.query('select scannum from works where work_id=?',[work_id],(err,result)=>{
+      if(err){console.log(err.message)}
+      else{
+        res.json(result[0]);     
+      }
+  })
+})
+router.post('/follow',(req,res)=>{
+  var mei_id=req.body.mei_id;
+  var isf=req.body.isfollow;
+  var follownum;
+  con.query('select follownum from users where mei_id=?',[mei_id],(err,result)=>{
+    if(err){
+         console.log(err.massege) 
+    }else{
+      follownum=result[0].follownum;
+      if(isf==0){
+        console.log(result)
+        follownum=result[0].follownum+1;
+        con.query('update users set follownum=? where mei_id=?',[follownum,mei_id]);
+        console.log(follownum);
+      }else if(isf==1){
+        follownum=result[0].follownum-1;
+        console.log(follownum);
+        con.query('update users set follownum=? where mei_id=?',[follownum,mei_id])
+      }
+    }
+  })
+})
+
+router.post('/like',(req,res)=>{
+   var work_id=req.body.work_id;
+   var isl=req.body.islike;
+   let likenum=0;
+   console.log(work_id,isl)
+      con.query('select likenum from works where work_id=?',[work_id],(err,result)=>{
+        console.log('result:',result);
+        if(err){
+            console.log(err.massege)
+        }else{
+            likenum=result[0].likenum;
+            if(isl==0){
+              // console.log(result)
+              likenum=result[0].likenum+1;
+              con.query('update works set likenum=? where work_id=?',[likenum,work_id]);
+              con.query('select * from works where work_id=?',[work_id],(err,re)=>{
+                if(err){console.log(err.message)}
+                else{
+                  res.json(re[0]);
+                }
+              })
+              //console.log(likenum);       
+            }else if(isl==1){
+              likenum=result[0].likenum-1;
+              // console.log(likenum);
+              con.query('update works set likenum=? where work_id=?',[likenum,work_id]);
+              con.query('select * from works where work_id=?',[work_id],(err,re)=>{
+                  if(err){console.log(err.message)}
+                  else{                           
+                       res.json(re[0]);
+                  }                
+              })   
+            }   
+       }
+     })
+})
+
+router.post('/star',(req,res)=>{
+   var work_id=req.body.work_id;
+   var iss=req.body.isstar;
+   let starnum=0;
+   console.log(work_id,iss)
+   con.query('select starnum from works where work_id=?',[work_id],(err,result)=>{
+     console.log('result:',result);
+     if(err){
+        console.log(err.massege)       
+     }else{
+       starnum=result[0].starnum;
+       if(iss==0){
+           // console.log(result)
+           starnum=result[0].starnum+1;
+           con.query('update works set starnum=? where work_id=?',[starnum,work_id]);
+           con.query('select * from works where work_id=?',[work_id],(err,re)=>{
+                 if(err){console.log(err.message)}
+                 else{
+                     res.json(re[0]);               
+                 }           
+           })
+           //console.log(starnum);      
+       }else if(iss==1){
+           starnum=result[0].starnum-1;
+           // console.log(likenum);
+           con.query('update works set starnum=? where work_id=?',[starnum,work_id]);
+           con.query('select * from works where work_id=?',[work_id],(err,re)=>{
+               if(err){console.log(err.message)}
+               else{
+                  res.json(re[0]);             
+               }              
+           })          
+       }
+     }
+   })
+})
+
+
 
 module.exports = router;

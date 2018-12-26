@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { ImprovePage } from '../improve/improve';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { SetPage } from '../set/set';
 import { DengluPage } from '../denglu/denglu';
 import { FensiPage } from '../fensi/fensi';
@@ -25,10 +26,18 @@ import { AppShare } from '../../app/app.share';
 export class MyPage {
   icons: string = "work";//默认选中作品
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public appShare: AppShare, public actionSheetCtrl: ActionSheetController) {
+    public appShare: AppShare, public actionSheetCtrl: ActionSheetController,
+  public http:HttpClient) {
   }
   user:object={};
   denglustatus:boolean=false;
+  userworks;
+  ngOnInit() {
+    this.http.get('api/userworks').subscribe(data=>{
+      console.log(data);
+      this.userworks=data;
+    })
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyPage');
   };

@@ -1,3 +1,84 @@
 page-comment {
-
+        img{
+            width: 40px;
+            height: 40px;
+            border-radius:50%;
+            margin-top:10px;
+            margin-left: 10px;
+            display: block;
+            float:left;
+        }
+        .name{
+            width:100px;
+            height:20px;
+            font-size:1.2em;
+            margin: 10px 10px;
+            float:left;
+        }
+        .comment{
+            font-size:18px;
+            width:100px;
+            margin-left:55px;
+            line-height: 15px;
+        }
+        .time{
+            margin:0 0 0 55px;
+            line-height: 10px;
+            color:gray;
+            display: inline;
+        }
+        .huifu{
+            padding-left:122px;
+        }
+    .bycom_user{
+        li{
+            background-color: rgb(243, 240, 240);
+            padding:20px;
+            margin-left:5px;
+            padding:5px;
+            line-height: 5px;
+        }
+        img{
+            width: 30px;
+            height: 30px;
+            border-radius:50%;
+            margin-top:10px;
+            margin-left: 10px;
+            display: block;
+            float:left;
+        }
+        .name{
+            padding-top:10px;
+        }
+        .comment,.time{
+            margin-left:50px;
+        }
+        .huifu{
+            padding-left:60px
+        }
+    }
+    ion-toolbar{
+        img{
+            margin-top:5px;
+        }
+        input{
+            width:200px;
+            height:30px;
+            margin-left:15px;
+            margin-top:10px;
+            border-radius: 5px;
+            border-width: 0px;
+            padding-left:5px;
+        }
+        button{
+            width:70px;
+            height:30px;
+            border-radius: 5px;
+            margin-top:10px;
+            color:gray
+        }
+    }
+    .change{
+        color:#ff5151;
+    }
 }

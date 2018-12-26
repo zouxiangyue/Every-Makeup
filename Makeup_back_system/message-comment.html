@@ -165,7 +165,7 @@
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class="fa fa-cog"></i>设置</a></li>
+                <li><a href="system-manage.html"><i class="fa fa-cog"></i>设置</a></li>
                 <li><a href="login.html"><i class="fa fa-key"></i> 退出登录</a></li>
             </ul>
         </li>
@@ -204,6 +204,12 @@
                     <a class="active" href="message-manage.html">
                         <i class="fa fa-comments"></i>
                         <span>消息管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-manage.html">
+                        <i class="fa fa-cog"></i>
+                        <span>系统管理</span>
                     </a>
                 </li>
                 <li>
@@ -301,18 +307,6 @@
                                 <button type="sumbmit" class="button button-primary">提交</button>
                         </form>
                     </p>
-                    <div class="row">
-                        <div class="col-sm-7 text-right text-center-xs">                
-                        <ul class="pagination pagination-sm m-t-none m-b-none">
-                            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-                            <li><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">4</a></li>
-                            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-                        </ul>
-                        </div>
-                    </div>
                 </div>
             </footer>
         </div>
@@ -368,7 +362,9 @@
       }),
         store = new Store({
           data : data,
-          autoLoad:true
+          autoLoad:true,
+          pageSize:5
+
         }),
         grid = new Grid.Grid({
           render:'#grid',
@@ -391,6 +387,10 @@
                 }
               }]
           },
+          bbar:{
+                // pagingBar:表明包含分页栏
+                pagingBar:true
+            },
           plugins : [editing,Grid.Plugins.CheckSelection,Grid.Plugins.ColumnChecked],
           store : store
         });

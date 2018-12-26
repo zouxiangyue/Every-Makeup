@@ -164,7 +164,7 @@
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class="fa fa-cog"></i>设置</a></li>
+                <li><a href="system-manage.html"><i class="fa fa-cog"></i>设置</a></li>
                 <li><a href="login.html"><i class="fa fa-key"></i>退出登录</a></li>
             </ul>
         </li>
@@ -203,6 +203,12 @@
                     <a href="message-manage.html">
                         <i class="fa fa-comments"></i>
                         <span>消息管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-manage.html">
+                        <i class="fa fa-cog"></i>
+                        <span>系统管理</span>
                     </a>
                 </li>
                 <li>
@@ -284,6 +290,10 @@
 
         ],
         data = [{a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
+        {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
+        {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
+        {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
+        {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
         {a:20180112,c:'2018-10-12',d:'面试装怎么化',e:'不能太浓太艳丽哦',h:124,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
         {a:20180113,c:'2018-09-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
         {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
@@ -300,7 +310,8 @@
       }),
         store = new Store({
           data : data,
-          autoLoad:true
+          autoLoad:true,
+          pageSize:7
         }),
         grid = new Grid.Grid({
           render:'#grid',
@@ -323,6 +334,10 @@
                 }
               }]
           },
+          bbar:{
+                // pagingBar:表明包含分页栏
+                pagingBar:true
+            },
           plugins : [editing,Grid.Plugins.CheckSelection,Grid.Plugins.ColumnChecked],
           store : store
         });
