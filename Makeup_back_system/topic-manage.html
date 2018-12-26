@@ -22,6 +22,9 @@
 <!-- //calendar -->
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
+<link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
+<link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
+
 <script src="js/raphael-min.js"></script>
 <script src="js/morris.js"></script>
 <style>
@@ -203,7 +206,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="topic-manage.html">
+                    <a href="topic-manage.html" class="active">
                         <i class="fa fa-paper-plane "></i>
                         <span>话题管理</span>
                     </a>
@@ -215,7 +218,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="active">
+                    <a href="system-manage.html">
                         <i class="fa fa-cog"></i>
                         <span>系统管理</span>
                     </a>
@@ -228,72 +231,45 @@
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-        <div class="table-agile-info">
-            <div class="panel panel-default">
-               <div class="panel-heading">
-                后台管理员信息
-               </div>
-               <div>
-                 <table class="table" ui-jq="footable" ui-options='{
-                   "paging": {
-                     "enabled": true
-                   },
-                   "filtering": {
-                     "enabled": true
-                   },
-                   "sorting": {
-                     "enabled": true
-                   }}'>
-                   <thead>
-                     <tr>
-                       <th data-breakpoints="xs">ID</th>
-                       <th>昵称</th>
-                       <th>真实姓名</th>
-                       <th data-breakpoints="xs sm md" data-title="DOB">出生日期</th>
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <tr data-expanded="true">
-                       <td>1</td>
-                       <td>sunny</td>
-                       <td>邹香月</td>
-                       <td>July 25th 1998</td>
-                     </tr>
-                     <tr>
-                       <td>2</td>
-                       <td>Elodia</td>
-                       <td>武滨</td>
-                       <td>March 30th 1992</td>
-                     </tr>
-                     <tr>
-                       <td>3</td>
-                       <td>Raeann</td>
-                       <td>李悦</td>                      
-                       <td>February 26th 1966</td>
-                     </tr>
-                     <tr>
-                       <td>4</td>
-                       <td>Junie</td>
-                       <td>张腾</td>
-                       <td>March 29th 1966</td>
-                     </tr>
-                     <tr>
-                       <td>5</td>
-                       <td>Solomon</td>
-                       <td>郝芸婷</td>
-                       <td>September 22nd 1964</td>
-                     </tr>
-                     <tr>
-                       <td>6</td>
-                       <td>Bar</td>
-                       <td>李欣芸</td>
-                       <td>August 4th 1991</td>
-                     </tr>
-                   </tbody>
-                 </table>
-               </div>
-             </div>
-           </div>  
+            <div class="agil-info-calendar">
+                <div class="col-md-11 agile-last-left">
+                    <div class="agile-last-grid">
+                        <div class="area-grids-heading">
+                            <h3>话题讨论量</h3>
+                        </div>
+                    <div id="graph4"></div>
+            <script>
+                 Morris.Donut({
+                    element: 'graph4',
+                    data: [
+                        {value: 15, label: '面试', formatted: 'at least 15%' },
+                        {value: 20, label: '旅行', formatted: 'approx. 20%' },
+                        {value: 25, label: '约会', formatted: 'approx. 25%' },
+                        {value: 40, label: '日常', formatted: 'at most 40%' }
+                        ],
+                    formatter: function (x, data) { return data.formatted; }
+                });
+            </script>   
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="demo-content">
+                <div class="row">
+                    <div class="span16">
+                        <div id="grid">
+                                  
+                        </div>
+                    </div>
+                </div>
+                <p class="row">
+                    <form class="span8 offset3" id="J_Form" action="" method="post">
+                        <input type="hidden" name="gridValue">
+                            <button type="sumbmit" class="button button-primary">提交</button>
+                    </form>
+                </p>
+      
 </section>
  <!-- footer -->
 		  <div class="footer">
@@ -327,8 +303,100 @@
 	   });
 	   
 	});
-    </script>
-    <!-- calendar -->
-	
+</script>
+<script src="http://g.tbcdn.cn/fi/bui/jquery-1.8.1.min.js"></script>
+<script src="http://g.alicdn.com/bui/seajs/2.3.0/sea.js"></script>
+<script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>
+<style>
+    .bui-grid-table .bui-grid-hd-title{
+        padding:0 0;
+    }
+</style>
+<!-- script start --> 
+  <script type="text/javascript">
+      BUI.use(['bui/grid','bui/data'],function(Grid,Data){
+          var Store = Data.Store,
+        columns = [
+          {title : '话题编号',dataIndex :'a',editor : {xtype : 'number',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
+          {title : '话题名称',dataIndex :'b',editor : {xtype : 'text'}},
+          {title : '话题标语',dataIndex :'c',editor : {xtype : 'text'}},
+          {title : '超级话题名称',dataIndex :'d',editor : {xtype : 'text'}},
+          {title : '参与人数',dataIndex :'e',editor : {xtype : 'number'}}
+         
+        ],
+        data = [{a:1001,b:'面试',c:'留下美好初印象',d:'#职场#面试穿搭#妆容',e:30},{a:1002,b:'旅行',c:'记录回忆足迹',d:'#游玩#旅行穿搭#轻便',e:40},{a:1003,b:'约会',c:'珍惜相处的时光',d:'#约会#约会穿搭#精致妆容',e:50},{a:1004,b:'日常',c:'开心生活每一天',d:'#学习#日常穿搭#健身',e:80}
+        ];
+      function valid(value){
+        // if(value === '1'){
+        //   return '不能选择1';
+        // }
+      }
+      var editing = new Grid.Plugins.CellEditing({
+        triggerSelected : false //触发编辑的时候不选中行
+      }),
+        store = new Store({
+          data : data,
+          autoLoad:true,
+          pageSize:7
+        }),
+        grid = new Grid.Grid({
+          render:'#grid',
+          columns : columns,
+          width : 1079,          //此处从700改为1100px
+          forceFit : true,
+          tbar:{ //添加、删除
+              items : [{
+                btnCls : 'button button-small',
+                text : '<i class="icon-plus"></i>添加',
+                listeners : {
+                  'click' : addFunction
+                }
+              },
+              {
+                btnCls : 'button button-small',
+                text : '<i class="icon-remove"></i>删除',
+                listeners : {
+                  'click' : delFunction
+                }
+              }]
+          },
+          bbar:{
+                // pagingBar:表明包含分页栏
+                pagingBar:true
+            },
+          plugins : [editing,Grid.Plugins.CheckSelection,Grid.Plugins.ColumnChecked],
+          store : store
+        });
+
+      grid.render();
+
+      
+
+      function validFn (value,obj) {
+        var records = store.getResult(),
+          rst = '';
+        BUI.each(records,function (record) {
+          if(record.a == value && obj != record){
+            rst = '文本不能重复';
+            return false;
+          }
+        });
+        return rst;
+      }
+
+      //添加记录
+      function addFunction(){
+        var newData = {b : 0};
+        store.addAt(newData,0);
+        editing.edit(newData,'a'); //添加记录后，直接编辑
+      }
+      //删除选中的记录
+      function delFunction(){
+        var selections = grid.getSelection();
+        store.remove(selections);
+      }          
+    });
+  </script>
+<!-- script end -->    
 </body>
 </html>
