@@ -3,6 +3,9 @@ import { NavController } from 'ionic-angular';
 import { SearchPage } from '../search/search';
 import { PaPage } from '../pa/pa';
 import { TopicPage } from '../topic/topic';
+import { TopictripPage } from '../topictrip/topictrip';
+import { TopicdatePage } from '../topicdate/topicdate';
+import { TopicdailyPage } from '../topicdaily/topicdaily';
 
 
 @Component({
@@ -22,5 +25,14 @@ export class AboutPage {
   }
   goTopic(){
     this.navCtrl.push(TopicPage);
+  }
+  goTopictrip(){
+    this.navCtrl.push(TopictripPage);
+  }
+  goTopicdate(){
+    this.navCtrl.push(TopicdatePage);
+  }
+  goTopicdaily(){
+    this.navCtrl.push(TopicdailyPage);
   }
 }
