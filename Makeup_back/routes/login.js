@@ -104,7 +104,10 @@ router.post('/scan',(req,res)=>{
  con.query('select scannum from works where work_id=?',[work_id],(err,result)=>{
       if(err){console.log(err.message)}
       else{
-        res.json(result[0]);     
+       // res.json(result[0]);
+       var scannum=result[0].scannum+1;
+       con.query('update works set scannum=? where work_id=?',[scannum,work_id]);
+       res.json({'scannum':scannum});
       }
   })
 })
@@ -205,6 +208,29 @@ router.post('/star',(req,res)=>{
    })
 })
 
-
+router.post('/creatework',(req,res)=>{
+  var content=req.body.content;
+  var mei_id=req.body.mei_id;
+  var work_id='';
+  var kind=req.body.kind;
+  var title=req.body.title;
+  var img=req.bodyimg || '../../assets/images/img22.jpg,../../assets/images/img24.jpg,../../assets/images/img26.jpg'
+  con.query('select count(*) num from works where mei_id=?',[mei_id],(err,result)=>{
+    if(err){console.log(console.log(err.message))}
+    else{
+      work_id=mei_id+(result[0].num+1);
+      con.query('insert into works(work_id,title,content,img,kind,mei_id) values(?,?,?,?,?,?)',
+        [work_id,title,content,img,kind,mei_id],(err,reslt)=>{
+          if(err){console.log(err.message)}
+          else{
+            con.query('select * from works where work_id=?',[work_id],(err,re)=>{
+              console.log(re);
+              res.json(re[0]);
+            })
+          }
+        })
+    }
+  })
+})
 
 module.exports = router;
