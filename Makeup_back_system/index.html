@@ -202,6 +202,12 @@
                         <span>作品管理</span>
                     </a>
                 </li>
+                <li>
+                    <a href="topic-manage.html">
+                        <i class="fa fa-paper-plane "></i>
+                        <span>话题管理</span>
+                    </a>
+                </li>
                 <li class="sub-menu">
                     <a href="message-manage.html">
                         <i class="fa fa-comments"></i>
@@ -212,12 +218,6 @@
                     <a href="system-manage.html">
                         <i class="fa fa-cog"></i>
                         <span>系统管理</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-user"></i>
-                        <span>Login Page</span>
                     </a>
                 </li>
             </ul>            </div>
@@ -329,7 +329,7 @@
                             <div class="clearfix"> </div>
                         </div>
                         <div class="agile-last-grids">
-                                <div class="col-md-4 agile-last-left agile-last-middle">
+                                <div class="col-md-6 agile-last-left agile-last-middle">
                                         <div class="agile-last-grid">
                                             <div class="area-grids-heading">
                                                 <h3>下载量/卸载量</h3>
@@ -362,7 +362,7 @@
                                             </script>
                                         </div>
                                     </div>
-                                <div class="col-md-4 agile-last-left agile-last-right">
+                                <div class="col-md-6 agile-last-left agile-last-right">
                                         <div class="agile-last-grid">
                                             <div class="area-grids-heading">
                                                 <h3>用户量</h3>
@@ -394,28 +394,7 @@
                                             </script>
                         
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 agile-last-left">
-                                            <div class="agile-last-grid">
-                                                <div class="area-grids-heading">
-                                                    <h3>话题讨论量</h3>
-                                                </div>
-                                                <div id="graph4"></div>
-                                                <script>
-                                                 Morris.Donut({
-                                                    element: 'graph4',
-                                                    data: [
-                                                      {value: 20, label: '面试', formatted: 'at least 20%' },
-                                                      {value: 15, label: '旅行', formatted: 'approx. 15%' },
-                                                      {value: 35, label: '约会', formatted: 'approx. 35%' },
-                                                      {value: 30, label: '日常', formatted: 'at most 30%' }
-                                                    ],
-                                                    formatter: function (x, data) { return data.formatted; }
-                                                  });
-                                                </script>
-                        
-                                            </div>
-                                        </div>
+                                    </div>                                    
                                 <div class="clearfix"></div>
                             </div>
                            
