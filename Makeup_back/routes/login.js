@@ -23,18 +23,23 @@ router.post('/',function(req,res){
  //res.json({a:12,b:13});
  con.query('select * from users', (err, results) => {
    if(err) {
+
      console.log(err.message);
      process.exit(1);   
    }else{
-      //console.log(results);
+
+     //console.log(results);
       console.log(results.length);
       for(var i=0;i<results.length;i++){
         //console.log(i);
+
         if((results[i].mei_id==user_id || results[i].email==user_id || results[i].phone==user_id)&& results[i].pwd==user_pwd){
           if(results[i].status==0){//判断用户状态，是否已登录，status=0表示未登录
             con.query('update users set status = ? where mei_id = ?',[1,results[i].mei_id],(err,result)=>{
+ 
               if(err){
                  console.log(err.message);
+
                  process.exit(1);
               }else{
                 con.query('select * from users where mei_id=?',[results[i].mei_id],(err,re)=>{
@@ -214,13 +219,15 @@ router.post('/creatework',(req,res)=>{
   var work_id='';
   var kind=req.body.kind;
   var title=req.body.title;
-  var img=req.bodyimg || '../../assets/images/img22.jpg,../../assets/images/img24.jpg,../../assets/images/img26.jpg'
+  var img=req.bodyimg || '../../assets/images/img22.jpg,../../assets/images/img24.jpg,../../assets/images/img26.jpg';
+  var video='';
+  var time=new Date();
+  var likenum=0,scannum=0,commentnum=0,collectnum=0,starnum=0;
   con.query('select count(*) num from works where mei_id=?',[mei_id],(err,result)=>{
     if(err){console.log(console.log(err.message))}
     else{
       work_id=mei_id+(result[0].num+1);
-      con.query('insert into works(work_id,title,content,img,kind,mei_id) values(?,?,?,?,?,?)',
-        [work_id,title,content,img,kind,mei_id],(err,reslt)=>{
+      con.query('insert into works values(?,?,?,?,?,?,?,?,?,?,?,?,?)',[work_id,kind,time,title,content,img,video,likenum,commentnum,starnum,scannum,mei_id,collectnum],(err,reslt)=>{
           if(err){console.log(err.message)}
           else{
             con.query('select * from works where work_id=?',[work_id],(err,re)=>{
@@ -231,6 +238,15 @@ router.post('/creatework',(req,res)=>{
         })
     }
   })
+});
+router.post('/myworks',(req,res)=>{
+  var mei_id=req.body.mei_id;
+  con.query('select * from works where mei_id=?',[mei_id],(err,result)=>{
+    if(err){console.log(err.message)}
+    else{
+      res.json(result);
+    }
+  });
 })
 
 module.exports = router;
