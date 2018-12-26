@@ -61,7 +61,7 @@
       <ion-grid class="contents">
         <ion-row>
           <ion-col col-6 (click)="goPa(i)" *ngFor='let work of works,let i=index'>
-            <img src="{{work[0].img}}" class="img">
+            <img src="{{work[0].img[0]}}" class="img">
             <h6>{{work[0].title}}</h6>
             <p><img src="{{work[1].headimg}}" class="photo">
             {{work[1].name}}<span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span></p>

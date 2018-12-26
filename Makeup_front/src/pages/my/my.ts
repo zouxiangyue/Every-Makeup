@@ -29,19 +29,17 @@ export class MyPage {
     public appShare: AppShare, public actionSheetCtrl: ActionSheetController,
   public http:HttpClient) {
   }
-  user:object={};
+  user:object=JSON.parse(window.localStorage.getItem('user'));
   denglustatus:boolean=false;
-  userworks;
-  ngOnInit() {
-    this.http.get('api/userworks').subscribe(data=>{
-      console.log(data);
-      this.userworks=data;
-    })
-  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyPage');
   };
+  mylikes;
+  mylikes_users;
   ionViewWillEnter(){
+    this.mylikes=JSON.parse(window.localStorage.getItem('mylikes'));
+    //console.log(JSON.parse(window.localStorage.getItem('mylikes_users')))
     if (window.localStorage.hasOwnProperty('user')) {
       this.denglustatus=true;
       this.user = JSON.parse(window.localStorage.getItem('user'));
@@ -54,6 +52,18 @@ export class MyPage {
       this.denglustatus=false;
       console.log('未登录');
     }
+  }
+  myworks;
+  ngOnInit() {
+    //console.log(this.mylikes)
+    this.http.post('api/login/myworks',{mei_id:this.user['mei_id']}).subscribe(data=>{
+      console.log(data);
+      this.myworks=data;
+      for(var i=0;i<this.myworks.length;i++){
+        this.myworks[i].img=(this.myworks[i].img).split(',')
+        console.log(this.myworks);
+      }
+    })
   }
 
   clickHead() {
@@ -129,5 +139,16 @@ export class MyPage {
     });
     actionSheet.present();
   }
-
+  isActive=true;
+  isClick(f){
+    this.isActive =f;
+  }
+  goPa(i,k){
+    //console.log(i,this.myworks[i])
+    if(k==0){
+      this.navCtrl.push(PaPage,{mywork:this.myworks[i]})
+    }else if(k==1){
+      this.navCtrl.push(PaPage,{work_user:this.mylikes[i][1],work:this.mylikes[i][0]});
+    }
+  }
 }

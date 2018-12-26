@@ -115,6 +115,7 @@ page-my {
             overflow: hidden; //把超出的内容进行隐藏；
             white-space: nowrap; //设置内容不换行；
             text-overflow: ellipsis; //设置超出内容为省略号
+            line-height: 15px;
         }
         .photo{
             border-radius:25px;
@@ -126,5 +127,12 @@ page-my {
             margin-top:5px; 
         }
     }
-    
+    .ischange{
+        border-bottom:2px solid #F09595;
+        color:#F09595;
+        font-size: 16px;
+    }
+    .change{
+        border-bottom:2px solid gainsboro;
+    }
 }

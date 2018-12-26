@@ -12,6 +12,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 export class HomePage {
   isActive=0;
   works;
+  works_img;
   isClick(i){
     this.isActive =i;
   }
@@ -28,10 +29,16 @@ export class HomePage {
     this.http.get('api/home').subscribe(data=>{
       console.log(data);
       this.works=data;
+      //console.log(this.works);
+      for(var i=0;i<this.works.length;i++){
+        this.works[i][0].img=(this.works[i][0].img).split(',')
+        console.log(this.works);
+      }
+      //console.log(this.works);
     })
   }
   goPa(i){
-    this.navCtrl.push(PaPage,{work_user:this.works[i][1],work_id:this.works[i][0].work_id});
+    this.navCtrl.push(PaPage,{work_user:this.works[i][1],work:this.works[i][0]});
   }
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
