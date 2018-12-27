@@ -29,14 +29,18 @@ export class MyPage {
     public appShare: AppShare, public actionSheetCtrl: ActionSheetController,
   public http:HttpClient) {
   }
-  user:object=JSON.parse(window.localStorage.getItem('user'));
+  
   denglustatus:boolean=false;
-
+  user;
+  ngOnInit() {
+    //console.log(this.mylikes)
+    this.user=JSON.parse(window.localStorage.getItem('user'));
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyPage');
+    console.log(this.user)
   };
   mylikes;
-  mylikes_users;
   ionViewWillEnter(){
     this.http.post('api/login/myworks',{mei_id:this.user['mei_id']}).subscribe(data=>{
       console.log(data);
@@ -47,6 +51,7 @@ export class MyPage {
       }
     })
     this.mylikes=JSON.parse(window.localStorage.getItem('mylikes'));
+    console.log(this.mylikes)
     //console.log(JSON.parse(window.localStorage.getItem('mylikes_users')))
     if (window.localStorage.hasOwnProperty('user')) {
       this.denglustatus=true;
@@ -62,9 +67,6 @@ export class MyPage {
     }
   }
   myworks;
-  ngOnInit() {
-    //console.log(this.mylikes)
-  }
 
   clickHead() {
     if (window.localStorage.hasOwnProperty('user')) {

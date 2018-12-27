@@ -59,7 +59,7 @@ export class HomePage {
           this.works_other.push(this.works[j])
         }
       }
-      //console.log(this.works);
+      console.log(this.works_tuijian);
     })
   }
   goPa(i,k){

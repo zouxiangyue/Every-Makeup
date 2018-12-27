@@ -14,23 +14,23 @@
     <div *ngSwitchCase="true">
       <ion-list>
         <ion-item detail-push>
-          <p>你可能感兴趣的人</p>
+          <p >你可能感兴趣的人</p>
           <span item-end>查看更多</span>
         </ion-item>
-        <ion-item *ngFor='let item of names;let key=index;' no-lines class='interest'>
-          <img src='{{item.img}}' alt='头像'>
-          <h2>{{item.name}}</h2>
-          <span>{{item.note_num}}个作品</span>
-          <span class='fan_num'>{{item.fan_num}}个粉丝</span>
-          <button item-end >关注</button>
+        <ion-item *ngFor='let interest of interest_users;let i=index;' no-lines class='interest'>
+          <img src='{{interest.headimg}}' alt='头像'>
+          <h2>{{interest.name}}</h2>
+          <span>{{interest.worknum}}个作品</span>
+          <span class='fan_num'>{{interest.fannum}}个粉丝</span>
+          <button item-end (click)="follow('关注',i)">关注</button>
         </ion-item>
         <p ion-item outline>我关注的好友</p>
-        <ion-item *ngFor='let item of follows;let key=index;' class='follow' no-lines>
-          <img src='{{item.img}}' alt='头像'>
-          <h2>{{item.name}}</h2>
-          <span>{{item.note_num}}个作品</span>
-          <span class='fan_num'>{{item.fan_num}}个粉丝</span>
-          <button item-end >已关注</button>
+        <ion-item *ngFor='let myfollow of myfollows;let j=index;' no-lines class='follow'>
+          <img src='{{myfollow.headimg}}' alt='头像'>
+          <h2>{{myfollow.name}}</h2>
+          <span>{{myfollow.worknum}}个作品</span>
+          <span class='fan_num'>{{myfollow.fannum}}个粉丝</span>
+          <button item-end (click)="follow('已关注',j)">已关注</button>
         </ion-item>
       </ion-list>
     </div>
@@ -46,16 +46,10 @@
           <h2>{{item2.name}}</h2>
           <span>{{item2.note_num}}个推荐人</span>
           <span class='fan_num'>{{item2.fan_num}}个发表</span>
-          <button item-end>关注</button>
+          <button item-end (click)="follow()">关注</button>
         </ion-item>
         <p ion-item outline>我关注的话题</p>
-        <ion-item *ngFor='let item2 of follows2' class='follow' no-lines>
-          <img src='{{item2.img}}' alt='头像'>
-          <h2>{{item2.name}}</h2>
-          <span>{{item2.note_num}}个推荐人</span>
-          <span class='fan_num'>{{item2.fan_num}}个发表</span>
-          <button item-end>已关注</button>
-        </ion-item>
+       
       </ion-list>
     </div>
   </div>

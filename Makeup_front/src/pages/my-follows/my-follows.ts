@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { DengluPage } from '../denglu/denglu'
 /**
  * Generated class for the MyFollowsPage page.
  *
@@ -15,21 +16,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MyFollowsPage {
   
-  isActive:boolean=true;
-  names=[{name:'Canna',img:"../../assets/images/img1.jpg",note_num:12,fan_num:16},
-         {name:'Jon',img:"../../assets/images/img2.jpg",note_num:58,fan_num:12},
-         {name:'Jack',img:"../../assets/images/img3.jpg",note_num:68,fan_num:460}];
-  follows=[{name:'梅子熟了',img:"../../assets/images/img4.jpg",note_num:20,fan_num:456},
-    {name:'雨夜',img:"../../assets/images/img5.jpg",note_num:23,fan_num:34},
-    {name:'听见你说',img:"../../assets/images/img6.jpg",note_num:12,fan_num:58}];
   
-  names2=[{name:'约会话题',img:"../../assets/images/约会.jpeg",note_num:16,fan_num:46},
-          {name:'旅行话题',img:"../../assets/images/旅行.jpeg",note_num:22,fan_num:34}];
-  follows2=[
-    {name:'面试话题',img:"../../assets/images/面试.jpeg",note_num:25,fan_num:26},
-    {name:'日常话题',img:"../../assets/images/img13.jpg",note_num:14,fan_num:24}
-  ];
-  arr=[];
+  isActive:boolean=true;
+
   // change(index,done){
   //   if(done){
   //     let unfollow=this.follows[index];
@@ -37,15 +26,77 @@ export class MyFollowsPage {
   //   }
   // }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public http: HttpClient) {
   }
-
+  myfollows;
+  interest_users;
+  user
+  ionViewWillEnter(){
+    this.user=JSON.parse(window.localStorage.getItem('user'));
+    this.myfollows=JSON.parse(window.localStorage.getItem('myfollows')) || [];
+    this.http.post('api/login/interest',{myfollows:this.myfollows}).subscribe(data=>{
+      this.interest_users=data;
+      console.log(data,this.interest_users);
+      for(var i=0;i<this.interest_users.length;i++){
+        if(this.interest_users[i].mei_id==this.user.mei_id){
+          this.interest_users.splice(i,1);
+        }
+      }
+    })
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyFollowsPage');
   }
 
   active(b){
     this.isActive=b;
+  }
+  myfollow(user,i){
+    if(window.localStorage.getItem('myfollows') && window.localStorage.getItem('myfollows')!='[]'){
+      this.myfollows=JSON.parse(window.localStorage.getItem('myfollows'));
+      this.myfollows.unshift(user);//将关注好友到关注列表
+      window.localStorage.setItem('myfollows',JSON.stringify(this.myfollows));
+      console.log(this.myfollows);
+      this.interest_users.splice(i,1);
+    }else{
+      this.myfollows.push(user);
+      window.localStorage.setItem('myfollows',JSON.stringify(this.myfollows));
+      console.log(this.myfollows,window.localStorage.getItem('myfollows'));
+      this.interest_users.splice(i,1);
+    }
+  }
+  clearmyfollow(i){
+    this.interest_users.push(this.myfollows[i]);
+    this.myfollows.splice(i,1);
+    window.localStorage.setItem('myfollows',JSON.stringify(this.myfollows));
+  }
+
+  follow(k,i) {
+   // console.log(k,i)
+    if (this.user) {
+      if ( k== '关注') {
+       // console.log(k,i)
+        var option={mei_id:this.user.mei_id,bymei_id:this.interest_users[i].mei_id,isfollow:0}
+        this.http.post('api/login/follow',option,{}).subscribe((data)=>{
+          console.log('关注');
+          this.user.follownum++;
+          window.localStorage.setItem('user',JSON.stringify(this.user))
+          this.myfollow(this.interest_users[i],i)
+        })
+      } else if (k == '已关注') {
+        //console.log(k,i)
+        var option={mei_id:this.user.mei_id,bymei_id:this.myfollows[i].mei_id,isfollow:1}
+        this.http.post('api/login/follow',option,{}).subscribe((data)=>{
+          console.log('取消关注');
+          this.user.follownum--;
+          window.localStorage.setItem('user',JSON.stringify(this.user))
+          this.clearmyfollow(i)
+        })
+      }
+    }else{
+      this.navCtrl.push(DengluPage);
+    }
   }
 
 }
