@@ -1,0 +1,111 @@
+<ion-content>
+  <div class="div1">
+    <div class="top">
+      <i class="iconfont1" (click)="goBack()">&#xe62f;</i>
+      <span class="spanT">话题</span>
+      <ion-icon name="share-alt" class="icon1" (click)="share($event)"></ion-icon>
+    </div>
+    <div class="bottom">
+      <p>
+        <br/>
+        <span class="span1">旅行-记录回忆足迹</span><br/><br/>
+        <span class="span2">#游玩#流行穿搭#轻便
+          <span class="span3">4
+            <!-- <ion-icon name="text"></ion-icon> -->
+            <i class="iconfont1">&#xe60e;</i>
+          </span>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <div class="div2">
+    <div class="tit">精彩讨论</div><hr/>
+    <div *ngIf='istop'>
+    <div class="single" *ngFor='let topic of top_arr'>
+        <div class="detail">
+        <div class="left"><img src="{{com.headimg}}" class="imgs"></div>
+        <div class="right">
+          <span class="name">{{com.name}}</span><br/>
+          <span class="span5">{{com.time}}</span>
+          <div class="dianzan">
+            <span class="span6">9</span>
+            <ion-icon name="thumbs-up"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="pinglun">{{com.com}}</div>
+    </div>
+    <hr/>
+    </div>
+
+    <div class="single">
+      <div class="detail">
+        <div class="left"><img src="../../assets/images/img1.jpg" class="imgs"></div>
+        <div class="right">
+          <span class="name">tingcy</span><br/>
+          <span class="span5">12-25 14:27</span>
+          <div class="dianzan">
+            <span class="span6">5</span>
+            <ion-icon name="heart-outline" style="float:right;"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="pinglun">我觉得旅行还是以轻便为前提哦~</div>
+    </div>
+    <hr/>
+
+    <div class="single">
+        <div class="detail">
+          <div class="left"><img src="../../assets/images/img13.jpg" class="imgs"></div>
+          <div class="right">
+            <span class="name">liyue</span><br/>
+            <span class="span5">12-21 12:27</span>
+            <div class="dianzan">
+              <span class="span6">33</span>
+              <ion-icon name="heart-outline" style="float:right;"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="pinglun">旅行前最好列一个用品清单。</div>
+      </div>
+      <hr/>
+
+      <div class="single">
+        <div class="detail">
+          <div class="left"><img src="../../assets/images/女头1.jpg" class="imgs"></div>
+          <div class="right">
+            <span class="name">淡默</span><br/>
+            <span class="span5">12-19 09:52</span>
+            <div class="dianzan">
+              <span class="span6">15</span>
+              <ion-icon name="heart-outline" style="float:right;"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="pinglun">装行李我一向很佩服我自己~</div>
+      </div>
+      <hr/>
+
+      <div class="single">
+        <div class="detail">
+          <div class="left"><img src="../../assets/images/img19.jpg" class="imgs"></div>
+          <div class="right">
+            <span class="name">moe</span><br/>
+            <span class="span5">12-15 16:22</span>
+            <div class="dianzan">
+              <span class="span6">8</span>
+              <ion-icon name="heart-outline" style="float:right;"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="pinglun">旅行要穿好看的衣服啊，拍照特漂亮~</div>
+      </div>
+      <hr/>
+  </div> 
+</ion-content>
+<ion-footer>
+  <button class="btn" ion-fab>
+    <i class="iconfont1" id="edit">&#xe684;</i>
+  </button>
+</ion-footer>

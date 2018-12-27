@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController,ViewController,App} from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { PaPage } from '../pa/pa';
 
 
 
@@ -17,8 +19,9 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class WreleasePage {
   type="beauty";
-  content;
-
+  content='';
+  title='';
+  kind='美妆类';
   imgUrl:string;
   takePhoto(){
     const options: CameraOptions = {
@@ -38,11 +41,17 @@ export class WreleasePage {
     });
   }
 
-  constructor(public camera:Camera,public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
+  constructor(public camera:Camera,public navCtrl: NavController, 
+    public navParams: NavParams,public alertCtrl: AlertController,
+   public http:HttpClient,public viewCtrl:ViewController,public appCtrl: App) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WreleasePage');
+  }
+  user;
+  ngOnInit() {
+    this.user=JSON.parse(window.localStorage.getItem('user'));
   }
   cancel(){
     this.navCtrl.popToRoot();
@@ -60,22 +69,22 @@ export class WreleasePage {
     console.log(beauty.getAttribute('checked'));
     if(Boolean(beauty.getAttribute('checked'))==true){
       console.log('美妆类'); 
-      this.type='beauty';
+      this.kind='美妆类';
     }else if(Boolean(wear.getAttribute('checked'))==true){
       console.log('穿搭类'); 
-      this.type='wear';
+      this.kind='穿搭类';
     }else if(Boolean(skin.getAttribute('checked'))==true){
       console.log('护肤类'); 
-      this.type='skin';
+      this.kind='护肤类';
     }else if(Boolean(perfume.getAttribute('checked'))==true){
       console.log('香氛类'); 
-      this.type='perfume';
+      this.kind='香氛类';
     }else if(Boolean(sport.getAttribute('checked'))==true){
       console.log('健身类'); 
-      this.type='sport';
+      this.kind='健身类';
     }else if(Boolean(other.getAttribute('checked'))==true){
       console.log('其他'); 
-      this.type='other';
+      this.kind='其他';
     }
   
     //发布帖子
@@ -85,6 +94,18 @@ export class WreleasePage {
         title: '发布成功!' 
       });
       alert.present();
+      var options={
+        mei_id:this.user.mei_id,
+        title:this.title,
+        content:this.content,
+        img:'',
+        kind:this.kind
+      }
+      this.http.post('api/login/creatework',options,{}).subscribe(data=>{
+        console.log(data);
+        this.viewCtrl.dismiss();
+        this.appCtrl.getRootNav().push(PaPage,{mywork:data});
+      })
     }
     //内容为空
     else{
@@ -93,6 +114,7 @@ export class WreleasePage {
       });
       tip.present();
     }
+
   }
 
 }

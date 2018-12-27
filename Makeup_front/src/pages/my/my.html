@@ -18,11 +18,11 @@
     <!-- <p class="p1">每妆号：21199320</p> -->
     <div>
         <div class="care" (click)='gotoFollows()'>
-            &nbsp;&nbsp;&nbsp;0
+            &nbsp;&nbsp;&nbsp;{{user.follownum}}
             <br/>关注
         </div>
         <div class="fans" (click)='gotoFensi()'>
-            &nbsp;&nbsp;&nbsp;0
+            &nbsp;&nbsp;&nbsp;{{user.fannum}}
             <br/>粉丝
         </div>
         <div class="praise" (click)='gotoDianzan()'>
@@ -30,191 +30,44 @@
             <br/>获赞
         </div>
     </div>
-    <ion-segment [(ngModel)]="icons" color="fenzi">
-        <ion-segment-button value="work" class="div4">
-            作品
-        </ion-segment-button>
-        <ion-segment-button value="like" class="div4">
-            喜欢
-        </ion-segment-button>
-    </ion-segment>
-    <!-- <div [ngSwitch]="icons">
-        <div *ngSwitchCase="'work'">
+    <ion-grid class='work_like'>
+        <ion-row>
+            <ion-col style='text-align: center' col-6 (click)="isClick(true)" [class.change]="isActive==false" [class.ischange]="isActive==true">
+                作品
+            </ion-col>
+            <ion-col style='text-align: center' col-6 (click)="isClick(false)" [class.change]="isActive==true" [class.ischange]="isActive==false">
+                喜欢
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div [ngSwitch]="isActive">
+        <div *ngSwitchCase="true">
             <ion-grid class="contents">
                 <ion-row>
-                    <ion-col col-6>
-                      
-                        <img (click)='goSub()' src="../../assets/images/img12.jpg" class="img">
-                        <h6>马丁靴穿搭遮肉、时髦</h6>
-                        <p><img src="../../assets/images/img11.jpg" class="photo">梅子熟了
-                            <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
-                        </p>
-                    </ion-col>
-                    <ion-col col-6>
-                        <img (click)='goSub()' src="../../assets/images/img13.jpg" class="img">
-                        <h6>面试妆怎么化更加分？</h6>
-                        <p><img src="../../assets/images/img14.jpg" class="photo">雨夜
-                            <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span>
-                        </p>
-                    </ion-col>
-                    <ion-col col-6>
-                        <img (click)='goSub()' src="../../assets/images/img15.jpg" class="img">
-                        <h6>秋冬穿搭必备神器!</h6>
-                        <p><img src="../../assets/images/img16.jpg" class="photo">听见你说
-                            <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
-                        </p>
-                    </ion-col>
-                    <ion-col col-6>
-                        <img (click)='goSub()' src="../../assets/images/img17.jpg" class="img">
-                        <h6>完美安利一个小物！</h6>
-                        <p><img src="../../assets/images/img18.jpg" class="photo">柔弱中带伤
-                            <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
+                    <ion-col (click)="goPa(i,0)" *ngFor='let mywork of myworks,let i=index' col-6>
+                        <img src="{{mywork.img[0]}}" class="img">
+                        <h6>{{mywork.title}}</h6>
+                        <p>
+                            <img src="{{user.headimg}}" class="photo">{{user.name}}
+                            <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>{{mywork.likenum}}</span>
                         </p>
                     </ion-col>
                 </ion-row>
             </ion-grid>
         </div>
-        <div *ngSwitchCase="'like'">
+        <div *ngSwitchCase="false">
             <ion-grid class="contents">
-                <ion-row>                               
-                    <ion-col col-6>
-                        <img (click)='goSub()' src="../../assets/images/img15.jpg" class="img">
-                        <h6>秋冬穿搭必备神器!</h6>
-                        <p><img src="../../assets/images/img16.jpg" class="photo">听见你说
-                            <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
+                <ion-row>
+                    <ion-col (click)="goPa(i,1)" col-6 *ngFor='let mylike of mylikes,let i=index'>
+                        <img src="{{mylike[0].img[0]}}" class="img">
+                        <h6>{{mylike[0].title}}</h6>
+                        <p>
+                            <img src="{{mylike[1].headimg}}" class="photo">{{mylike[1].name}}
+                            <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>{{mylike[0].likenum}}</span>
                         </p>
                     </ion-col>
-                    <ion-col col-6>
-                        <img (click)='goSub()' src="../../assets/images/img17.jpg" class="img">
-                        <h6>完美安利一个小物！</h6>
-                        <p><img src="../../assets/images/img18.jpg" class="photo">柔弱中带伤
-                            <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
-                        </p>
-                    </ion-col>
-                    <ion-col col-6>
-                        <img (click)='goSub()' src="../../assets/images/img12.jpg" class="img">
-                        <h6>马丁靴穿搭遮肉、时髦</h6>
-                        <p><img src="../../assets/images/img11.jpg" class="photo">梅子熟了
-                            <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
-                        </p>
-                    </ion-col>
-                    <ion-col col-6>
-                        <img (click)='goSub()' src="../../assets/images/img13.jpg" class="img">
-                        <h6>面试妆怎么化更加分？</h6>
-                        <p><img src="../../assets/images/img14.jpg" class="photo">雨夜
-                            <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span>
-                        </p>
-                    </ion-col>
-                </ion-row>  
+                </ion-row>
             </ion-grid>
         </div>
     </div>
-
-
-</ion-content> -->
-
-
-<!-- <ion-content>
-    <div>
-        <img (click)="goDenglu()" src="../../assets/images/鲸鱼.png" >
-    
-    <div class="div2" (click)='setting()'>
-        <ion-icon ios="ios-card" md="md-card"></ion-icon> 完善信息
-    </div>
-    <div class="div21" (click)='setting1()'>
-        <ion-icon ios="ios-settings" md="md-settings"></ion-icon> 设置
-    </div>
-    <br/>
-    <br/>
-    <br/>
-
-    <p class="p1">每妆号：21199320</p>
-    <div class="div3">
-        <div class="care">&nbsp;&nbsp;2
-            <br/>关注</div>
-        <div class="fans" (click)='goto()'>&nbsp;&nbsp;10
-            <br/>粉丝</div>
-        <div class="praise">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;128
-            <br/>收藏与获赞</div>
-    </div>
-
-    <ion-segment [(ngModel)]="icons" color="purple">
-        <ion-segment-button value="work">
-            作品
-        </ion-segment-button>
-        <ion-segment-button value="like">
-            喜欢
-        </ion-segment-button>
-    </ion-segment>
-    <div [ngSwitch]="icons">
-        <div *ngSwitchCase="'work'">
-            <ion-grid class="contents">
-                <ion-row>
-                  <ion-col col-6>
-                    <img src="../../assets/images/img12.jpg" class="img">
-                    <h6>马丁靴穿搭遮肉、时髦</h6>
-                    <p><img src="../../assets/images/img11.jpg" class="photo">梅子熟了
-                        <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
-                    </p>
-                  </ion-col>
-                  <ion-col col-6>
-                    <img src="../../assets/images/img13.jpg" class="img">
-                    <h6>面试妆怎么化更加分？</h6>
-                    <p><img src="../../assets/images/img14.jpg" class="photo">雨夜
-                        <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span>
-                    </p>
-                  </ion-col>
-                  <ion-col col-6>
-                    <img src="../../assets/images/img15.jpg" class="img">
-                    <h6>秋冬穿搭必备神器!</h6>
-                    <p><img src="../../assets/images/img16.jpg" class="photo">听见你说
-                        <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
-                    </p>
-                  </ion-col>
-                  <ion-col col-6>
-                    <img src="../../assets/images/img17.jpg" class="img">
-                    <h6>完美安利一个小物！</h6>
-                    <p><img src="../../assets/images/img18.jpg" class="photo">柔弱中带伤
-                        <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
-                    </p>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-        </div>
-        <div *ngSwitchCase="'like'">
-            <ion-grid class="contents">
-                <ion-row>                               
-                  <ion-col col-6>
-                    <img src="../../assets/images/img15.jpg" class="img">
-                    <h6>秋冬穿搭必备神器!</h6>
-                    <p><img src="../../assets/images/img16.jpg" class="photo">听见你说
-                        <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
-                    </p>
-                  </ion-col>
-                  <ion-col col-6>
-                    <img src="../../assets/images/img17.jpg" class="img">
-                    <h6>完美安利一个小物！</h6>
-                    <p><img src="../../assets/images/img18.jpg" class="photo">柔弱中带伤
-                        <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
-                    </p>
-                  </ion-col>
-                  <ion-col col-6>
-                    <img src="../../assets/images/img12.jpg" class="img">
-                    <h6>马丁靴穿搭遮肉、时髦</h6>
-                    <p><img src="../../assets/images/img11.jpg" class="photo">梅子熟了
-                        <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>139</span>
-                    </p>
-                  </ion-col>
-                  <ion-col col-6>
-                    <img src="../../assets/images/img13.jpg" class="img">
-                    <h6>面试妆怎么化更加分？</h6>
-                    <p><img src="../../assets/images/img14.jpg" class="photo">雨夜
-                        <span><i class="iconfont1" style="font-size:16px">&#xe630;</i>19</span>
-                    </p>
-                  </ion-col>
-                </ion-row>  
-              </ion-grid>
-        </div>
-    </div>
-</div>
-</ion-content> -->
+</ion-content>

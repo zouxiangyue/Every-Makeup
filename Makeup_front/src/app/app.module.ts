@@ -47,6 +47,9 @@ import { ImprovebirthdayPage } from '../pages/improvebirthday/improvebirthday';
 import { ImprovesignaturePage } from '../pages/improvesignature/improvesignature';
 import { CommentPage } from '../pages/comment/comment';
 import { TopicPage } from '../pages/topic/topic';
+import { TopictripPage } from '../pages/topictrip/topictrip';
+import { TopicdatePage } from '../pages/topicdate/topicdate';
+import { TopicdailyPage } from '../pages/topicdaily/topicdaily';
 
 
 
@@ -93,6 +96,9 @@ import { TopicPage } from '../pages/topic/topic';
 
     CommentPage,
     TopicPage,
+    TopictripPage,
+    TopicdatePage,
+    TopicdailyPage
   ],
   imports: [
     BrowserModule,
@@ -146,6 +152,9 @@ import { TopicPage } from '../pages/topic/topic';
 
     CommentPage,
     TopicPage,
+    TopictripPage,
+    TopicdatePage,
+    TopicdailyPage
   ],
   providers: [
     StatusBar,
