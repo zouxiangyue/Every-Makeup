@@ -118,8 +118,9 @@ router.post('/scan',(req,res)=>{
 })
 router.post('/follow',(req,res)=>{
   var mei_id=req.body.mei_id;
+  var bymei_id=req.body.bymei_id;
   var isf=req.body.isfollow;
-  var follownum;
+  var follownum,byfannum;
   con.query('select follownum from users where mei_id=?',[mei_id],(err,result)=>{
     if(err){
          console.log(err.massege) 
@@ -130,13 +131,33 @@ router.post('/follow',(req,res)=>{
         follownum=result[0].follownum+1;
         con.query('update users set follownum=? where mei_id=?',[follownum,mei_id]);
         console.log(follownum);
-      }else if(isf==1){
+        con.query('select fannum from users where mei_id=?',[bymei_id],(err,re)=>{
+          if(err){console.log(err.message)}
+          else{
+            //console.log(re);
+            byfannum=re[0].fannum+1;
+            con.query('update users set fannum=? where mei_id=?',[byfannum,bymei_id]);
+            //console.log(byfannum);
+            res.json(re[0])
+          }
+        })
+      }
+      else if(isf==1){
         follownum=result[0].follownum-1;
         console.log(follownum);
-        con.query('update users set follownum=? where mei_id=?',[follownum,mei_id])
+        con.query('update users set follownum=? where mei_id=?',[follownum,mei_id]);
+        con.query('select fannum from users where mei_id=?',[bymei_id],(err,re)=>{
+           if(err){console.log(err.message)}
+           else{
+               byfannum=re[0].fannum-1;
+               con.query('update users set fannum=? where mei_id=?',[byfannum,bymei_id]);
+               res.json(re[0]);
+           }       
+        })
       }
     }
-  })
+  });
+  
 })
 
 router.post('/like',(req,res)=>{
@@ -245,6 +266,43 @@ router.post('/myworks',(req,res)=>{
     if(err){console.log(err.message)}
     else{
       res.json(result);
+    }
+  });
+})
+
+router.post('/pawork',(req,res)=>{
+  var work_id=req.body.work_id;
+  con.query('select * from works where work_id=?',[work_id],(err,result)=>{
+    if(err){console.log(err)}
+    else{res.json(result[0])};
+  })
+})
+
+router.post('/interest',(req,res)=>{
+  var myfollows=req.body.myfollows;
+  var arr=[],users;
+  con.query('select * from users',(err,result)=>{
+    if(err){console.log(err)}
+    else{
+      users=result;
+      console.log('users:',users,myfollows)
+      console.log('length',users.length,myfollows.length);
+      if(myfollows.length){
+        for(var i=0;i<users.length;i++){
+          for(var j=0;j<myfollows.length;j++){
+            if(users[i].mei_id==myfollows[j].mei_id){
+               break;    
+            }else{
+               if(j==myfollows.length-1){
+                  arr.push(users[i])
+               }
+               continue;   
+            }    
+          } 
+        }
+        console.log(users,arr)
+        res.json(arr);
+      }else{res.json(result)}
     }
   });
 })
