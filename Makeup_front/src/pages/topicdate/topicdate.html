@@ -1,0 +1,115 @@
+<ion-content>
+  <div class="div1">
+    <div class="top">
+      <i class="iconfont1" (click)="goBack()">&#xe62f;</i>
+      <span class="spanT">话题</span>
+      <ion-icon name="share-alt" class="icon1" (click)="share($event)"></ion-icon>
+    </div>
+    <div class="bottom">
+      <p>
+        <br/>
+        <span class="span1">约会-珍惜相处的时光</span><br/><br/>
+        <span class="span2">#约会#约会穿搭#精致妆容
+          <span class="span3">7
+            <!-- <ion-icon name="text"></ion-icon> -->
+            <i class="iconfont1">&#xe60e;</i>
+          </span>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <div class="div2">
+    <div class="tit">精彩讨论</div><hr/>
+    <div *ngIf='istop'>
+    <div class="single" *ngFor='let topic of top_arr'>
+        <div class="detail">
+        <div class="left"><img src="{{com.headimg}}" class="imgs"></div>
+        <div class="right">
+          <span class="name">{{com.name}}</span><br/>
+          <span class="span5">{{com.time}}</span>
+          <div class="dianzan">
+            <span class="span6">9</span>
+            <ion-icon name="thumbs-up"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="pinglun">{{com.com}}</div>
+    </div>
+    <hr/>
+    </div>
+
+    <div class="single">
+      <div class="detail">
+        <div class="left"><img src="../../assets/images/img19.jpg" class="imgs"></div>
+        <div class="right">
+          <span class="name">moe</span><br/>
+          <span class="span5">12-11 22:20</span>
+          <div class="dianzan">
+            <span class="span6">11</span>
+            <ion-icon name="heart-outline" style="float:right;"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="pinglun">约会的时候可以化一些粉色系的妆容哦~</div>
+    </div>
+    <hr/>
+
+    <div class="single">
+        <div class="detail">
+          <div class="left"><img src="../../assets/images/img15.jpg" class="imgs"></div>
+          <div class="right">
+            <span class="name">鲸鱼</span><br/>
+            <span class="span5">11-19 09:27</span>
+            <div class="dianzan">
+              <span class="span6">20</span>
+              <ion-icon name="heart-outline" style="float:right;"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="pinglun">可以穿一些小裙裙(#^.^#)</div>
+      </div>
+      <hr/>
+
+      <div class="single">
+        <div class="detail">
+          <div class="left"><img src="../../assets/images/img16.jpg" class="imgs"></div>
+          <div class="right">
+            <span class="name">sunshine</span><br/>
+            <span class="span5">10-18 09:10</span>
+            <div class="dianzan">
+              <span class="span6">14</span>
+              <ion-icon name="heart-outline" style="float:right;"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="pinglun">约会的地点要好好思考呀</div>
+      </div>
+      <hr/>
+
+      <div class="single">
+        <div class="detail">
+          <div class="left"><img src="../../assets/images/img4.jpg" class="imgs"></div>
+          <div class="right">
+            <span class="name">柯基吉</span><br/>
+            <span class="span5">10-15 10:29</span>
+            <div class="dianzan">
+              <span class="span6">21</span>
+              <ion-icon name="heart-outline" style="float:right;"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="pinglun">适当的时候可以撒撒娇の^_^</div>
+      </div>
+      <hr/>
+
+
+  </div> 
+
+
+</ion-content>
+<ion-footer>
+  <button class="btn" ion-fab>
+    <i class="iconfont1" id="edit">&#xe684;</i>
+  </button>
+</ion-footer>

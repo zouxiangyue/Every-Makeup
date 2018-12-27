@@ -10,7 +10,8 @@
   <div id="note">
     <font color="#777" >发表你的每妆帖......</font>
   </div>
-  <textarea rows="20" cols="46" id="ta" value="说点什么吧" [(ngModel)]="content" onfocus="document.getElementById('note').style.display='none'; console.log(value);" onblur="if( value.trim()== ''){document.getElementById('note').style.display='block';   console.log('block');}"></textarea>
+  <textarea placeholder="标题~~~" rows="1" cols="46" id="ta" value="标题" [(ngModel)]="title" onfocus="document.getElementById('note').style.display='none'; console.log(value);" onblur="if( value.trim()== ''){document.getElementById('note').style.display='block';   console.log('block');}"></textarea>
+  <textarea placeholder="发表你的想法~~~" rows="15" cols="46" id="ta" value="说点什么吧" [(ngModel)]="content" onfocus="document.getElementById('note').style.display='none'; console.log(value);" onblur="if( value.trim()== ''){document.getElementById('note').style.display='block';   console.log('block');}"></textarea>
   
   <button ion-button block (click)="takePhoto()" class="camera">照片拍摄</button>
   <img src="{{imgUrl}}" alt="">
