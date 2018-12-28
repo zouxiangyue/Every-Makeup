@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { AppShare } from '../../app/app.share';
 import { AboutPage } from '../about/about';
+import { TaolunPage } from '../taolun/taolun';
 
 /**
  * Generated class for the TopicPage page.
@@ -67,6 +68,10 @@ export class TopicPage {
       ]
     });
     actionSheet.present();
+  }
+
+  goTaolun(){
+    this.navCtrl.push(TaolunPage);
   }
 
 
