@@ -26,7 +26,7 @@ export class AddPage {
 
   write(){
     this.viewCtrl.dismiss();
-    this.appCtrl.getRootNav().push(WreleasePage);
+    this.navCtrl.push(WreleasePage);
   }
 
 
