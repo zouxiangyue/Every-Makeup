@@ -17,6 +17,14 @@ export class AboutPage {
   constructor(public navCtrl: NavController) {
 
   }
+  ngOnInit() {
+     var topics=[{img:'../../assets/images/面试.jpeg',title:'面试',content:'留下美好初印象',follownum:7},
+                 {img:'../../assets/images/旅行.jpeg',title:'旅行',content:'记录回忆足迹',follownum:6},
+                 {img:'../../assets/images/约会.jpeg',title:'约会',content:'珍惜相处时光',follownum:4},
+                 {img:'../../assets/images/img13.jpg',title:'日常',content:'开心生活每一天',follownum:1}
+          ];
+window.localStorage.setItem('topics',JSON.stringify(topics));
+}
   search(){
     this.navCtrl.push(SearchPage);
   }

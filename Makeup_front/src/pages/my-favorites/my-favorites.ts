@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { PaPage } from '../pa/pa';
 /**
  * Generated class for the MyFavoritesPage page.
  *
@@ -21,5 +21,15 @@ export class MyFavoritesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyFavoritesPage');
   }
-
+  user;
+  mystars;
+  ionViewWillEnter(){
+    this.user=JSON.parse(window.localStorage.getItem('user'));
+    this.mystars=JSON.parse(window.localStorage.getItem('mystars')) || [];
+    console.log(this.mystars);
+  }
+  goPa(i){
+    console.log(i,this.mystars[i])
+      this.navCtrl.push(PaPage,{work_user:this.mystars[i][1],work:this.mystars[i][0]});
+  }
 }

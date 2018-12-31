@@ -41,15 +41,21 @@
           <p>推荐话题</p>
           <span item-end></span>
         </ion-item>
-        <ion-item *ngFor='let item2 of names2' no-lines class='interest'>
-          <img src='{{item2.img}}' alt='头像'>
-          <h2>{{item2.name}}</h2>
-          <span>{{item2.note_num}}个推荐人</span>
-          <span class='fan_num'>{{item2.fan_num}}个发表</span>
-          <button item-end (click)="follow()">关注</button>
+        <ion-item *ngFor='let topic of tui_topics;let i=index' no-lines class='interest'>
+          <img src='{{topic.img}}' alt='头像'>
+          <h2>{{topic.title}}</h2>
+          <span>{{topic.follownum}}个关注人</span>
+          <!-- <span class='fan_num'>{{item2.fan_num}}个发表</span> -->
+          <button item-end (click)="follow_t('关注',i)">关注</button>
         </ion-item>
         <p ion-item outline>我关注的话题</p>
-       
+        <ion-item *ngFor='let topic of mytopics;let j=index' no-lines class='follow'>
+            <img src='{{topic.img}}' alt='头像'>
+            <h2>{{topic.title}}</h2>
+            <span>{{topic.follownum}}个关注人</span>
+            <!-- <span class='fan_num'>{{item2.fan_num}}个发表</span> -->
+            <button item-end (click)="follow_t('已关注',j)">已关注</button>
+        </ion-item>
       </ion-list>
     </div>
   </div>
