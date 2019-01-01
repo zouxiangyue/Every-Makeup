@@ -313,21 +313,32 @@
 </style>
 <!-- script start --> 
   <script type="text/javascript">
+  let users;
+     const http=new XMLHttpRequest();
+      const url='http:192.168.17.144:8080/system/users';
+      http.open('GET',url);
+      http.send();
+      http.onreadystatechange=(e)=>{
+          console.log(http.response)
+          users=JSON.parse(http.response)
+          console.log(users);
+      }
       BUI.use(['bui/grid','bui/data'],function(Grid,Data){
-          var 
-        Store = Data.Store,
+          var Store = Data.Store,
         enumObj = {"1" : "男","2" : "女"},
         columns = [
-          {title : '每妆号',dataIndex :'a',editor : {xtype : 'number',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
-          {title : '昵称',dataIndex : 'b',editor : {xtype : 'text'}},
-          {title : '学校',dataIndex :'c', editor : {xtype : 'text'}},
-          {title : '密码',dataIndex : 'd', editor : {xtype : 'text'}},
-          {title : '性别',dataIndex : 'e', editor : {id:'mySelect',xtype :'select',items : enumObj,rules : {required : true},validator : valid},renderer : Grid.Format.enumRenderer(enumObj)},
-          {title : '出生日期',dataIndex : 'f',editor : {xtype : 'date'},renderer : Grid.Format.dateRenderer},
-          {title : '个性签名',dataIndex : 'g',editor : {xtype : 'text'}}
-
+          {title : '每妆号',dataIndex :'mei_id',editor : {xtype : 'string',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
+          {title : '昵称',dataIndex : 'name',editor : {xtype : 'string'}},
+          {title : '学校',dataIndex :'school', editor : {xtype : 'string'}},
+          {title : '性别',dataIndex : 'sex', editor : {xtype : 'string'}},
+          {title : '手机号',dataIndex : 'phone', editor : {xtype : 'string'}},
+          {title : '签名',dataIndex : 'signature', editor : {xtype :'string'}},
+          {title : '关注人数',dataIndex : 'follownum',editor : {xtype : 'number'},},
+          {title : '粉丝人数',dataIndex : 'fannum',editor : {xtype : 'number'}},
+          {title : '登录状态',dataIndex : 'status',editor : {xtype : 'number'}}
         ],
-        data = [{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180011,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好'},{a:20180111,b:'sunshine',c:'河北农业大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180711,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好'},{a:20180111,b:'sunshine',c:'河北科技大学',d:'123123',f:'2009-12-20',g:'你好呀'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好'},{a:20180111,b:'sunshine',c:'河北师范大学',d:'123123',f:'2009-12-20',g:'你好呀'}];
+     data=users;
+     
       function valid(value){
         // if(value === '1'){
         //   return '不能选择1';
@@ -398,6 +409,11 @@
         store.remove(selections);
       }          
     });
+
+      
+     // setInterval("test()",1000);
+     
+    //setTimeout(function(){location.reload();console.log(123)},1000);
   </script>
 <!-- script end -->
 </body>

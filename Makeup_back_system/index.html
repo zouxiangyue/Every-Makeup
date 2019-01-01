@@ -260,68 +260,8 @@
                                     <header class="panel-heading">
                                         用户反馈通知 
                                     </header>
-                                    <div class="notify-w3ls">
-                                        <div class="alert alert-info clearfix">
-                                            <span class="alert-icon"><i class="fa fa-envelope-o"></i></span>
-                                            <div class="notification-info">
-                                                <ul class="clearfix notification-meta">
-                                                    <li class="pull-left notification-sender"><span><a href="#">约翰逊</a></span> 给你发送了一封邮件 </li>
-                                                    <li class="pull-right notification-time">1分钟前</li>
-                                                </ul>
-                                                <p>
-                                                    希望你们可以做的更好！
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="alert alert-danger">
-                                            <span class="alert-icon"><i class="fa fa-facebook"></i></span>
-                                            <div class="notification-info">
-                                                <ul class="clearfix notification-meta">
-                                                    <li class="pull-left notification-sender"><span><a href="#">JEnnie</a></span> 在帖子里提到过你 </li>
-                                                    <li class="pull-right notification-time">7小时前</li>
-                                                </ul>
-                                                <p>
-                                                   要一直很努力哦
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="alert alert-info clearfix">
-                                            <span class="alert-icon"><i class="fa fa-envelope-o"></i></span>
-                                            <div class="notification-info">
-                                                <ul class="clearfix notification-meta">
-                                                    <li class="pull-left notification-sender"><span><a href="#">boomboom</a></span>给你发送了一封邮件 </li>
-                                                    <li class="pull-right notification-time">4天前</li>
-                                                </ul>
-                                                <p>
-                                                    不骄不躁！
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="alert alert-success ">
-                                            <span class="alert-icon"><i class="fa fa-comments-o"></i></span>
-                                            <div class="notification-info">
-                                                <ul class="clearfix notification-meta">
-                                                    <li class="pull-left notification-sender">你有5个未读的信息</li>
-                                                    <li class="pull-right notification-time">1分钟前</li>
-                                                </ul>
-                                                <p>
-                                                    <a href="#">安吉拉,小可可</a> 和 <a href="#">其他3个联系人</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="alert alert-info clearfix">
-                                            <span class="alert-icon"><i class="fa fa-envelope-o"></i></span>
-                                            <div class="notification-info">
-                                                <ul class="clearfix notification-meta">
-                                                    <li class="pull-left notification-sender"><span><a href="#">我是she?</a></span> 给你发送了一封邮件 </li>
-                                                    <li class="pull-right notification-time">3天前</li>
-                                                </ul>
-                                                <p>
-                                                    有些功能还需要完善哦~
-                                                </p>
-                                            </div>
-                                        </div>
-                                        
+                                    <div class="notify-w3ls" id='feedback'>
+                                         
                                     </div>
                                 
                                 </div>
@@ -526,9 +466,66 @@
 		break;
 		case 'file:':
 		// alert('Just a heads-up, events will not work when run locally.');
-		}
-
-		});
+        }
+        let feedbacks;
+        $.ajax({
+            url: 'http://192.168.17.144:8080/system/feedbacks',
+            dataType: 'JSON',
+            type: 'GET',
+            success: function (data) {
+                if (data) {
+                    //console.log(typeof data,data);
+                    feedbacks=data;
+                    console.log(feedbacks)
+                    var $feedback=$('#feedback').html();
+                    console.log($feedback);
+                    console.log(feedbacks.length)
+                    for(var i=0;i<feedbacks.length;i++){
+                        var $newf=' <div class="alert alert-info clearfix"><span class="alert-icon"><i class="fa fa-envelope-o"></i></span><div class="notification-info"><ul class="clearfix notification-meta"><li class="pull-left notification-sender"><span><a href="#" class="fname"></a></span> <span>给你发送了一个反馈</span></li><li class="pull-right notification-time ftime"></li></ul><p class="ftxt"> </p></div>';
+                        //console.log($newf)
+                        //$newf.html($feedback)
+                        //console.log($newf.html())
+                        $('#feedback').append($newf);
+                    }
+                    for(var i=0;i<feedbacks.length;i++){
+                         $(`.fname:eq(${i})`).html(`${feedbacks[i].name}`);
+                         $(`.ftxt:eq(${i})`).html(`${feedbacks[i].feedback}`);
+                         $(`.ftime:eq(${i})`).html(`${feedbacks[i].time}`);
+                    }
+                }
+            },
+            error: function (xhr) {
+                //alert('error:' + JSON.stringify(xhr));
+            }
+        })
+       /*  var $feedback=$('#feedback').html();
+        console.log($feedback);
+        for(var i=0;i<2;i++){
+            var $newf=' <div class="alert alert-info clearfix"><span class="alert-icon"><i class="fa fa-envelope-o"></i></span><div class="notification-info"><ul class="clearfix notification-meta"><li class="pull-left notification-sender"><span><a href="#" class="fname">12434</a></span> <span class="ftxt">给你发送了一个反馈</span></li><li class="pull-right notification-time">1分钟前</li></ul><p class="ftxt"> 希望你们可以做的更好！</p></div>';
+            console.log($newf)
+            //$newf.html($feedback)
+            //console.log($newf.html())
+            $('#feedback').append($newf);
+        }
+        for(var i=0;i<2;i++){
+            console.log($(`.fname:eq(${i})`).html())
+        } */
+        });
+        // <div class="notify-w3ls" id='feedback'>
+        //                                 <div class="alert alert-info clearfix">
+        //                                     <span class="alert-icon"><i class="fa fa-envelope-o"></i></span>
+        //                                     <div class="notification-info">
+        //                                         <ul class="clearfix notification-meta">
+        //                                             <li class="pull-left notification-sender"><span><a href="#" class='fname'>约翰逊</a></span><span class='ftxt'>给你发送了一个反馈</span></li>
+        //                                             <li class="pull-right notification-time">1分钟前</li>
+        //                                         </ul>
+        //                                         <p class='ftxt'>
+        //                                             希望你们可以做的更好！
+        //                                         </p>
+        //                                     </div>
+        //                                 </div>   
+        //                             </div>
+                                
 	</script>
 	<!-- //calendar -->
 </body>

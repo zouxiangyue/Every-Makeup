@@ -31,11 +31,17 @@ export class MyFollowsPage {
   }
   myfollows;
   interest_users;
-  user
+  user;
+  topics;
+  tui_topics;
+  mytopics;
   ionViewWillEnter(){
     this.user=JSON.parse(window.localStorage.getItem('user'));
-    this.myfollows=JSON.parse(window.localStorage.getItem('myfollows')) || [];
-    this.http.post('api/login/interest',{myfollows:this.myfollows}).subscribe(data=>{
+    this.http.post('api/login/myfollows',{mei_id:this.user.mei_id}).subscribe(data=>{
+      this.myfollows=data;
+      console.log(this.myfollows);
+      window.localStorage.setItem('myfollows',JSON.stringify(this.myfollows))
+       this.http.post('api/login/interest',{myfollows:this.myfollows}).subscribe(data=>{
       this.interest_users=data;
       console.log(data,this.interest_users);
       for(var i=0;i<this.interest_users.length;i++){
@@ -44,6 +50,14 @@ export class MyFollowsPage {
         }
       }
     })
+    })
+   // window.localStorage.removeItem('mytopics')
+    //window.localStorage.removeItem('tui_topics')
+    this.topics=JSON.parse(window.localStorage.getItem('topics'))
+    console.log(this.topics)
+    this.tui_topics=JSON.parse(window.localStorage.getItem('tui_topics')) || this.topics;
+    this.mytopics=JSON.parse(window.localStorage.getItem('mytopics')) || [];
+    console.log(this.tui_topics,this.mytopics)
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyFollowsPage');
@@ -98,5 +112,22 @@ export class MyFollowsPage {
       this.navCtrl.push(DengluPage);
     }
   }
-
+  
+  follow_t(e,i){
+    if(e=='关注'){
+      console.log('关注')
+      this.tui_topics[i].follownum++;
+      this.mytopics.unshift(this.tui_topics[i]);
+      this.tui_topics.splice(i,1);
+      window.localStorage.setItem('tui_topics',JSON.stringify(this.tui_topics));
+      window.localStorage.setItem('mytopics',JSON.stringify(this.mytopics))
+    }else if(e=='已关注'){
+      console.log('已关注')
+      this.mytopics[i].follownum--;
+      this.tui_topics.push(this.mytopics[i]);
+      this.mytopics.splice(i,1);
+      window.localStorage.setItem('tui_topics',JSON.stringify(this.tui_topics));
+      window.localStorage.setItem('mytopics',JSON.stringify(this.mytopics))
+    }
+  }
 }

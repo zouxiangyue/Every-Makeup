@@ -46,6 +46,7 @@ export class PaPage {
     })
     this.mylikes=JSON.parse(window.localStorage.getItem('mylikes')) || [];
     this.myfollows=JSON.parse(window.localStorage.getItem('myfollows')) || [];
+    this.mystars=JSON.parse(window.localStorage.getItem('mystars')) || [];
     if(this.navParams.get('work')){
       this.isuser_work=true;
       this.http.post('api/home/relate',{kind:this.work['kind']}).subscribe(data=>{
@@ -64,11 +65,17 @@ export class PaPage {
     this.http.post('api/login/scan', { work_id: this.work['work_id'] }, {}).subscribe(data => {
       console.log('浏览量：', data['scannum'])
     })
-    //console.log(this.mylikes)
+    console.log(this.mylikes)
     for(var i=0;i<this.mylikes.length;i++){
       console.log(this.mylikes[i][0].work_id==this.work.work_id)
       if(this.mylikes[i][0].work_id==this.work.work_id){
         this.islike=1;
+      }
+    }
+    for(var i=0;i<this.mystars.length;i++){
+      console.log(this.mystars[i][0].work_id==this.work.work_id)
+      if(this.mystars[i][0].work_id==this.work.work_id){
+        this.isstar=1;
       }
     }
     console.log(this.myfollows)
@@ -173,7 +180,7 @@ export class PaPage {
     }
   }
   mylike(){
-    if(window.localStorage.getItem('mylikes')!='[]'){
+    if(window.localStorage.getItem('mylikes') && window.localStorage.getItem('mylikes')!='[]'){
       this.mylikes=JSON.parse(window.localStorage.getItem('mylikes'));
       this.mylikes.unshift([this.work,this.work_user]);//将喜欢的作品添加到喜欢列表的开始
       window.localStorage.setItem('mylikes',JSON.stringify(this.mylikes));
@@ -197,7 +204,7 @@ export class PaPage {
     console.log(this.work in this.mylikes)
     if (this.user ) {
       if (l == 0) {
-        let option={work_id:this.work['work_id'],islike:l}
+        let option={mei_id:this.user.mei_id,bymei_id:this.work_user.mei_id,work_id:this.work['work_id'],islike:l}
         this.http.post('api/login/like',option,{}).subscribe((data)=>{
           console.log('点赞')
           this.work=data;
@@ -206,7 +213,7 @@ export class PaPage {
         this.mylike();
         this.islike = 1;
       } else if (l == 1) {
-        let option={work_id:this.work['work_id'],islike:l}
+        let option={mei_id:this.user.mei_id,bymei_id:this.work_user.mei_id,work_id:this.work['work_id'],islike:l}
         this.http.post('api/login/like',option,{}).subscribe((data)=>{
           console.log('取消点赞');
           this.work=data;
@@ -219,7 +226,29 @@ export class PaPage {
       this.navCtrl.push(DengluPage);
     }
   }
+
   isstar=0;
+  mystar(){
+    if(window.localStorage.getItem('mystars') && window.localStorage.getItem('mystars')!='[]'){
+      this.mystars=JSON.parse(window.localStorage.getItem('mystars'));
+      this.mystars.unshift([this.work,this.work_user]);
+      window.localStorage.setItem('mystars',JSON.stringify(this.mystars));
+      console.log(this.mystars)
+    }else{
+      this.mystars.push([this.work,this.work_user]);
+      window.localStorage.setItem('mystars',JSON.stringify(this.mystars));
+      console.log(this.mystars,window.localStorage.getItem('mystars'));
+    }
+  }
+  clearmystar(){
+    for(var i=0;i<this.mystars.length;i++){
+      console.log(this.mystars[i].work_id==this.work.work_id);
+      if(this.mystars[i][0].work_id==this.work.work_id){
+        this.mystars.splice(i,1);
+      }
+    }
+    window.localStorage.setItem('mystars',JSON.stringify(this.mystars));
+  }
   star(i){
     if (this.user) {
       let option={work_id:this.work['work_id'],isstar:this.isstar}
@@ -228,13 +257,15 @@ export class PaPage {
           console.log('收藏')
           this.work=data;
           this.changeimg();
+          this.mystar();
         })
         this.isstar = 1;
       } else if (i == 1) {
         this.http.post('api/login/star',option,{}).subscribe((data)=>{
-          console.log('取消点赞')
+          console.log('取消收藏')
           this.work=data;
           this.changeimg();
+          this.clearmystar();
         })
         this.isstar = 0;
       }

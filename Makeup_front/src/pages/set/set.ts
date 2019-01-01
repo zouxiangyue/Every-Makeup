@@ -67,6 +67,9 @@ export class SetPage {
       if(data['status']==0){
         console.log(window.localStorage.getItem('user'));
         window.localStorage.removeItem('user');
+        window.localStorage.removeItem('mylikes');
+        window.localStorage.removeItem('myworks');
+        window.localStorage.removeItem('myfans');
         var data: Object = {
           callback: data => {
             console.log(data);

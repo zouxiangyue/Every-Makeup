@@ -17,7 +17,7 @@ page-fensi {
             position: absolute;
             margin-left: 48px;
             margin-top: 23px;
-            width:200px;
+            width:150px;
             overflow: hidden; //把超出的内容进行隐藏；
             white-space: nowrap; //设置内容不换行；
             text-overflow: ellipsis; //设置超出内容为省略号
@@ -31,6 +31,17 @@ page-fensi {
         }
         .guanzhu{
             background-color: #E17579;
+        }
+        button{
+            height:40px;
+            width:60px;
+            background-color: #F09595;
+            opacity: 0.7;
+            border-radius: 10px
+        }
+        .isbtn{
+            background-color:rgb(225, 225, 225);
+            color:black;
         }
     }
 }

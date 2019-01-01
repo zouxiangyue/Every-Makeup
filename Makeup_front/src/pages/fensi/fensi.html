@@ -5,93 +5,14 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-item detail-none class="contents">
-      <ion-img src="../../assets/images/img9.jpg" class="photo"></ion-img>
-      <h4>Mike</h4>
+    <ion-item detail-none class="contents" *ngFor='let fan of myfans;let i=index'>
+      <img src="{{fan[0].headimg}}" class="photo">
+      <h4>{{fan[0].name}}</h4>
       <p>
-        what's your name?
+        {{fan[0].signature}}
       </p>     
-      <input type="button" value="关注" class="guanzhu" (click)="change($event)">
+       <button *ngIf='isfollow[i]==i+1'  (click)='change(0,i)' value='关注'  item-end>关注</button>
+       <button *ngIf='isfollow[i]==-i-1'  (click)='change(1,i)' style=' background-color:rgb(225, 225, 225);color:black;' item-end>互关</button>
       <br><br>
     </ion-item>
-    <ion-item detail-none class="contents">
-      <ion-img src="../../assets/images/img10.jpg" class="photo"></ion-img>
-      <h4>草莓</h4>
-      <p>
-        STRAWBERRY
-      </p>     
-      <input type="button" value="关注" class="guanzhu" (click)="change($event)">
-     
-      <br><br>
-    </ion-item>
-    <ion-item detail-none class="contents">
-      <ion-img src="../../assets/images/img11.jpg" class="photo"></ion-img>
-        <h4>sunnyday</h4>
-        <p>
-          Every man's got a breaking point. 
-        </p>
-        <input type="button" value="互关" (click)="change($event)">
-     
-        <br><br>
-    </ion-item>
-    <ion-item detail-none class="contents">
-      <ion-img src="../../assets/images/img12.jpg" class="photo"></ion-img>
-      <h4>鲸鱼</h4>
-      <p>
-        怯懦囚禁灵魂,希望还你自由.
-      </p>
-      <input  type="button" value="关注" class="guanzhu" (click)="change($event)">
-           
-      <br><br>
-    </ion-item>
-    <ion-item detail-none class="contents">
-      <ion-img src="../../assets/images/img13.jpg" class="photo"></ion-img>
-      <h4>沙拉酱</h4>
-      <p>
-        如果你有梦想，就要守护它。      
-      </p>
-      <input  type="button" value="互关" (click)="change($event)">
-     
-      <br><br>
-    </ion-item>
-    <ion-item detail-none class="contents">
-      <ion-img src="../../assets/images/img14.jpg" class="photo"></ion-img>
-      <h4>祥云</h4>
-      <p>
-        You want something. Go get it！     
-      </p>
-      <input type="button" value="互关" (click)="change($event)">
-      
-      <br><br>
-    </ion-item>  
-    <ion-item detail-none class="contents">
-      <ion-img src="../../assets/images/img16.jpg" class="photo"></ion-img>
-      <h4>something</h4>
-      <p>
-        别让别人告诉你你成不了才，即使是我也不行。
-      </p>
-      <input type="button" value="关注" class="guanzhu" (click)="change($event)">
-     
-      <br><br>
-    </ion-item>
-    <ion-item detail-none class="contents">
-      <ion-img src="../../assets/images/img17.jpg" class="photo"></ion-img>
-      <h4>sad﹏</h4>
-      <p>
-        Stupid is as stupid does
-      </p>
-      <input type="button" value="关注" class="guanzhu" (click)="change($event)">
-     
-      <br><br>
-    </ion-item>
-    <ion-item detail-none class="contents">
-      <ion-img src="../../assets/images/img18.jpg" class="photo"></ion-img>
-      <h4>柯基</h4>
-      <p>
-        等等我，我走路超慢的.      
-      </p>
-      <input  type="button" value="互关" (click)="change($event)">
-     
-      <br><br>
-    </ion-item>          
 </ion-content>

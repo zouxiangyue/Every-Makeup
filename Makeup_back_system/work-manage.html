@@ -270,36 +270,34 @@
 </style>
 <!-- script start --> 
   <script type="text/javascript">
+  let works;
+     const http=new XMLHttpRequest();
+      const url='http:192.168.17.144:8080/system/works';
+      http.open('GET',url);
+  
+      http.send();
+      http.onreadystatechange=(e)=>{
+          console.log(http.response)
+          works=JSON.parse(http.response)
+          console.log(works);
+      }
       BUI.use(['bui/grid','bui/data'],function(Grid,Data){
           var Store = Data.Store,
         enumObj = {"1" : "美妆类","2" : "穿搭类","3" : "护肤类","4" : "香氛类","5" : "健身类","6" : "其他"},
         columns = [
-          {title : '作品编号',dataIndex :'a',editor : {xtype : 'number',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
-          {title : '类别',dataIndex : 'b', editor : {id:'mySelect',xtype :'select',items : enumObj,rules : {required : true},validator : valid},renderer : Grid.Format.enumRenderer(enumObj)},
-          {title : '发布时间',dataIndex :'c', editor : {xtype : 'date'},renderer : Grid.Format.dateRenderer},
-          {title : '文章标题',dataIndex : 'd', editor : {xtype : 'text'}},
-          {title : '文章内容',dataIndex : 'e',editor : {xtype : 'text'}},
-          {title : '图片',dataIndex : 'f',editor : {xtype : 'text'}},//先写成text
-          {title : '视频',dataIndex : 'g',editor : {xtype : 'text'}},//先写成text
-          {title : '点赞数',dataIndex : 'h',editor : {xtype : 'number'}},
-          {title : '评论数',dataIndex : 'i',editor : {xtype : 'number'}},
-          {title : '收藏数',dataIndex : 'j',editor : {xtype : 'number'}},
-          {title : '浏览量',dataIndex : 'k',editor : {xtype : 'number'}},
-          {title : '用户编号',dataIndex : 'l',editor : {xtype : 'number',rules : {required : true}}},
+          {title : '作品编号',dataIndex :'work_id',editor : {xtype : 'number',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
+          {title : '类别',dataIndex : 'kind', editor : {xtype :'string'}},
+          {title : '发布时间',dataIndex :'time', editor : {xtype : 'date'},renderer : Grid.Format.dateRenderer},
+          {title : '文章标题',dataIndex : 'title', editor : {xtype : 'text'}},
+          {title : '点赞数',dataIndex : 'likenum',editor : {xtype : 'number'}},
+          {title : '评论数',dataIndex : 'commentnum',editor : {xtype : 'number'}},
+          {title : '收藏数',dataIndex : 'collectnum',editor : {xtype : 'number'}},
+          {title : '浏览量',dataIndex : 'scannum',editor : {xtype : 'number'}},
+          {title : '用户编号',dataIndex : 'mei_id',editor : {xtype : 'number',rules : {required : true}}},
           {title : '编辑',dataIndex : 'm'}
 
         ],
-        data = [{a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
-        {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
-        {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
-        {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
-        {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
-        {a:20180112,c:'2018-10-12',d:'面试装怎么化',e:'不能太浓太艳丽哦',h:124,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
-        {a:20180113,c:'2018-09-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
-        {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
-        {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'},
-        {a:20180111,c:'2018-11-12',d:'秋冬穿搭',e:'秋冬就是秋冬，春霞就是春夏',h:123,i:456,j:789,k:125,l:20158856,m:'<a href="edit.html">✎</a>'}
-        ];
+        data = works
       function valid(value){
         // if(value === '1'){
         //   return '不能选择1';

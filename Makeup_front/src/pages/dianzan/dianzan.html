@@ -5,85 +5,14 @@
 </ion-header>
 
 <ion-content padding>
-<ion-item detail-none class="contents">
-  <ion-img src="../../assets/images/img9.jpg" class="photo"></ion-img>
-  <h4>Mike</h4>
+<ion-item detail-none class="contents" *ngFor='let like of likes'>
+  <img src="{{like[1].headimg}}" class="photo">
+  <h4>{{like[1].name}}</h4>
   <p>
-    赞了你的评论<span>10-23</span>
+    赞了你的作品<span>{{like[2].time}}</span>
   </p>
-  <ion-img src="../../assets/images/img4.jpg" class="zuopin"></ion-img>
+  <img src="{{like[0].img[0]}}" class="zuopin">
   <br><br>
 </ion-item>
-<ion-item detail-none class="contents">
-  <ion-img src="../../assets/images/img5.jpg" class="photo"></ion-img>
-  <h4>binbin</h4>
-  <p>
-    赞了你的评论<span>11-23</span>
-  </p>
-  <ion-img src="../../assets/images/img6.jpg" class="zuopin"></ion-img>
-  <br><br>
-</ion-item>
-<ion-item detail-none class="contents">
-  <ion-img src="../../assets/images/img7.jpg" class="photo"></ion-img>
-  <h4>flowers</h4>
-  <p>
-    赞了你的评论<span>11-3</span>
-  </p>
-  <ion-img src="../../assets/images/img9.jpg" class="zuopin"></ion-img>
-  <br><br>
-</ion-item>  
-<ion-item detail-none class="contents">
-  <ion-img src="../../assets/images/img10.jpg" class="photo"></ion-img>
-  <h4>可惜没如果</h4>
-  <p>
-    赞了你的评论<span>3-21</span>
-  </p>
-  <ion-img src="../../assets/images/img11.jpg" class="zuopin"></ion-img>
-  <br><br>
-</ion-item> 
-<ion-item detail-none class="contents">
-  <ion-img src="../../assets/images/img1.jpg" class="photo"></ion-img>
-  <h4>flowers</h4>
-  <p>
-    赞了你的评论<span>11-3</span>
-  </p>
-  <ion-img src="../../assets/images/img18.jpg" class="zuopin"></ion-img>
-  <br><br>
-</ion-item> 
-<ion-item detail-none class="contents">
-  <ion-img src="../../assets/images/img19.jpg" class="photo"></ion-img>
-  <h4>沙海</h4>
-  <p>
-    赞了你的评论<span>4-23</span>
-  </p>
-  <ion-img src="../../assets/images/img20.jpg" class="zuopin"></ion-img>
-  <br><br>
-</ion-item> 
-<ion-item detail-none class="contents">
-  <ion-img src="../../assets/images/img21.jpg" class="photo"></ion-img>
-  <h4>(^ω^)</h4>
-  <p>
-    赞了你的评论<span>10-15</span>
-  </p>
-  <ion-img src="../../assets/images/img22.jpg" class="zuopin"></ion-img>
-  <br><br>
-</ion-item> 
-<ion-item detail-none class="contents">
-  <ion-img src="../../assets/images/img23.jpg" class="photo"></ion-img>
-  <h4>I think..</h4>
-  <p>
-    赞了你的评论<span>10-25</span>
-  </p>
-  <ion-img src="../../assets/images/img24.jpg" class="zuopin"></ion-img>
-  <br><br>
-</ion-item>
-<ion-item detail-none class="contents">
-  <ion-img src="../../assets/images/img25.jpg" class="photo"></ion-img>
-  <h4>I think..</h4>
-  <p>
-    赞了你的评论<span>10-25</span>
-  </p>
-  <ion-img src="../../assets/images/img26.jpg" class="zuopin"></ion-img>
-  <br><br>
-</ion-item>
+
 </ion-content>

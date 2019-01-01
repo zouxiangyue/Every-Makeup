@@ -50,6 +50,7 @@ import { TopicPage } from '../pages/topic/topic';
 import { TopictripPage } from '../pages/topictrip/topictrip';
 import { TopicdatePage } from '../pages/topicdate/topicdate';
 import { TopicdailyPage } from '../pages/topicdaily/topicdaily';
+import { TaolunPage } from '../pages/taolun/taolun';
 
 
 
@@ -98,7 +99,8 @@ import { TopicdailyPage } from '../pages/topicdaily/topicdaily';
     TopicPage,
     TopictripPage,
     TopicdatePage,
-    TopicdailyPage
+    TopicdailyPage,
+    TaolunPage,
   ],
   imports: [
     BrowserModule,
@@ -154,7 +156,8 @@ import { TopicdailyPage } from '../pages/topicdaily/topicdaily';
     TopicPage,
     TopictripPage,
     TopicdatePage,
-    TopicdailyPage
+    TopicdailyPage,
+    TaolunPage,
   ],
   providers: [
     StatusBar,
