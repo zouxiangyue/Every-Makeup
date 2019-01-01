@@ -138,7 +138,15 @@ router.post('/follow',(req,res)=>{
             byfannum=re[0].fannum+1;
             con.query('update users set fannum=? where mei_id=?',[byfannum,bymei_id]);
             //console.log(byfannum);
-            res.json(re[0])
+             var d=new Date();
+             var dm= d.getMonth()<10 ? '0'+(d.getMonth()+1):d.getMonth()+1+'';
+             var dd=d.getDate()<10 ? '0'+d.getDate():d.getDate()+'';
+             var dh=d.getHours()<10 ? '0'+d.getHours():d.getHours()+'';
+             var dmi=d.getMinutes()<10 ? '0'+d.getMinutes():d.getMinutes()+'';
+             var ds=d.getSeconds()<10 ? '0'+d.getSeconds():d.getSeconds()+''
+             var time=dm+'-'+dd+' '+dh+':'+dmi;
+            con.query('insert into follows values(?,?,?)',[mei_id,bymei_id,time])
+            res.json(re[0]);
           }
         })
       }
@@ -151,6 +159,7 @@ router.post('/follow',(req,res)=>{
            else{
                byfannum=re[0].fannum-1;
                con.query('update users set fannum=? where mei_id=?',[byfannum,bymei_id]);
+               con.query('delete from  follows where mei_id=? and bymei_id=?',[mei_id,bymei_id])
                res.json(re[0]);
            }       
         })
@@ -161,6 +170,8 @@ router.post('/follow',(req,res)=>{
 })
 
 router.post('/like',(req,res)=>{
+   var mei_id=req.body.mei_id;
+   var bymei_id=req.body.bymei_id;
    var work_id=req.body.work_id;
    var isl=req.body.islike;
    let likenum=0;
@@ -175,6 +186,14 @@ router.post('/like',(req,res)=>{
               // console.log(result)
               likenum=result[0].likenum+1;
               con.query('update works set likenum=? where work_id=?',[likenum,work_id]);
+              var d=new Date();
+              var dm= d.getMonth()<10 ? '0'+(d.getMonth()+1):d.getMonth()+1+'';
+              var dd=d.getDate()<10 ? '0'+d.getDate():d.getDate()+'';
+              var dh=d.getHours()<10 ? '0'+d.getHours():d.getHours()+'';
+              var dmi=d.getMinutes()<10 ? '0'+d.getMinutes():d.getMinutes()+'';
+              var ds=d.getSeconds()<10 ? '0'+d.getSeconds():d.getSeconds()+''
+              var time=dm+'-'+dd+' '+dh+':'+dmi;
+              con.query('insert into likes values(?,?,?,?)',[mei_id,bymei_id,work_id,time])
               con.query('select * from works where work_id=?',[work_id],(err,re)=>{
                 if(err){console.log(err.message)}
                 else{
@@ -186,6 +205,7 @@ router.post('/like',(req,res)=>{
               likenum=result[0].likenum-1;
               // console.log(likenum);
               con.query('update works set likenum=? where work_id=?',[likenum,work_id]);
+              con.query('delete from likes where mei_id=? and bymei_id=? and bywork_id=?',[mei_id,bymei_id,work_id])
               con.query('select * from works where work_id=?',[work_id],(err,re)=>{
                   if(err){console.log(err.message)}
                   else{                           
@@ -306,5 +326,135 @@ router.post('/interest',(req,res)=>{
     }
   });
 })
+router.post('/myfollows',(req,res)=>{
+    var mei_id=req.body.mei_id;
+    con.query('select * from users where mei_id in(select bymei_id from follows where follows.mei_id=?)',[mei_id],(err,result)=>{
+        if(err){}
+        else{
+            res.json(result)   
+        }  
+    })
+})
 
+router.post('/myfans',(req,res)=>{
+  console.log(1)
+  var mei_id=req.body.mei_id;
+  var options=[];
+  con.query('select * from follows where bymei_id=?',[mei_id],(err,results)=>{
+     if(err){}
+     else{
+       console.log(2)
+        var len=results.length;
+        for(let i=0;i<len;i++){
+           let arr=[];
+           con.query('select * from users where mei_id=?',[results[i].mei_id],(err,result)=>{
+              if(err){}
+              else{
+                console.log(3)
+                 arr.push(result[0]);
+                 arr.push({time:results[i].time})
+                 options.push(arr);
+                 if(i==results.length-1){
+                   console.log(4)
+                   res.json(options)
+                 }
+              }     
+           })     
+        }  
+     } 
+  })
+
+})
+
+router.post('/mylikes',(req,res)=>{
+  var bymei_id=req.body.mei_id;
+  var options=[];
+  con.query('select * from likes where bymei_id=?',[bymei_id],(err,results)=>{
+    if(err){}
+    else{
+      var len=results.length;
+      for(let i=0;i<results.length;i++){
+       let arr=[];
+        con.query('select * from works where work_id=?',[results[i].bywork_id],(err,result)=>{
+          if(err){}
+          else{
+            arr.push(result[0]);
+            con.query('select * from users where mei_id=?',[results[i].mei_id],(err,re)=>{
+              if(err){}
+              else{
+                arr.push(re[0]);
+                arr.push({time:results[i].time});
+                options.push(arr);
+                if(i==results.length-1){
+                  res.json(options)
+                }
+              }
+            })
+          }
+        })
+      }
+    }
+  })
+})
+router.post('/likenum',(req,res)=>{
+  var mei_id=req.body.mei_id;
+  con.query('select sum(likenum)likenum  from works where mei_id=?',[mei_id],(err,result)=>{
+    if(err){}
+    else{
+      res.json(result)
+    }
+  })
+})
+router.post('/myxihua',(req,res)=>{
+  var mei_id=req.body.mei_id;
+  var options=[];
+  con.query('select * from likes where mei_id=?',[mei_id],(err,results)=>{
+     if(err){}
+     else{
+        var len=results.length;
+        for(let i=0;i<results.length;i++){
+            let arr=[];
+            con.query('select * from works where work_id=?',[results[i].bywork_id],(err,result)=>{
+                if(err){}
+                else{
+                arr.push(result[0]);
+                    con.query('select * from users where mei_id=?',[results[i].bymei_id],(err,re)=>{
+                      if(err){}
+                      else{
+                        arr.push(re[0]);
+                        options.push(arr)
+                        if(i==results.length-1){
+                             res.json(options)             
+                        }             
+                      }
+
+                    })        
+                }       
+            })  
+        }
+    }
+  })
+
+})
+
+router.post('/feedback',(req,res)=>{
+  var feedback=req.body.feedback;
+  var mei_id=req.body.mei_id;
+  var phone=req.body.phone;
+  var name=req.body.name;
+  var time=req.body.time;
+  var id;
+  con.query('select max(id) id from feedbacks',(err,result)=>{
+    if(err){}
+    else if(result[0].id!=null){
+      id=result[0].id+1;
+      con.query('insert into feedbacks values(?,?,?,?,?,?)',[id,mei_id,feedback,phone,name,time]);
+      res.json(result)
+    }else{
+      id=0;
+      con.query('insert into feedbacks values(?,?,?,?,?,?)',[id,mei_id,feedback,phone,name,time]);
+      res.json(result);
+    }
+  })
+})
 module.exports = router;

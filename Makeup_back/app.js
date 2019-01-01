@@ -5,8 +5,9 @@ const express = require('express'),
     
 var login=require('./routes/login.js'),
     register=require('./routes/register.js'),
-    improve=require('./routes/improve.js');
-    home=require('./routes/home.js');
+    improve=require('./routes/improve.js'),
+    home=require('./routes/home.js'),
+    system=require('./routes/system.js')
 
 //app.use(function(req, res) {
  //console.log('hello app');
@@ -36,5 +37,7 @@ app.use('/api/login',login);
 app.use('/api/register',register);
 app.use('/api/improve',improve);
 app.use('/api/home',home);
+app.use('/system',system);
+
 http.createServer(app).listen(8080);
 module.exports = app;
