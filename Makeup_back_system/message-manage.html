@@ -235,9 +235,22 @@
                         </div>
                         <div class="col-md-8 market-update-left">
                             <h4>点赞</h4>
-                            <h3>50</h3>
                             <p>是一种态度。</p>
                         </div>
+                    <div class="clearfix"> </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-3 market-update-gd">
+                <a href="message-follow.html">
+                <div class="market-update-block clr-block-3">
+                    <div class="col-md-4 market-update-right">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="col-md-8 market-update-left">
+                        <h4>关注</h4>
+                        <p>关注喜欢的用户</p>
+                    </div>
                     <div class="clearfix"> </div>
                 </div>
                 </a>
@@ -250,26 +263,10 @@
                         </div>
                         <div class="col-md-8 market-update-left">
                             <h4>评论</h4>
-                            <h3>40</h3>
                             <p>不做潜水族。</p>
                         </div>
                     <div class="clearfix"> </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-md-3 market-update-gd">
-                <a href="message-star.html">
-                <div class="market-update-block clr-block-3">
-                    <div class="col-md-4 market-update-right">
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <div class="col-md-8 market-update-left">
-                        <h4>收藏</h4>
-                        <h3>35</h3>
-                        <p>喜欢的作品不迷路。</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
                 </a>
             </div>
             <div class="col-md-3 market-update-gd">
@@ -280,7 +277,6 @@
                     </div>
                     <div class="col-md-8 market-update-left">
                         <h4>@我</h4>
-                        <h3>20</h3>
                         <p>不再遮遮掩掩。</p>
                     </div>
                     <div class="clearfix"> </div>
@@ -339,21 +335,25 @@
 </style>
 <!-- script start --> 
   <script type="text/javascript">
+   let dianzan;
+     const http=new XMLHttpRequest();
+      const url='http:192.168.17.144:8080/system/dianzan';
+      http.open('GET',url);
+      http.send();
+      http.onreadystatechange=(e)=>{
+          console.log(http.response)
+          dianzan=JSON.parse(http.response)
+          console.log(dianzan);
+      }
       BUI.use(['bui/grid','bui/data'],function(Grid,Data){
           var Store = Data.Store,
         columns = [
-          {title : '点赞编号',dataIndex :'a',editor : {xtype : 'number',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
-          {title : '被点赞人每妆号',dataIndex : 'b', editor : {xtype :'number'}},
-          {title : '点赞人每妆号',dataIndex :'c', editor : {xtype : 'number'},rules : {required : true}},
-          {title : '被点赞作品编号',dataIndex : 'd', editor : {xtype : 'number'}}
-
+          {title : '被点赞人每妆号',dataIndex : 'mei_id', editor : {xtype :'string'}},
+          {title : '点赞人每妆号',dataIndex :'bymei_id', editor : {xtype : 'string'},rules : {required : true}},
+          {title : '被点赞作品编号',dataIndex : 'bywork_id', editor : {xtype : 'string'}},
+          {title : '点赞时间',dataIndex : 'time', editor : {xtype : 'string'}}
         ],
-        data = [{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018},{a:1234567890,b:20180111,c:20180351,d:20192018}];
-      function valid(value){
-        // if(value === '1'){
-        //   return '不能选择1';
-        // }
-      }
+        data = dianzan;
       var editing = new Grid.Plugins.CellEditing({
         triggerSelected : false //触发编辑的时候不选中行
       }),

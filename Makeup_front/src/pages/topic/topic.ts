@@ -81,7 +81,12 @@ user=JSON.parse(window.localStorage.getItem('user'));
         console.log(data);
         this.com_txt=data;
         var d=new Date();
-        var time=d.getMonth()+'-'+d.getDate()+' '+d.getHours()+':'+d.getMinutes()
+        var dm= d.getMonth()<10 ? '0'+(d.getMonth()+1):d.getMonth()+1+'';
+        var dd=d.getDate()<10 ? '0'+d.getDate():d.getDate()+'';
+        var dh=d.getHours()<10 ? '0'+d.getHours():d.getHours()+'';
+        var dmi=d.getMinutes()<10 ? '0'+d.getMinutes():d.getMinutes()+'';
+        var ds=d.getSeconds()<10 ? '0'+d.getSeconds():d.getSeconds()+''
+        var time=dm+'-'+dd+' '+dh+':'+dmi;
         var com= {headimg:this.user.headimg,name:this.user.name,time:time,likenum:0,com:this.com_txt};
         this.topic_arr.push(com);
       }

@@ -41,7 +41,12 @@ export class CommentPage {
   iscom=false;
   com(){
     var d=new Date();
-    var time=d.getMonth()+'-'+d.getDate()+' '+d.getHours()+':'+d.getMinutes()
+    var dm= d.getMonth()<10 ? '0'+(d.getMonth()+1):d.getMonth()+1+'';
+    var dd=d.getDate()<10 ? '0'+d.getDate():d.getDate()+'';
+    var dh=d.getHours()<10 ? '0'+d.getHours():d.getHours()+'';
+    var dmi=d.getMinutes()<10 ? '0'+d.getMinutes():d.getMinutes()+'';
+    var ds=d.getSeconds()<10 ? '0'+d.getSeconds():d.getSeconds()+''
+    var time=dm+'-'+dd+' '+dh+':'+dmi;
     this.com_arr.push({
       com:this.com_txt,
       headimg:this.user.headimg,

@@ -14,7 +14,7 @@ export class FensiPage {
   myfollows;
   isfollow=[];
   ionViewWillEnter(){
-    console.log(123)
+   // console.log(123)
     this.user=JSON.parse(window.localStorage.getItem('user'));
     this.myfollows=JSON.parse(window.localStorage.getItem('myfollows')) || [];
     this.myfans=JSON.parse(window.localStorage.getItem('myfans')) || [];
@@ -25,8 +25,8 @@ export class FensiPage {
       for(var i=0;i<this.myfans.length;i++){
         this.isfollow[i]=this.myfans.length+1;
         for(var j=0;j<this.myfollows.length;j++){
-            console.log(this.myfans[i].mei_id==this.myfollows[j].mei_id)
-             if(this.myfans[i].mei_id==this.myfollows[j].mei_id){
+            console.log(this.myfans[i][0].mei_id==this.myfollows[j].mei_id)
+             if(this.myfans[i][0].mei_id==this.myfollows[j].mei_id){
                    this.isfollow[i]=-(i+1);
                     break;
               }else if(j==this.myfollows.length-1){
