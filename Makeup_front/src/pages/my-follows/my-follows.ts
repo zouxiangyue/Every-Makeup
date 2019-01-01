@@ -37,8 +37,11 @@ export class MyFollowsPage {
   mytopics;
   ionViewWillEnter(){
     this.user=JSON.parse(window.localStorage.getItem('user'));
-    this.myfollows=JSON.parse(window.localStorage.getItem('myfollows')) || [];
-    this.http.post('api/login/interest',{myfollows:this.myfollows}).subscribe(data=>{
+    this.http.post('api/login/myfollows',{mei_id:this.user.mei_id}).subscribe(data=>{
+      this.myfollows=data;
+      console.log(this.myfollows);
+      window.localStorage.setItem('myfollows',JSON.stringify(this.myfollows))
+       this.http.post('api/login/interest',{myfollows:this.myfollows}).subscribe(data=>{
       this.interest_users=data;
       console.log(data,this.interest_users);
       for(var i=0;i<this.interest_users.length;i++){
@@ -46,6 +49,7 @@ export class MyFollowsPage {
           this.interest_users.splice(i,1);
         }
       }
+    })
     })
    // window.localStorage.removeItem('mytopics')
     //window.localStorage.removeItem('tui_topics')

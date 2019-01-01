@@ -15,10 +15,18 @@ export class TabsPage {
   tab1Root = HomePage;
   tab2Root = AboutPage;
   tab3Root = ContactPage;
-  tab4Root = MyPage;
-
+  tab4Root;
+user
   constructor(public navCtrl:NavController) {
     console.log(window.localStorage.getItem('user'))
-
+this.user=window.localStorage.getItem('user')
   }
+  goDenglu(){
+    if(this.user){
+      this.tab4Root=MyPage;
+    }else{
+      this.tab4Root=DengluPage;
+    }
+  }
+ 
 }

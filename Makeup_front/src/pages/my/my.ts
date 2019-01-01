@@ -31,41 +31,63 @@ export class MyPage {
   }
   
   denglustatus:boolean=false;
-  user;
-  ngOnInit() {
-    //console.log(this.mylikes)
-    this.user=JSON.parse(window.localStorage.getItem('user'));
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MyPage');
-    console.log(this.user)
-  };
+  user= {//接受登录页传输的用户数据 
+        mei_id: '*******',
+        name: '未登录',
+        headimg:'../../assets/images/1.jpg',
+        follownum:0,
+        likenum:0,
+        fannum:0
+      };
   mylikes;
+  topics;
+  guanzhu_len;
   ionViewWillEnter(){
-    this.http.post('api/login/myworks',{mei_id:this.user['mei_id']}).subscribe(data=>{
+    console.log(123);
+    if (window.localStorage.hasOwnProperty('user')) {
+      this.denglustatus=true;
+      this.user = JSON.parse(window.localStorage.getItem('user'));
+      this.http.post('api/login/myworks',{mei_id:this.user['mei_id']}).subscribe(data=>{
       console.log(data);
       this.myworks=data;
       for(var i=0;i<this.myworks.length;i++){
         this.myworks[i].img=(this.myworks[i].img).split(',')
         console.log(this.myworks);
       }
+      this.mytopics=JSON.parse(window.localStorage.getItem('mytopics')) || []
+      console.log(this.mytopics.length,this.user.follownum);
+      this.guanzhu_len=this.mytopics.length+this.user.follownum;
+      console.log(this.guanzhu_len)
     })
     this.mylikes=JSON.parse(window.localStorage.getItem('mylikes'));
     console.log(this.mylikes)
-    //console.log(JSON.parse(window.localStorage.getItem('mylikes_users')))
-    if (window.localStorage.hasOwnProperty('user')) {
-      this.denglustatus=true;
-      this.user = JSON.parse(window.localStorage.getItem('user'));
     } else {
       this.user = {//接受登录页传输的用户数据 
         mei_id: '*******',
         name: '未登录',
-        headimg:'../../assets/images/1.jpg'
+        headimg:'../../assets/images/1.jpg',
+        follownum:0,
+        likenum:0,
+        fannum:0,
       };
       this.denglustatus=false;
       console.log('未登录');
     }
+    this.mylikes=[];
+    this.myworks=[];
+    this.guanzhu_len= 0;
+    console.log(this.user)
   }
+
+  ngOnInit() {
+    //console.log(this.mylikes)
+    //this.user=JSON.parse(window.localStorage.getItem('user'));
+  }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MyPage');
+    console.log(this.user);
+    console.log(this.guanzhu_len)
+  };
   myworks;
 
   clickHead() {
