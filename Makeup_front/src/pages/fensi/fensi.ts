@@ -63,7 +63,7 @@ export class FensiPage {
   }
   change(e,i){
       if(e==0){
-         var option={mei_id:this.user.mei_id,bymei_id:this.myfans[i].mei_id,isfollow:0}
+         var option={mei_id:this.user.mei_id,bymei_id:this.myfans[i][0].mei_id,isfollow:0}
         this.http.post('api/login/follow',option,{}).subscribe((data)=>{
           console.log('关注');
           this.user.follownum++;
@@ -72,7 +72,7 @@ export class FensiPage {
         })
        this.isfollow[i]=-i-1;
       }else if(e==1){
-         var option={mei_id:this.user.mei_id,bymei_id:this.myfans[i].mei_id,isfollow:1}
+         var option={mei_id:this.user.mei_id,bymei_id:this.myfans[i][0].mei_id,isfollow:1}
         this.http.post('api/login/follow',option,{}).subscribe((data)=>{
           console.log('取消关注');
           this.user.follownum--;
