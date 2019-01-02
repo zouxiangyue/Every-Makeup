@@ -36,6 +36,7 @@ export class HomePage {
     this.http.get('api/home').subscribe(data=>{
       console.log(data);
       this.works=data;
+      window.localStorage.setItem('sql_works',JSON.stringify(data));
       //console.log(this.works);
       for(var i=0;i<this.works.length;i++){
         this.works[i][0].img=(this.works[i][0].img).split(',')
