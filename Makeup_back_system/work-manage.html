@@ -229,11 +229,12 @@
           {title : '评论数',dataIndex : 'commentnum',editor : {xtype : 'number'}},
           {title : '收藏数',dataIndex : 'collectnum',editor : {xtype : 'number'}},
           {title : '浏览量',dataIndex : 'scannum',editor : {xtype : 'number'}},
-          {title : '用户编号',dataIndex : 'mei_id',editor : {xtype : 'number',rules : {required : true}}},
+          {title : '用户编号',dataIndex : 'mei_id',width:105,editor : {xtype : 'number',rules : {required : true}}},
           {title : '编辑',dataIndex : 'm'}
 
         ],
         data = works
+        data=[{m:'<a href="edit.html">编辑</a>'}]
       function valid(value){
         // if(value === '1'){
         //   return '不能选择1';
@@ -272,7 +273,7 @@
                 // pagingBar:表明包含分页栏
                 pagingBar:true
             },
-          plugins : [editing,Grid.Plugins.CheckSelection,Grid.Plugins.ColumnChecked],
+          plugins : [editing,Grid.Plugins.CheckSelection,Grid.Plugins.ColumnChecked,Grid.Plugins.AutoFit],
           store : store
         });
 
