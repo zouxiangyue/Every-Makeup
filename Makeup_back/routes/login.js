@@ -134,10 +134,10 @@ router.post('/follow',(req,res)=>{
         con.query('select fannum from users where mei_id=?',[bymei_id],(err,re)=>{
           if(err){console.log(err.message)}
           else{
-            //console.log(re);
+            console.log(re);
             byfannum=re[0].fannum+1;
             con.query('update users set fannum=? where mei_id=?',[byfannum,bymei_id]);
-            //console.log(byfannum);
+           console.log(byfannum);
              var d=new Date();
              var dm= d.getMonth()<10 ? '0'+(d.getMonth()+1):d.getMonth()+1+'';
              var dd=d.getDate()<10 ? '0'+d.getDate():d.getDate()+'';
