@@ -21,10 +21,10 @@ export class TopicPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public appShare:AppShare,public actionSheetCtrl:ActionSheetController) {
   }
-  topic_arr=[{headimg:'../../assets/images/touxiang.png',name:'圣约翰',time:'12-21 22:27',likenum:3,com:'主意着装干净整洁，不要画浓妆哦。'},
+  topic_arr=[{headimg:'../../assets/images/img19.jpg',name:'moe',time:'12-21 22:27',likenum:3,com:'主意着装干净整洁，不要画浓妆哦。'},
              {headimg:'../../assets/images/女头1.jpg',name:'淡默',time:'12-22 20:00',likenum:2,com:'最好穿正装哦。'},
-             {headimg:'../../assets/images/鲸鱼.png',name:'鲸鱼',time:'12-24 15:07',likenum:2,com:'面试一定要认真对待，大方得体最重要。'},
-             {headimg:'../../assets/images/img4.jpg',name:'liyue',time:'12-24 15:07',likenum:1,com:'不要太浓或太艳哦！'},
+             {headimg:'../../assets/images/img13.jpg',name:'liyue',time:'12-24 15:07',likenum:2,com:'面试一定要认真对待，大方得体最重要。'},
+             {headimg:'../../assets/images/img1.jpg',name:'tingcy',time:'12-24 15:07',likenum:1,com:'不要太浓或太艳哦！'},
   ]
   ionViewDidLoad() {
     console.log('ionViewDidLoad TopicPage');

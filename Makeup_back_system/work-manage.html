@@ -25,6 +25,11 @@
 		height:70%;
 		margin-top:-40px;
 	}
+    .bui-grid-table .bui-grid-cell-text{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 </style>
 <script src="js/jquery2.0.3.min.js"></script>
 </head>
@@ -208,7 +213,7 @@
   <script type="text/javascript">
   let works;
      const http=new XMLHttpRequest();
-      const url='http:192.168.17.144:8080/system/works';
+      const url='http:192.168.133.144:8080/system/works';
       http.open('GET',url);
   
       http.send();
@@ -221,20 +226,27 @@
           var Store = Data.Store,
         enumObj = {"1" : "美妆类","2" : "穿搭类","3" : "护肤类","4" : "香氛类","5" : "健身类","6" : "其他"},
         columns = [
-          {title : '作品编号',dataIndex :'work_id',editor : {xtype : 'number',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
-          {title : '类别',dataIndex : 'kind', editor : {xtype :'string'}},
-          {title : '发布时间',dataIndex :'time', editor : {xtype : 'date'},renderer : Grid.Format.dateRenderer},
+          {title : '作品编号',dataIndex :'work_id',width:120,editor : {xtype : 'number',validator : validFn,rules : {required : true}}}, //editor中的定义等用于 BUI.Form.Field.Text的定义
+          {title : '类别',dataIndex : 'kind', width:70,editor : {xtype :'string'}},
+          {title : '发布时间',dataIndex :'time',width:130, editor : {xtype : 'date'},renderer : Grid.Format.dateRenderer},
           {title : '文章标题',dataIndex : 'title', editor : {xtype : 'text'}},
-          {title : '点赞数',dataIndex : 'likenum',editor : {xtype : 'number'}},
-          {title : '评论数',dataIndex : 'commentnum',editor : {xtype : 'number'}},
-          {title : '收藏数',dataIndex : 'collectnum',editor : {xtype : 'number'}},
-          {title : '浏览量',dataIndex : 'scannum',editor : {xtype : 'number'}},
-          {title : '用户编号',dataIndex : 'mei_id',width:105,editor : {xtype : 'number',rules : {required : true}}},
+          {title : '文章内容',dataIndex : 'content', editor : {xtype : 'text'}},
+          {title : '点赞数',dataIndex : 'likenum',width:40,editor : {xtype : 'number'}},
+          {title : '评论数',dataIndex : 'commentnum',width:40,editor : {xtype : 'number'}},
+          {title : '收藏数',dataIndex : 'collectnum',width:40,editor : {xtype : 'number'}},
+          {title : '浏览量',dataIndex : 'scannum',width:40,editor : {xtype : 'number'}},
+          {title : '用户编号',dataIndex : 'mei_id',editor : {xtype : 'number',rules : {required : true}}},
           {title : '编辑',dataIndex : 'm'}
 
         ],
-        data = works
-        data=[{m:'<a href="edit.html">编辑</a>'}]
+        data = works;
+        // data=[{m:'<a href="edit.html">编辑</a>'}]
+        var m={m:'<a href="edit.html">编辑</a>'}
+        for(var i=0;i<data.length;i++){
+            console.log(data)
+            data[i].m=m.m;
+            console.log(data)
+        }
       function valid(value){
         // if(value === '1'){
         //   return '不能选择1';

@@ -9,7 +9,7 @@
       <img src="{{fan[0].headimg}}" class="photo">
       <h4>{{fan[0].name}}</h4>
       <p>
-        {{fan[0].signature}}
+        {{fan[0].sigature}}
       </p>     
        <button *ngIf='isfollow[i]==i+1'  (click)='change(0,i)' value='关注'  item-end>关注</button>
        <button *ngIf='isfollow[i]==-i-1'  (click)='change(1,i)' style=' background-color:rgb(225, 225, 225);color:black;' item-end>互关</button>

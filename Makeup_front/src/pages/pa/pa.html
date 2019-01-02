@@ -63,12 +63,12 @@
           <i *ngIf='islike==0'  (click)='like(0)' class="iconfont1" style="font-size:28px;color:white;" >&#xe645;</i>
           <i *ngIf='islike==1' (click)='like(1)' class="iconfont1" style="font-size:28px;color:#ff5151" >&#xe645;</i>
           <span style="font-size: 1.2em;color:white;" >赞·{{work.likenum}}</span>
-          <span style="color:white;position: absolute;left:33.3%;top:35%">丨</span>
+          <span style="color:white;position: absolute;left:30%;top:35%">丨</span>
       </span>
       <span style="padding-left: 40px;"  (click)='goComment()'>
           <i class="iconfont1" style="font-size:25px;color:white;">&#xe64d;</i>
           <span style="font-size: 1.2em;color:white;">评论·{{work.commentnum}}</span>
-          <span style="color:white;position: absolute;left:66.6%;top:35%">丨</span>
+          <span style="color:white;position: absolute;left:60%;top:35%">丨</span>
       </span>
       <span style="padding-left: 35px;" >
           <i *ngIf='isstar==0' class="iconfont1" style="font-size:26px;color:white;" (click)='star(0)'>&#xe687;</i>

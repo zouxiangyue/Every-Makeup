@@ -32,7 +32,7 @@ export class MyApp {
     platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
       //window.localStorage.removeItem('user');
     this.storage.get('guide').then(key=>{
-      //key=false;
+      key=false;
       console.log(key);
       if(key){
         this.rootPage=TabsPage;

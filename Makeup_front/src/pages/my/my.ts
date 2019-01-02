@@ -29,14 +29,20 @@ export class MyPage {
     public appShare: AppShare, public actionSheetCtrl: ActionSheetController,
   public http:HttpClient) {
   }
-  
+  likenum=0;
   denglustatus:boolean=false;
-  user=JSON.parse(window.localStorage.getItem('user'));
+  user= {//接受登录页传输的用户数据 
+    mei_id: '*******',
+    name: '未登录',
+    headimg:'../../assets/images/1.jpg',
+    follownum:0,
+    likenum:this.likenum,
+    fannum:0,
+  };
   mylikes=JSON.parse(window.localStorage.getItem('mylikes'));
   topics;
   mytopics
-  guanzhu_len;
-  likenum=0;
+  guanzhu_len=0;
   ionViewWillEnter(){
     console.log(123);
     this.mylikes=JSON.parse(window.localStorage.getItem('mylikes'));
@@ -64,7 +70,12 @@ export class MyPage {
       this.guanzhu_len=this.mytopics.length+this.user.follownum;
       console.log(this.guanzhu_len)
     })
-    console.log(this.mylikes)
+    console.log(this.mylikes);
+    console.log(this.user)
+    this.http.post('api/login/likenum',{mei_id:this.user.mei_id}).subscribe(data=>{
+      this.likenum=data[0].likenum;
+      console.log(this.likenum)
+    })
     } else {
       this.user = {//接受登录页传输的用户数据 
         mei_id: '*******',
@@ -77,12 +88,7 @@ export class MyPage {
       this.denglustatus=false;
       console.log('未登录');
     }
-    this.guanzhu_len= 0;
-    console.log(this.user)
-    this.http.post('api/login/likenum',{mei_id:this.user.mei_id}).subscribe(data=>{
-      this.likenum=data[0].likenum;
-      console.log(this.likenum)
-    })
+
   }
 
   ngOnInit() {
