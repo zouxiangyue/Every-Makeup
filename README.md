@@ -38,7 +38,11 @@
 ### 项目运行部分截图
 
 #### 启动页面
+<p>
 <img src="/效果截图/01.jpg" align=center width=250 height=420 />
+<img src="/效果截图/002.jpg" align=center width=250 height=420 />
+<img src="/效果截图/001.jpg" align=center width=250 height=420 />
+</p>
 
 #### 首页
 <img src="/效果截图/02.jpg" align=center width=250 height=420 />
@@ -65,31 +69,34 @@
 <img src="/效果截图/10.jpg" align=center width=250 height=420 />
 
 #### 话题详情页
+<p>
 <img src="/效果截图/11.png" align=center width=250 height=420 />
-
-#### 话题发表页
 <img src="/效果截图/12.png" align=center width=250 height=420 />
+</p>
 
 #### 消息页
+<p>
 <img src="/效果截图/13.png" align=center width=250 height=420 />
-
-#### 消息详情页
 <img src="/效果截图/14.png" align=center width=250 height=420 />
 <img src="/效果截图/15.png" align=center width=250 height=420 />
 <img src="/效果截图/16.jpg" align=center width=250 height=420 />
 <img src="/效果截图/17.png" align=center width=250 height=420 />
+</p>
 
 #### 我的页
 <img src="/效果截图/18.png" align=center width=250 height=420 />
 
 #### 完善信息页
+<p>
 <img src="/效果截图/19.png" align=center width=250 height=420 />
-
-#### 完善信息详情页
 <img src="/效果截图/21.png" align=center width=250 height=420 />
+</p>
 
 #### 设置页
 <img src="/效果截图/22.png" align=center width=250 height=420 />
+
+#### 我的关注页
+<img src="/效果截图/26.png" align=center width=250 height=420 />
 
 #### 注册页面
 <img src="/效果截图/25.png" align=center width=250 height=420 />
