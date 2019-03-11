@@ -35,18 +35,64 @@
    * Github：[https://github.com/Galaxy86](https://github.com/Galaxy86)  
    * email：[501811824@qq.com](501811824@qq.com) 
    	
-## 项目运行部分截图
+### 项目运行部分截图
+
 #### 启动页面
-#### 注册页面
-#### 登录页面
+<img src="/效果截图/01.jpg" align=center width=250 height=400 />
+
 #### 首页
-#### 搜索页
-#### 发表作品页
-#### 文章发表详情页
+<img src="/效果截图/02.jpg" align=center width=250 height=400 />
+
 #### 作品详情页
+<img src="/效果截图/04.jpg" align=center width=250 height=400 />
+
 #### 作品评论页
+<img src="/效果截图/05.png" align=center width=250 height=400 />
+
+#### 侧边栏
+<img src="/效果截图/06.png" align=center width=250 height=400 />
+
+#### 搜索页
+<img src="/效果截图/07.png" align=center width=250 height=400 />
+
+#### 作品发表页
+<img src="/效果截图/08.png" align=center width=250 height=400 />
+
+#### 文章发表详情页
+<img src="/效果截图/09.png" align=center width=250 height=400 />
+
 #### 话题页
+<img src="/效果截图/10.jpg" align=center width=250 height=400 />
+
 #### 话题详情页
+<img src="/效果截图/11.png" align=center width=250 height=400 />
+
+#### 话题发表页
+<img src="/效果截图/12.png" align=center width=250 height=400 />
+
 #### 消息页
+<img src="/效果截图/13.png" align=center width=250 height=400 />
+
+#### 消息详情页
+<img src="/效果截图/14.png" align=center width=250 height=400 />
+<img src="/效果截图/15.png" align=center width=250 height=400 />
+<img src="/效果截图/16.jpg" align=center width=250 height=400 />
+<img src="/效果截图/17.png" align=center width=250 height=400 />
+
 #### 我的页
+<img src="/效果截图/18.png" align=center width=250 height=400 />
+
 #### 完善信息页
+<img src="/效果截图/19.png" align=center width=250 height=400 />
+
+#### 完善信息详情页
+<img src="/效果截图/21.png" align=center width=250 height=400 />
+
+#### 设置页
+<img src="/效果截图/22.png" align=center width=250 height=400 />
+
+#### 注册页面
+<img src="/效果截图/25.png" align=center width=250 height=400 />
+
+#### 登录页面
+<img src="/效果截图/24.png" align=center width=250 height=400 />
