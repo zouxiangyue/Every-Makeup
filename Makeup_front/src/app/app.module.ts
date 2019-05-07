@@ -51,6 +51,7 @@ import { TopictripPage } from '../pages/topictrip/topictrip';
 import { TopicdatePage } from '../pages/topicdate/topicdate';
 import { TopicdailyPage } from '../pages/topicdaily/topicdaily';
 import { TaolunPage } from '../pages/taolun/taolun';
+import { CodePage } from '../pages/code/code';
 
 
 
@@ -101,6 +102,7 @@ import { TaolunPage } from '../pages/taolun/taolun';
     TopicdatePage,
     TopicdailyPage,
     TaolunPage,
+    CodePage,
   ],
   imports: [
     BrowserModule,
@@ -158,6 +160,7 @@ import { TaolunPage } from '../pages/taolun/taolun';
     TopicdatePage,
     TopicdailyPage,
     TaolunPage,
+    CodePage,
   ],
   providers: [
     StatusBar,

@@ -14,6 +14,8 @@ import { AboutmeiPage } from '../pages/aboutmei/aboutmei';
 import { PrivacyPage } from '../pages/privacy/privacy';
 import { FeedbackPage } from '../pages/feedback/feedback';
 import { SetPage } from '../pages/set/set';
+import { CodePage } from '../pages/code/code';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -24,7 +26,8 @@ export class MyApp {
   more=[['icon-eye','我的关注'],['icon-star','我的收藏'],
   ['icon-lock','隐私政策'],['icon-pen_','反馈与帮助'],
   ['icon-bin','清除缓存'],
-  ['icon-set','设置']];
+  ['icon-set','设置'],
+  ['icon-eye','公众号']];
 
   @ViewChild('myNav') navCtrl: NavController;
   
@@ -69,6 +72,9 @@ export class MyApp {
         break;
       case 5:
         this.navCtrl.push(SetPage);
+        break;
+      case 6:
+        this.navCtrl.push(CodePage);
         break;
       default:
         console.log('page not found!');
